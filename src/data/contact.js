@@ -1,10 +1,10 @@
 export const headerContact = {
-  phoneDisplay: "01811215487",
-  phoneHref: "tel:+8801811215487",
+  phoneDisplay: "09617336633",
+  phoneHref: "tel:+8809617336633",
   email: "info@ekinternational.com",
   emailHref: "mailto:info@ekinternational.com",
   location: "Dhaka, Bangladesh",
-  whatsappHref: "https://wa.me/8801811215487",
+  whatsappHref: "https://wa.me/8809617336633",
 };
 
 export const socialPlatforms = [

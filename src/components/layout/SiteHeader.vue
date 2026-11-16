@@ -1,4 +1,4 @@
-<script setup>
+﻿<script setup>
 import { onBeforeUnmount, onMounted, ref } from "vue";
 import {
   ChevronDown,
@@ -49,6 +49,23 @@ function closeMenuAndFocus() {
   if (shouldRestoreFocus) menuButton.value?.focus();
 }
 
+function handleNavigationClick(routeKey, hash) {
+  const targetRoute = `${locale.value}-${routeKey}`;
+  const targetHash = hash || '';
+  const isCurrentTarget = route.name === targetRoute && route.hash === targetHash;
+
+  closeMenuAndFocus();
+  if (!isCurrentTarget) return;
+
+  window.requestAnimationFrame(() => {
+    const target = hash ? document.querySelector(hash) : null;
+    const top = target
+      ? Math.max(0, target.getBoundingClientRect().top + window.scrollY - 96)
+      : 0;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+}
+
 function setServicesButton(element) {
   servicesButton.value = element;
 }
@@ -75,7 +92,7 @@ onBeforeUnmount(() => window.removeEventListener("keydown", handleKeydown));
   <header
     class="sticky top-[-50px] z-40 bg-white sm:top-[-56px] lg:top-[-50px]"
   >
-    <div class="h-[50px] bg-blue-900 text-white sm:h-14 lg:h-[50px]">
+    <div class="h-[50px] bg-[#313493] text-white sm:h-14 lg:h-[50px]">
       <div
         class="mx-auto flex h-full max-w-7xl items-center justify-between gap-2 px-4 sm:px-6 lg:px-8"
       >
@@ -170,12 +187,12 @@ onBeforeUnmount(() => window.removeEventListener("keydown", handleKeydown));
       class="mx-auto flex h-[76px] max-w-7xl items-center justify-between gap-2 px-4 sm:px-6 lg:h-[88px] lg:gap-5 lg:px-8"
     >
       <RouterLink
-        class="shrink-0 cursor-pointer rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
+        class="shrink-0 cursor-pointer rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#313493]"
         :to="{ name: `${locale}-home` }"
         @click="closeMenu"
       >
         <img
-          class="h-auto w-16 object-contain sm:w-20 lg:w-28"
+          class="h-auto w-16 object-contain sm:w-20 lg:w-24"
           :src="brandLogo"
           alt="EK International"
           fetchpriority="high"
@@ -202,43 +219,44 @@ onBeforeUnmount(() => window.removeEventListener("keydown", handleKeydown));
           >
             <RouterLink
               v-if="!item.submenu"
-              class="relative flex min-h-11 cursor-pointer items-center gap-1 whitespace-nowrap rounded-md px-3 text-base font-semibold transition-colors duration-300 hover:text-red-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700 motion-reduce:transition-none lg:min-h-[88px] lg:rounded-none lg:px-1 lg:text-xs xl:text-sm lg:before:absolute lg:before:inset-x-0 lg:before:top-0 lg:before:h-[3px] lg:before:origin-center lg:before:scale-x-0 lg:before:bg-red-600 lg:before:content-[''] lg:before:transition-transform lg:before:duration-300 lg:hover:before:scale-x-100 lg:focus-visible:before:scale-x-100 lg:motion-reduce:before:transition-none"
-              :class="
-                isActive(item)
-                  ? 'text-red-700 lg:before:scale-x-100'
-                  : 'text-blue-950'
-              "
+              class="relative flex min-h-11 cursor-pointer items-center gap-1 whitespace-nowrap rounded-md px-3 text-base font-semibold transition-colors duration-300 hover:text-[#EE2329] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EE2329] motion-reduce:transition-none lg:min-h-[88px] lg:rounded-none lg:px-1 lg:text-xs xl:text-sm lg:before:absolute lg:before:inset-x-0 lg:before:top-0 lg:before:h-[3px] lg:before:origin-center lg:before:scale-x-0 lg:before:bg-[#EE2329] lg:before:content-[''] lg:before:transition-transform lg:before:duration-300 lg:hover:before:scale-x-100 lg:focus-visible:before:scale-x-100 lg:motion-reduce:before:transition-none"
+              :class=" isActive(item) ? 'text-[#EE2329] lg:before:scale-x-100' : 'text-[#313493]' "
               :to="{ name: `${locale}-${item.routeKey}`, hash: item.hash }"
               :aria-current="isActive(item) ? 'page' : undefined"
-              @click="closeMenuAndFocus"
+              @click="handleNavigationClick(item.routeKey, item.hash)"
             >
               {{ dictionary.homeFoundation.navigation[item.labelKey] }}
             </RouterLink>
 
             <template v-else>
-              <button
-                :ref="setServicesButton"
-                class="relative flex min-h-11 w-full cursor-pointer items-center justify-between gap-1 whitespace-nowrap rounded-md px-3 text-left text-base font-semibold transition-colors duration-300 hover:text-red-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700 motion-reduce:transition-none lg:min-h-[88px] lg:w-auto lg:justify-center lg:rounded-none lg:px-1 lg:text-xs xl:text-sm lg:before:absolute lg:before:inset-x-0 lg:before:top-0 lg:before:h-[3px] lg:before:origin-center lg:before:scale-x-0 lg:before:bg-red-600 lg:before:content-[''] lg:before:transition-transform lg:before:duration-300 lg:hover:before:scale-x-100 lg:focus-visible:before:scale-x-100 lg:motion-reduce:before:transition-none"
-                :class="
-                  isActive(item)
-                    ? 'text-red-700 lg:before:scale-x-100'
-                    : 'text-blue-950'
-                "
-                type="button"
-                aria-controls="work-visa-submenu"
-                aria-haspopup="true"
-                :aria-expanded="servicesOpen"
-                :aria-current="isActive(item) ? 'page' : undefined"
-                @click="servicesOpen = !servicesOpen"
-              >
-                {{ dictionary.homeFoundation.navigation[item.labelKey] }}
-                <ChevronDown
-                  class="transition-transform duration-200 motion-reduce:transition-none"
-                  :class="servicesOpen ? 'rotate-180' : ''"
-                  :size="15"
-                  aria-hidden="true"
-                />
-              </button>
+              <div class="flex items-center lg:relative">
+                <RouterLink
+                  class="relative flex min-h-11 cursor-pointer items-center whitespace-nowrap rounded-md px-3 text-base font-semibold transition-colors duration-300 hover:text-[#EE2329] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EE2329] motion-reduce:transition-none lg:min-h-[88px] lg:rounded-none lg:px-1 lg:text-xs xl:text-sm lg:before:absolute lg:before:inset-x-0 lg:before:top-0 lg:before:h-[3px] lg:before:origin-center lg:before:scale-x-0 lg:before:bg-[#EE2329] lg:before:content-[''] lg:before:transition-transform lg:before:duration-300 lg:hover:before:scale-x-100 lg:focus-visible:before:scale-x-100 lg:motion-reduce:before:transition-none"
+                  :class="isActive(item) ? 'text-[#EE2329] lg:before:scale-x-100' : 'text-[#313493]'"
+                  :to="{ name: `${locale}-${item.routeKey}`, hash: item.hash }"
+                  :aria-current="isActive(item) ? 'page' : undefined"
+                  @click="handleNavigationClick(item.routeKey, item.hash)"
+                >
+                  {{ dictionary.homeFoundation.navigation[item.labelKey] }}
+                </RouterLink>
+                <button
+                  :ref="setServicesButton"
+                  class="inline-flex size-11 cursor-pointer items-center justify-center rounded-md text-[#313493] transition-colors hover:text-[#EE2329] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EE2329] motion-reduce:transition-none lg:size-5 lg:rounded-none"
+                  type="button"
+                  aria-controls="work-visa-submenu"
+                  aria-haspopup="true"
+                  :aria-expanded="servicesOpen"
+                  :aria-label="dictionary.homeFoundation.navigation[item.labelKey]"
+                  @click="servicesOpen = !servicesOpen"
+                >
+                  <ChevronDown
+                    class="transition-transform duration-200 motion-reduce:transition-none"
+                    :class="servicesOpen ? 'rotate-180' : ''"
+                    :size="15"
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
 
               <Transition
                 enter-active-class="transition duration-250 ease-out motion-reduce:transition-none"
@@ -251,16 +269,16 @@ onBeforeUnmount(() => window.removeEventListener("keydown", handleKeydown));
                 <ul
                   v-if="servicesOpen"
                   id="work-visa-submenu"
-                  class="mt-1 grid gap-1 rounded-lg border border-slate-200 border-b-4 border-b-red-600 bg-white p-2 shadow-xl lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-0 lg:min-w-64"
+                  class="mt-1 grid gap-1 rounded-lg border border-slate-200 border-b-4 border-b-[#EE2329] bg-white p-2 shadow-xl lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-0 lg:min-w-64"
                 >
                   <li v-for="subitem in item.submenu" :key="subitem.id">
                     <RouterLink
-                      class="block min-h-12 cursor-pointer whitespace-nowrap rounded-md border-b border-slate-200 px-3 py-3 text-sm font-medium text-blue-950 transition-colors duration-200 hover:bg-red-50 hover:text-red-700 focus-visible:bg-red-50 focus-visible:outline-2 focus-visible:outline-red-700 motion-reduce:transition-none last:border-b-0 xl:text-sm"
+                      class="block min-h-12 cursor-pointer whitespace-nowrap rounded-md border-b border-slate-200 px-3 py-3 text-sm font-medium text-[#313493] transition-colors duration-200 hover:bg-red-50 hover:text-[#EE2329] focus-visible:bg-red-50 focus-visible:outline-2 focus-visible:outline-[#EE2329] motion-reduce:transition-none last:border-b-0 xl:text-sm"
                       :to="{
                         name: `${locale}-${subitem.routeKey}`,
                         hash: subitem.hash,
                       }"
-                      @click="closeMenuAndFocus"
+                      @click="handleNavigationClick(subitem.routeKey, subitem.hash)"
                     >
                       {{
                         dictionary.homeFoundation.navigation[subitem.labelKey]
@@ -276,12 +294,12 @@ onBeforeUnmount(() => window.removeEventListener("keydown", handleKeydown));
 
       <div class="ml-auto flex shrink-0 items-center gap-1 sm:gap-2 lg:ml-1">
         <a
-          class="group inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-full text-blue-950 transition-colors hover:text-red-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700 motion-reduce:transition-none sm:gap-3"
+          class="group inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-full text-[#313493] transition-colors hover:text-[#EE2329] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#EE2329] motion-reduce:transition-none sm:gap-3"
           :href="headerContact.phoneHref"
           :aria-label="`${dictionary.siteHeader.callUsNow}: ${headerContact.phoneDisplay}`"
         >
           <span
-            class="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-red-700 text-white transition-colors group-hover:bg-red-800 sm:size-14"
+            class="relative isolate inline-flex size-11 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#EE2329] text-white transition-colors group-hover:bg-[#B91C1C]    sm:size-14"
             aria-hidden="true"
           >
             <PhoneCall :size="22" :stroke-width="1.8" />
@@ -291,14 +309,14 @@ onBeforeUnmount(() => window.removeEventListener("keydown", handleKeydown));
               dictionary.siteHeader.callUsNow
             }}</span>
             <span
-              class="whitespace-nowrap text-base font-semibold text-blue-950 xl:text-lg"
+              class="whitespace-nowrap text-base font-semibold text-[#313493] xl:text-lg"
               >{{ headerContact.phoneDisplay }}</span
             >
           </span>
         </a>
         <button
           ref="menuButton"
-          class="inline-flex size-11 cursor-pointer items-center justify-center rounded-md border border-slate-300 text-blue-950 transition-colors hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 motion-reduce:transition-none lg:hidden"
+          class="inline-flex size-11 cursor-pointer items-center justify-center rounded-md border border-slate-300 text-[#313493] transition-colors hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#313493] motion-reduce:transition-none lg:hidden"
           type="button"
           aria-controls="primary-navigation"
           :aria-expanded="menuOpen"

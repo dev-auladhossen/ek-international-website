@@ -1,4 +1,4 @@
-<script setup>
+﻿<script setup>
 import { usePageContent } from '../../composables/usePageContent'
 
 const { page } = usePageContent()

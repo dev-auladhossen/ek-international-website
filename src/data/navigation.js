@@ -1,18 +1,20 @@
 export const primaryNavigation = [
   { id: 'home', routeKey: 'home', labelKey: 'home' },
-  { id: 'about', routeKey: 'about', labelKey: 'aboutUs' },
+  { id: 'about', routeKey: 'home', hash: '#about', labelKey: 'aboutUs' },
   {
     id: 'workVisa',
+    routeKey: 'home',
+    hash: '#destinations',
     labelKey: 'workVisaHeader',
     submenu: [
       { id: 'workVisaOverview', routeKey: 'work-visa', labelKey: 'workVisaOverview' },
       { id: 'destinations', routeKey: 'home', hash: '#destinations', labelKey: 'destinations' },
     ],
   },
-  { id: 'hajjUmrah', routeKey: 'hajj-umrah', labelKey: 'hajjUmrah' },
-  { id: 'team', routeKey: 'team', labelKey: 'team' },
+  { id: 'hajjUmrah', routeKey: 'home', hash: '#hajj-umrah', labelKey: 'hajjUmrah' },
+  { id: 'team', routeKey: 'home', hash: '#team', labelKey: 'team' },
   { id: 'faq', routeKey: 'home', hash: '#faq', labelKey: 'faq' },
-  { id: 'contact', routeKey: 'contact', labelKey: 'contactUs' },
+  { id: 'contact', routeKey: 'home', hash: '#contact', labelKey: 'contactUs' },
 ]
 
 export const contactChannels = [

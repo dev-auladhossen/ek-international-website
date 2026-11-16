@@ -1,5 +1,6 @@
-<script setup>
+﻿<script setup>
 import { Mail, MapPin, MessageCircle, Phone } from '@lucide/vue'
+import RevealHeading from '../common/RevealHeading.vue'
 import inquiryBackground from '../../assets/images/backgrounds/Blue Gradient World Map with Red Wave.png'
 import { headerContact } from '../../data/contact'
 import { usePageContent } from '../../composables/usePageContent'
@@ -24,22 +25,24 @@ const contactMethods = [
     <div class="relative z-10 mx-auto max-w-7xl">
       <header class="mx-auto max-w-4xl text-center">
         <div class="flex items-center justify-center gap-3">
-          <span class="h-0.5 w-10 bg-red-600 sm:w-12" aria-hidden="true"></span>
-          <p class="text-xs font-bold uppercase tracking-wide text-red-700 sm:text-sm">
+          <span class="h-0.5 w-10 bg-[#EE2329] sm:w-12" aria-hidden="true"></span>
+          <p class="text-xs font-bold uppercase tracking-wide text-[#EE2329] sm:text-sm">
             {{ dictionary.homeFoundation.contact.eyebrow }}
           </p>
-          <span class="h-0.5 w-10 bg-red-600 sm:w-12" aria-hidden="true"></span>
+          <span class="h-0.5 w-10 bg-[#EE2329] sm:w-12" aria-hidden="true"></span>
         </div>
-        <h2 id="contact-title" class="mt-2 text-2xl font-bold leading-tight tracking-tight text-blue-950 sm:text-3xl lg:text-4xl">
-          {{ dictionary.homeFoundation.contact.title }}
-        </h2>
-        <p class="mx-auto mt-2 max-w-3xl text-sm leading-6 text-blue-950 sm:text-base">
+        <RevealHeading
+          id="contact-title"
+          class="mt-2 text-2xl font-bold leading-tight tracking-tight text-[#313493] sm:text-3xl lg:text-4xl"
+          :text="dictionary.homeFoundation.contact.title"
+        />
+        <p v-reveal class="mx-auto mt-2 max-w-3xl text-sm leading-6 text-[#313493] sm:text-base">
           {{ dictionary.homeFoundation.contact.intro }}
         </p>
       </header>
 
       <div class="mt-7 grid gap-5 lg:mt-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-6">
-        <aside class="group relative isolate flex min-h-[25rem] overflow-hidden rounded-2xl bg-blue-950 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transform-none motion-reduce:transition-none sm:p-8">
+        <aside v-reveal:image-left class="group relative isolate flex min-h-[25rem] overflow-hidden rounded-2xl bg-[#313493] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transform-none motion-reduce:transition-none sm:p-8">
           <img
             class="absolute inset-0 -z-10 size-full scale-105 object-cover transition-transform duration-700 ease-out group-hover:scale-110 motion-reduce:transition-none"
             :src="inquiryBackground"
@@ -52,7 +55,7 @@ const contactMethods = [
           />
           <ul class="my-auto grid w-full max-w-[19rem] gap-5 sm:gap-6">
             <li v-for="method in contactMethods" :key="method.id" class="group/item flex min-w-0 items-center gap-3.5 sm:gap-4">
-              <span class="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-red-600 shadow-sm transition duration-300 group-hover/item:scale-105 group-hover/item:bg-red-50 motion-reduce:transform-none motion-reduce:transition-none sm:size-14" aria-hidden="true">
+              <span class="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-[#EE2329] shadow-sm transition duration-300 group-hover/item:scale-105 group-hover/item:bg-red-50 motion-reduce:transform-none motion-reduce:transition-none sm:size-14" aria-hidden="true">
                 <component :is="method.icon" :size="23" :stroke-width="2.2" />
               </span>
               <div class="min-w-0 text-white">
@@ -76,8 +79,8 @@ const contactMethods = [
           </ul>
         </aside>
 
-        <div class="rounded-2xl border border-blue-100 bg-white/95 p-5 shadow-sm transition duration-300 hover:shadow-md sm:p-7 lg:p-8">
-          <h3 class="text-xl font-bold tracking-tight text-blue-950 sm:text-2xl">
+        <div v-reveal class="rounded-2xl border border-blue-100 bg-white/95 p-5 shadow-sm transition duration-300 hover:shadow-md sm:p-7 lg:p-8">
+          <h3 class="text-xl font-bold tracking-tight text-[#313493] sm:text-2xl">
             {{ dictionary.homeFoundation.inquiry.heading }}
           </h3>
           <InquiryForm />

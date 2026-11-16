@@ -1,37 +1,37 @@
-import southKoreaMeeting from '../assets/images/optimized/hero/south-korea-meeting.webp'
-import consultationMeeting from '../assets/images/optimized/hero/consultation-meeting.webp'
-import travelOfficeBanner from '../assets/images/optimized/hero/travel-office-banner.webp'
+import professionalOfficeHandshake from '../assets/images/hero/Professional Office Handshake Lounge.png'
+import internationalTravelReception from '../assets/images/hero/International Travel Office Reception.png'
+import globalCareerConsultation from '../assets/images/hero/Global Career Consultation Meeting.png'
 
 export default [
   {
-    id: 'south-korea-meeting',
-    image: southKoreaMeeting,
+    id: 'professional-office-handshake',
+    image: professionalOfficeHandshake,
     altKey: 'southKoreaMeetingAlt',
     imagePosition: 'object-[68%_center] sm:object-center',
     copyIndex: 0,
-    width: 1600,
-    height: 900,
+    width: 1774,
+    height: 887,
     primaryRouteKey: 'work-visa',
   },
   {
-    id: 'consultation-meeting',
-    image: consultationMeeting,
+    id: 'international-travel-reception',
+    image: internationalTravelReception,
     altKey: 'consultationMeetingAlt',
     imagePosition: 'object-[68%_center] sm:object-center',
     copyIndex: 1,
-    width: 1600,
-    height: 900,
+    width: 2172,
+    height: 724,
     primaryRouteKey: 'home',
     primaryHash: '#services',
   },
   {
-    id: 'travel-office-banner',
-    image: travelOfficeBanner,
+    id: 'global-career-consultation',
+    image: globalCareerConsultation,
     altKey: 'travelOfficeBannerAlt',
     imagePosition: 'object-center',
     copyIndex: 2,
-    width: 1556,
-    height: 440,
+    width: 1774,
+    height: 887,
     primaryRouteKey: 'home',
     primaryHash: '#services',
   },

@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@theme {
+  --animate-country-marquee: country-marquee 38s linear infinite;
+  --animate-hero-zoom: hero-zoom 3s ease-in-out forwards;
+  @keyframes hero-zoom {
+    from {
+      transform: scale(1);
+    }
+
+    to {
+      transform: scale(1.08);
+    }
+  }
+
+  @keyframes country-marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}

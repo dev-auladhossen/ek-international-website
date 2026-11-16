@@ -1,6 +1,6 @@
-<script setup>
+﻿<script setup>
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import { ArrowRight, ChevronLeft, ChevronRight } from '@lucide/vue'
+import { ArrowRight, ChevronLeft, ChevronRight, Plane } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
 import { usePageContent } from '../../composables/usePageContent'
 import heroSlides from '../../data/heroSlides'
@@ -37,7 +37,7 @@ function scheduleAutoplay() {
   autoplayTimer = window.setTimeout(() => {
     activeIndex.value = (activeIndex.value + 1) % heroSlides.length
     scheduleAutoplay()
-  }, 2000)
+  }, 3000)
 }
 
 function goToSlide(index) {
@@ -99,7 +99,8 @@ onBeforeUnmount(() => {
 
 <template>
   <section
-    class="relative isolate min-h-[620px] overflow-hidden bg-blue-950 text-white sm:min-h-[560px] lg:min-h-[540px] xl:min-h-[600px]"
+    id="home"
+    class="relative isolate h-[calc(100svh-140px)] min-h-[460px] max-h-[700px] overflow-hidden bg-[#313493] text-white lg:h-[calc(100svh-210px)] lg:min-h-[460px]"
     role="region"
     aria-roledescription="carousel"
     aria-labelledby="hero-title"
@@ -131,7 +132,7 @@ onBeforeUnmount(() => {
         :inert="slide.id !== activeSlide.id"
       >
         <img
-          class="absolute inset-0 size-full object-cover"
+          class="absolute inset-0 size-full object-cover motion-safe:animate-hero-zoom motion-reduce:animate-none"
           :class="slide.imagePosition"
           :src="slide.image"
           :alt="dictionary.homeFoundation.carousel[slide.altKey]"
@@ -142,15 +143,15 @@ onBeforeUnmount(() => {
           decoding="async"
         />
         <div
-          class="absolute inset-0 bg-gradient-to-r from-blue-950/95 via-blue-950/75 to-blue-950/30 sm:to-blue-950/15"
+          class="absolute inset-0 bg-gradient-to-r from-[#313493]/95 via-[#313493]/55 to-transparent"
           aria-hidden="true"
         ></div>
         <div
-          class="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-6 pb-20 pt-12 sm:min-h-[560px] sm:px-12 lg:min-h-[540px] lg:px-16 xl:min-h-[600px]"
+          class="relative mx-auto flex h-full max-w-7xl items-center px-5 pb-16 pt-8 sm:px-10 lg:px-16"
         >
           <TransitionGroup
             tag="div"
-            class="max-w-full sm:max-w-[70%] md:max-w-[58%] lg:max-w-[48%] xl:max-w-[46%]"
+            class="max-w-full sm:max-w-[70%] md:max-w-[58%] lg:max-w-[54%] xl:max-w-[52%]"
             appear
             enter-active-class="transition-all duration-700 ease-out motion-reduce:transition-none"
             enter-from-class="translate-y-8 opacity-0 motion-reduce:transform-none"
@@ -161,36 +162,37 @@ onBeforeUnmount(() => {
           >
             <p
               key="eyebrow"
-              class="delay-100 inline-flex rounded-sm bg-red-600 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white sm:text-sm"
+              class="delay-100 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-wide text-white sm:text-sm"
             >
+              <Plane class="text-[#EE2329]" :size="22" :stroke-width="2.5" aria-hidden="true" />
               {{ dictionary.homeFoundation.carousel.slides[slide.copyIndex].eyebrow }}
             </p>
             <h1
               key="heading"
               :id="slide.id === activeSlide.id ? 'hero-title' : undefined"
-              class="delay-200 mt-4 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-6xl"
+              class="delay-200 mt-3 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-[3.25rem]"
             >
               {{ dictionary.homeFoundation.carousel.slides[slide.copyIndex].heading }}
             </h1>
             <p
               key="description"
-              class="delay-300 mt-4 max-w-xl text-base leading-7 text-white/95 sm:mt-5 sm:text-lg sm:leading-8"
+              class="delay-300 mt-3 max-w-xl text-sm leading-6 text-white/95 sm:mt-4 sm:text-base sm:leading-7 lg:text-lg"
             >
               {{ dictionary.homeFoundation.carousel.slides[slide.copyIndex].description }}
             </p>
             <div
               key="ctas"
-              class="delay-500 mt-6 flex flex-col gap-3 sm:mt-7 sm:flex-row sm:flex-wrap"
+              class="delay-500 mt-5 flex flex-col gap-3 sm:mt-6 sm:flex-row sm:flex-wrap"
             >
               <RouterLink
-                class="inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-md bg-red-600 px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white motion-reduce:transition-none sm:text-base"
+                class="relative isolate inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-md bg-[#EE2329] px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#B91C1C] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white  sm:text-base"
                 :to="routeTarget(slide.primaryRouteKey, slide.primaryHash)"
               >
                 {{ dictionary.homeFoundation.carousel.slides[slide.copyIndex].primaryCta }}
                 <ArrowRight :size="18" aria-hidden="true" />
               </RouterLink>
               <RouterLink
-                class="inline-flex min-h-12 cursor-pointer items-center justify-center rounded-md border-2 border-white/90 bg-blue-950/20 px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white motion-reduce:transition-none sm:text-base"
+                class="inline-flex min-h-12 cursor-pointer items-center justify-center rounded-md border-2 border-white/90 bg-[#313493]/20 px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white motion-reduce:transition-none sm:text-base"
                 :to="routeTarget('contact')"
               >
                 {{ dictionary.homeFoundation.carousel.slides[slide.copyIndex].secondaryCta }}
@@ -205,7 +207,7 @@ onBeforeUnmount(() => {
       class="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex items-center justify-between px-4 pb-4 sm:px-6 sm:pb-5 lg:inset-y-0 lg:px-6 lg:pb-0 xl:px-8"
     >
       <button
-        class="pointer-events-auto inline-flex size-14 cursor-pointer items-center justify-center rounded-sm bg-transparent text-white drop-shadow-md transition-colors hover:bg-blue-950/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none lg:absolute lg:left-6 lg:top-1/2 lg:-translate-y-1/2 xl:left-8"
+        class="pointer-events-auto inline-flex size-14 cursor-pointer items-center justify-center rounded-sm bg-transparent text-white drop-shadow-md transition-colors hover:bg-[#313493]/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none lg:absolute lg:left-6 lg:top-1/2 lg:-translate-y-1/2 xl:left-8"
         type="button"
         :aria-label="dictionary.homeFoundation.carousel.previous"
         @click="moveSlide(-1)"
@@ -229,14 +231,14 @@ onBeforeUnmount(() => {
         >
           <span
             class="size-3.5 rounded-full border-2 border-white transition-colors motion-reduce:transition-none"
-            :class="activeIndex === index ? 'bg-red-600' : 'bg-white/70'"
+            :class="activeIndex === index ? 'bg-[#EE2329]' : 'bg-white/70'"
             aria-hidden="true"
           ></span>
         </button>
       </div>
 
       <button
-        class="pointer-events-auto inline-flex size-14 cursor-pointer items-center justify-center rounded-sm bg-transparent text-white drop-shadow-md transition-colors hover:bg-blue-950/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none lg:absolute lg:right-6 lg:top-1/2 lg:-translate-y-1/2 xl:right-8"
+        class="pointer-events-auto inline-flex size-14 cursor-pointer items-center justify-center rounded-sm bg-transparent text-white drop-shadow-md transition-colors hover:bg-[#313493]/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none lg:absolute lg:right-6 lg:top-1/2 lg:-translate-y-1/2 xl:right-8"
         type="button"
         :aria-label="dictionary.homeFoundation.carousel.next"
         @click="moveSlide(1)"

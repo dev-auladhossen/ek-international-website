@@ -79,9 +79,9 @@ export default {
       regionLabel: "Featured opportunities",
       slideLabel: "Slide {current} of {total}",
       showSlide: "Show slide",
-      southKoreaMeetingAlt: "Two people meeting in an office in front of a world map",
-      consultationMeetingAlt: "Clients speaking with a consultant at EK International",
-      travelOfficeBannerAlt: "Passports and travel materials displayed in an office beside an airport view",
+      southKoreaMeetingAlt: "Professionals meeting and shaking hands in an office lounge",
+      consultationMeetingAlt: "An international travel office reception",
+      travelOfficeBannerAlt: "A consultation meeting about global career opportunities",
       controlsLabel: "Carousel controls",
       previous: "Previous slide",
       next: "Next slide",
@@ -113,15 +113,19 @@ export default {
       sulaimanKhanName: "S.B. Sulaiman Khan",
       accountsManagerRole: "Accounts Manager",
     },
-    trust: {
-      title: "Trust & value",
-      contentPending:
-        "Approved credentials, service commitments, or other supporting information to be supplied.",
-    },
     about: {
-      title: "About EK International",
-      contentPending:
-        "Approved company background and introduction to be supplied.",
+      eyebrow: "About EK International",
+      title: "Connecting People with Global Opportunities",
+      description:
+        "EK International provides overseas employment and visa processing assistance, along with Hajj and Umrah travel services.",
+      supportingDescription:
+        "Our services include work visa assistance, travel arrangements, documentation guidance, and dedicated support.",
+      imageAlt: "Illustrative concept of a modern EK International reception area.",
+      cta: "Learn More About Us",
+      workVisaFeature: "Work Visa Assistance",
+      hajjFeature: "Hajj & Umrah Packages",
+      teamFeature: "Our Team",
+      supportFeature: "Dedicated Support",
     },
     services: {
       eyebrow: "Our services",
@@ -181,7 +185,7 @@ export default {
       processingTimeQuestion: "How long does the visa process usually take?",
       processingTimeAnswer: "Processing time depends on the destination and application. Contact EK International for current guidance.",
       contactQuestion: "How can I get in touch with EK International?",
-      contactAnswer: "Call us at 01811215487 or message us on WhatsApp.",
+      contactAnswer: "Call us at 09617336633 or message us on WhatsApp.",
     },
     inquiry: {
       heading: "Send an Inquiry",
