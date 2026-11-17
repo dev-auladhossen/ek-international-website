@@ -1,0 +1,61 @@
+import goldenTawaf from "../assets/images/hajj&umrah/Masjid al-Haram at Sunset-5.png";
+import goldenKaaba from "../assets/images/hajj&umrah/Golden Sunset at the Kaaba-1.png";
+import mosqueCorridor from "../assets/images/hajj&umrah/Grand Mosque Pilgrimage Corridor-4.png";
+import prophetMosque from "../assets/images/hajj&umrah/Sunset at the Prophet’s Mosque-3.png";
+
+export default [
+  {
+    id: "standard-umrah",
+    category: "umrah",
+    nameKey: "standardUmrahName",
+    typeKey: "standardType",
+    serviceKey: "umrahService",
+    statusKey: "bookingOngoing",
+    priceLabelKey: "packagePrice",
+    price: "৳100,000",
+    detailsKey: "packageInformationPending",
+    image: goldenTawaf,
+    imageAltKey: "standardUmrahImageAlt",
+  },
+  {
+    id: "premium-umrah",
+    category: "umrah",
+    nameKey: "premiumUmrahName",
+    typeKey: "premiumType",
+    serviceKey: "umrahService",
+    statusKey: "bookingOngoing",
+    priceLabelKey: "packagePrice",
+    price: "৳150,000",
+    detailsKey: "packageInformationPending",
+    image: goldenKaaba,
+    imageAltKey: "premiumUmrahImageAlt",
+  },
+  {
+    id: "gold-classic-hajj",
+    category: "hajj",
+    nameKey: "goldClassicHajjName",
+    typeKey: "hajjType",
+    serviceKey: "hajjService",
+    statusKey: "customizableAvailability",
+    priceLabelKey: "startingFrom",
+    price: "৳820,000",
+    duration: "42–45 days",
+    detailsKey: "goldClassicHajjDetails",
+    image: mosqueCorridor,
+    imageAltKey: "hajjPackageImageAlt",
+  },
+  {
+    id: "classic-hajj",
+    category: "hajj",
+    nameKey: "classicHajjName",
+    typeKey: "hajjType",
+    serviceKey: "hajjService",
+    statusKey: "customizableAvailability",
+    priceLabelKey: "startingFrom",
+    price: "৳680,000",
+    duration: "42–45 days",
+    detailsKey: "classicHajjDetails",
+    image: prophetMosque,
+    imageAltKey: "hajjPackageImageAlt",
+  },
+];

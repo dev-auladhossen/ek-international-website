@@ -1,5 +1,5 @@
 <script setup>
-import { Handshake, Landmark, ShieldCheck, UsersRound, ArrowRight } from '@lucide/vue'
+import { ArrowRight, Eye, Handshake, Plane } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
 import RevealHeading from '../common/RevealHeading.vue'
 import sectionBackground from '../../assets/images/backgrounds/ethereal-blue-wave-panorama.png'
@@ -9,10 +9,9 @@ import { usePageContent } from '../../composables/usePageContent'
 
 const { dictionary, locale } = usePageContent()
 const featureIcons = {
-  handshake: Handshake,
-  hajj: Landmark,
-  team: UsersRound,
-  support: ShieldCheck,
+  mission: Plane,
+  vision: Eye,
+  commitment: Handshake,
 }
 </script>
 
@@ -77,17 +76,23 @@ const featureIcons = {
         </RouterLink>
       </div>
 
-      <ul class="grid gap-4 border-t border-slate-300 pt-5 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4 xl:col-span-1 xl:grid-cols-1 xl:border-l xl:border-t-0 xl:py-2 xl:pl-5 xl:pt-2">
-        <li v-for="feature in aboutFeatures" :key="feature.id" v-reveal class="flex items-center gap-3">
-          <component
-            :is="featureIcons[feature.icon]"
-            class="shrink-0 text-[#EE2329]"
-            :size="31"
-            :stroke-width="2.2"
-            aria-hidden="true"
-          />
-          <span class="text-sm font-semibold leading-5 text-[#010300] sm:text-base">
-            {{ dictionary.homeFoundation.about[feature.titleKey] }}
+      <ul class="grid gap-3 border-t border-slate-300 pt-5 sm:grid-cols-1 lg:col-span-2 xl:col-span-1 xl:border-l xl:border-t-0 xl:py-2 xl:pl-5 xl:pt-2">
+        <li v-for="feature in aboutFeatures" :key="feature.id" v-reveal class="flex items-start gap-3 border-b border-sky-200 pb-3 last:border-b-0">
+          <span class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-sky-100 text-[#313493]">
+            <component
+              :is="featureIcons[feature.icon]"
+              :size="23"
+              :stroke-width="2.2"
+              aria-hidden="true"
+            />
+          </span>
+          <span class="min-w-0 pt-0.5">
+            <span class="block text-sm font-bold leading-5 text-[#313493]">
+              {{ dictionary.homeFoundation.about[feature.titleKey] }}
+            </span>
+            <span class="mt-0.5 block text-xs leading-4 text-slate-700">
+              {{ dictionary.homeFoundation.about[feature.descriptionKey] }}
+            </span>
           </span>
         </li>
       </ul>

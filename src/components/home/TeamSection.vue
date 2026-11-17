@@ -6,6 +6,7 @@ import team from '../../data/team'
 import { usePageContent } from '../../composables/usePageContent'
 
 const { dictionary, locale } = usePageContent()
+const featuredTeam = team.slice(0, 5)
 function memberName(member) {
   return dictionary.value.homeFoundation.team[member.nameKey]
 }
@@ -53,7 +54,7 @@ function memberPhoneLabel(member) {
         class="mt-7 grid grid-cols-2 gap-3 sm:mt-9 sm:gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
       >
         <li
-          v-for="member in team"
+          v-for="member in featuredTeam"
           :key="member.id"
           v-reveal
           class="min-w-0"

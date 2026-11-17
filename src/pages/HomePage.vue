@@ -1,5 +1,5 @@
 ﻿<script setup>
-import GetInTouchSection from "../components/contact/GetInTouchSection.vue";
+import HomeContactSection from "../components/home/HomeContactSection.vue";
 import AboutSection from "../components/home/AboutSection.vue";
 import DestinationSection from "../components/home/DestinationSection.vue";
 import FAQSection from "../components/home/FAQSection.vue";
@@ -24,7 +24,7 @@ import SiteFooter from "../components/layout/SiteFooter.vue";
     <ProcessSection />
     <HajjUmrahSection />
     <FAQSection />
-    <GetInTouchSection />
+    <HomeContactSection />
   </main>
 
   <SiteFooter />

@@ -17,15 +17,15 @@ import { primaryNavigation } from "../../data/navigation";
 import LanguageSwitcher from "../common/LanguageSwitcher.vue";
 
 const menuOpen = ref(false);
-const servicesOpen = ref(false);
+const openSubmenu = ref(null);
 const menuButton = ref(null);
-const servicesButton = ref(null);
+const submenuButtons = ref({});
 const route = useRoute();
 const { dictionary, locale } = usePageContent();
 
 function closeMenu() {
   menuOpen.value = false;
-  servicesOpen.value = false;
+  openSubmenu.value = null;
 }
 
 function handleKeydown(event) {
@@ -37,9 +37,10 @@ function handleKeydown(event) {
     return;
   }
 
-  if (servicesOpen.value) {
-    servicesOpen.value = false;
-    servicesButton.value?.focus();
+  if (openSubmenu.value) {
+    const activeSubmenu = openSubmenu.value;
+    openSubmenu.value = null;
+    submenuButtons.value[activeSubmenu]?.focus();
   }
 }
 
@@ -66,18 +67,34 @@ function handleNavigationClick(routeKey, hash) {
   });
 }
 
-function setServicesButton(element) {
-  servicesButton.value = element;
+function setSubmenuButton(id, element) {
+  if (element) submenuButtons.value[id] = element;
+  else delete submenuButtons.value[id];
+}
+
+function closeSubmenu(id) {
+  if (openSubmenu.value === id) openSubmenu.value = null;
+}
+
+function toggleSubmenu(id) {
+  if (window.matchMedia('(min-width: 1024px)').matches) {
+    openSubmenu.value = id;
+    return;
+  }
+  openSubmenu.value = openSubmenu.value === id ? null : id;
 }
 
 function isActive(item) {
   if (item.id === "home")
     return route.name === `${locale.value}-home` && !route.hash;
+  if (item.id === "services") {
+    return route.name === `${locale.value}-services`;
+  }
+  if (item.id === "more") {
+    return route.name === `${locale.value}-home` && ["#destinations", "#faq", "#gallery"].includes(route.hash);
+  }
   if (item.id === "workVisa") {
-    return (
-      route.name === `${locale.value}-work-visa` ||
-      route.hash === "#destinations"
-    );
+    return route.name === `${locale.value}-work-visa`;
   }
   if (item.hash)
     return route.name === `${locale.value}-home` && route.hash === item.hash;
@@ -214,8 +231,8 @@ onBeforeUnmount(() => window.removeEventListener("keydown", handleKeydown));
             v-for="item in primaryNavigation"
             :key="item.id"
             class="relative"
-            @mouseenter="item.submenu && (servicesOpen = true)"
-            @mouseleave="item.submenu && (servicesOpen = false)"
+            @mouseenter="item.submenu && (openSubmenu = item.id)"
+            @mouseleave="item.submenu && closeSubmenu(item.id)"
           >
             <RouterLink
               v-if="!item.submenu"
@@ -240,18 +257,18 @@ onBeforeUnmount(() => window.removeEventListener("keydown", handleKeydown));
                   {{ dictionary.homeFoundation.navigation[item.labelKey] }}
                 </RouterLink>
                 <button
-                  :ref="setServicesButton"
+                  :ref="(element) => setSubmenuButton(item.id, element)"
                   class="inline-flex size-11 cursor-pointer items-center justify-center rounded-md text-[#313493] transition-colors hover:text-[#EE2329] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EE2329] motion-reduce:transition-none lg:size-5 lg:rounded-none"
                   type="button"
-                  aria-controls="work-visa-submenu"
+                  :aria-controls="`${item.id}-submenu`"
                   aria-haspopup="true"
-                  :aria-expanded="servicesOpen"
+                  :aria-expanded="openSubmenu === item.id"
                   :aria-label="dictionary.homeFoundation.navigation[item.labelKey]"
-                  @click="servicesOpen = !servicesOpen"
+                  @click="toggleSubmenu(item.id)"
                 >
                   <ChevronDown
                     class="transition-transform duration-200 motion-reduce:transition-none"
-                    :class="servicesOpen ? 'rotate-180' : ''"
+                    :class="openSubmenu === item.id ? 'rotate-180' : ''"
                     :size="15"
                     aria-hidden="true"
                   />
@@ -267,8 +284,8 @@ onBeforeUnmount(() => window.removeEventListener("keydown", handleKeydown));
                 leave-to-class="-translate-y-1 opacity-0"
               >
                 <ul
-                  v-if="servicesOpen"
-                  id="work-visa-submenu"
+                  v-if="openSubmenu === item.id"
+                  :id="`${item.id}-submenu`"
                   class="mt-1 grid gap-1 rounded-lg border border-slate-200 border-b-4 border-b-[#EE2329] bg-white p-2 shadow-xl lg:absolute lg:left-0 lg:top-full lg:z-50 lg:mt-0 lg:min-w-64"
                 >
                   <li v-for="subitem in item.submenu" :key="subitem.id">

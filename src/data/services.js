@@ -1,25 +1,69 @@
-import overseasEmploymentImage from '../assets/images/services/Construction and Pilgrimage in Saudi Arabia.png'
-import hajjUmrahImage from '../assets/images/services/Sunlit Kaaba and Clock Tower.png'
+import overseasEmploymentImage from '../assets/images/services/overseas-employment.png'
+import passportProcessingImage from '../assets/images/services/passport-processing.png'
+import travelVisaProcessingImage from '../assets/images/services/travel-visa-processing.png'
+import airTicketBookingImage from '../assets/images/services/air-ticket-booking.png'
+import umrahVisaProcessingImage from '../assets/images/services/umrah-visa-processing.png'
+import hajjRegistrationImage from '../assets/images/services/hajj-registration.png'
 
 export default [
   {
-    id: 'overseas-work-visa',
-    titleKey: 'workVisaTitle',
-    descriptionKey: 'workVisaDescription',
+    id: 'overseas-employment',
+    titleKey: 'overseasEmploymentTitle',
+    descriptionKey: 'overseasEmploymentDescription',
     image: overseasEmploymentImage,
-    imageAltKey: 'workVisaImageAlt',
+    imageAltKey: 'overseasEmploymentImageAlt',
     icon: 'workVisa',
-    routeKey: 'work-visa',
-    ctaKey: 'workVisaCta',
+    featureKeys: ['employmentBenefitPlacement', 'employmentBenefitDocuments', 'employmentBenefitTravel'],
+    featured: true,
   },
   {
-    id: 'hajj-umrah-packages',
-    titleKey: 'hajjTitle',
-    descriptionKey: 'hajjDescription',
-    image: hajjUmrahImage,
-    imageAltKey: 'hajjImageAlt',
+    id: 'passport-processing',
+    titleKey: 'passportProcessingTitle',
+    descriptionKey: 'passportProcessingDescription',
+    image: passportProcessingImage,
+    imageAltKey: 'passportProcessingImageAlt',
+    icon: 'passport',
+    featureKeys: ['passportBenefitApplication', 'passportBenefitRenewal', 'passportBenefitReissue'],
+    featured: true,
+  },
+  {
+    id: 'travel-visa-processing',
+    titleKey: 'travelVisaProcessingTitle',
+    descriptionKey: 'travelVisaProcessingDescription',
+    image: travelVisaProcessingImage,
+    imageAltKey: 'travelVisaProcessingImageAlt',
+    icon: 'travelVisa',
+    featureKeys: ['travelVisaBenefitTourist', 'travelVisaBenefitBusiness', 'travelVisaBenefitVisit'],
+    featured: true,
+  },
+  {
+    id: 'air-ticket-booking',
+    titleKey: 'airTicketBookingTitle',
+    descriptionKey: 'airTicketBookingDescription',
+    image: airTicketBookingImage,
+    imageAltKey: 'airTicketBookingImageAlt',
+    icon: 'airTicket',
+    featureKeys: ['airTicketBenefitInternational', 'airTicketBenefitDomestic', 'airTicketBenefitFare'],
+    featured: true,
+  },
+  {
+    id: 'umrah-visa-processing',
+    titleKey: 'umrahVisaProcessingTitle',
+    descriptionKey: 'umrahVisaProcessingDescription',
+    image: umrahVisaProcessingImage,
+    imageAltKey: 'umrahVisaProcessingImageAlt',
+    icon: 'umrah',
+    featureKeys: ['umrahBenefitApplication', 'umrahBenefitDocuments', 'umrahBenefitPreparation'],
+    featured: false,
+  },
+  {
+    id: 'hajj-registration',
+    titleKey: 'hajjRegistrationTitle',
+    descriptionKey: 'hajjRegistrationDescription',
+    image: hajjRegistrationImage,
+    imageAltKey: 'hajjRegistrationImageAlt',
     icon: 'hajj',
-    routeKey: 'hajj-umrah',
-    ctaKey: 'hajjCta',
+    featureKeys: ['hajjBenefitRegistration', 'hajjBenefitDocuments', 'hajjBenefitGuidance'],
+    featured: false,
   },
 ]
