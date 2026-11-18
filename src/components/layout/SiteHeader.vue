@@ -12,7 +12,7 @@ import {
 import { RouterLink, useRoute } from "vue-router";
 import brandLogo from "../../assets/images/optimized/logo/header-logo.webp";
 import { usePageContent } from "../../composables/usePageContent";
-import { headerContact, socialPlatforms } from "../../data/contact";
+import { headerContact } from "../../data/contact";
 import { primaryNavigation } from "../../data/navigation";
 import LanguageSwitcher from "../common/LanguageSwitcher.vue";
 
@@ -91,7 +91,10 @@ function isActive(item) {
     return route.name === `${locale.value}-services`;
   }
   if (item.id === "more") {
-    return route.name === `${locale.value}-home` && ["#destinations", "#faq", "#gallery"].includes(route.hash);
+    return (
+      route.name === `${locale.value}-destinations` ||
+      (route.name === `${locale.value}-home` && ["#destinations", "#faq", "#gallery"].includes(route.hash))
+    );
   }
   if (item.id === "workVisa") {
     return route.name === `${locale.value}-work-visa`;
@@ -113,88 +116,27 @@ onBeforeUnmount(() => window.removeEventListener("keydown", handleKeydown));
       <div
         class="mx-auto flex h-full max-w-7xl items-center justify-between gap-2 px-4 sm:px-6 lg:px-8"
       >
-        <div
-          class="flex min-w-0 items-center gap-2 text-xs font-medium sm:gap-3 sm:text-sm lg:gap-4"
-        >
-          <a
-            class="inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-sm transition-colors hover:text-blue-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            :href="headerContact.phoneHref"
-          >
-            <Phone :size="14" aria-hidden="true" />
+        <span class="inline-flex min-w-0 shrink items-center gap-1.5 text-xs font-semibold sm:text-sm" aria-label="Office location">
+            <MapPin class="shrink-0" :size="16" aria-hidden="true" />
+            <span class="hidden truncate sm:inline">Uttara, Dhaka, Bangladesh</span>
+            <span class="sr-only sm:hidden">Uttara, Dhaka, Bangladesh</span>
+        </span>
+        <div class="ml-auto flex min-w-0 shrink-0 items-center gap-1 text-[10px] font-semibold sm:gap-3 sm:text-xs lg:gap-4 lg:text-sm">
+          <a class="inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-sm transition-colors hover:text-blue-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" :href="headerContact.phoneHref">
+            <Phone :size="17" aria-hidden="true" />
             <span>{{ headerContact.phoneDisplay }}</span>
           </a>
-          <span
-            class="hidden h-4 border-l border-white/50 sm:inline-block"
-            aria-hidden="true"
-          ></span>
-          <a
-            class="inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-sm transition-colors hover:text-blue-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            :href="headerContact.emailHref"
-            :aria-label="headerContact.email"
-          >
-            <Mail :size="17" aria-hidden="true" />
-            <span class="hidden sm:inline">{{ headerContact.email }}</span>
+          <span class="hidden h-7 border-l border-white/50 sm:block" aria-hidden="true"></span>
+          <a class="inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-sm transition-colors hover:text-blue-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" :href="headerContact.whatsappHref" target="_blank" rel="noopener noreferrer" :aria-label="`${dictionary.siteHeader.whatsapp}: ${headerContact.whatsappDisplay}`">
+            <svg class="size-5 shrink-0 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.5 0 .15 5.34.15 11.92c0 2.1.55 4.15 1.6 5.96L.05 24l6.28-1.65a11.9 11.9 0 0 0 5.75 1.47h.01c6.57 0 11.92-5.35 11.92-11.92 0-3.18-1.24-6.17-3.49-8.42ZM12.09 21.8a9.88 9.88 0 0 1-5.03-1.38l-.36-.21-3.73.98 1-3.63-.24-.37a9.87 9.87 0 0 1-1.52-5.27c0-5.45 4.44-9.89 9.9-9.89a9.82 9.82 0 0 1 7 2.9 9.82 9.82 0 0 1 2.9 7c0 5.45-4.44 9.88-9.9 9.88Zm5.43-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.8-1.49-1.78-1.66-2.08-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.3 1.27.49 1.7.62.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.18-1.42-.07-.12-.27-.2-.58-.35Z" /></svg>
+            <span class="hidden md:inline">{{ dictionary.siteHeader.whatsapp }}</span>
           </a>
-          <span
-            class="hidden h-4 border-l border-white/50 sm:inline-block"
-            aria-hidden="true"
-          ></span>
-          <span class="hidden min-w-0 items-center gap-1.5 md:inline-flex">
-            <MapPin class="shrink-0" :size="15" aria-hidden="true" />
-            <span class="truncate">{{ headerContact.location }}</span>
-          </span>
-        </div>
-
-        <div class="flex shrink-0 items-center gap-3 lg:gap-4">
-          <div
-            class="hidden items-center gap-5 text-sm font-medium xl:flex"
-            role="group"
-            :aria-label="dictionary.siteHeader.socialLinksLabel"
-          >
-            <span
-              v-for="(platform, index) in socialPlatforms"
-              :key="platform.id"
-              class="inline-flex items-center cursor-pointer rounded-sm transition-colors hover:text-blue-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              <span class="sr-only">{{
-                dictionary.siteHeader.socialLinks[platform.id]
-              }}</span>
-              <svg
-                v-if="platform.id === 'instagram'"
-                class="size-4 fill-current"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7Zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3Zm11.5 1.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"
-                />
-              </svg>
-              <svg
-                v-else-if="platform.id === 'facebook'"
-                class="size-4 fill-current"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.03 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.09 24 18.1 24 12.07Z"
-                />
-              </svg>
-              <svg
-                v-else
-                class="size-4 fill-current"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"
-                />
-              </svg>
-            </span>
-          </div>
-          <span
-            class="hidden h-4 border-l border-white/50 sm:inline-block"
-            aria-hidden="true"
-          ></span>
+          <span class="hidden h-7 border-l border-white/50 sm:block" aria-hidden="true"></span>
+          <a class="inline-flex min-w-0 shrink cursor-pointer items-center gap-1.5 rounded-sm transition-colors hover:text-blue-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" :href="headerContact.emailHref" :aria-label="headerContact.email">
+            <Mail :size="19" class="shrink-0" aria-hidden="true" />
+            <span class="hidden truncate lg:inline">{{ headerContact.email }}</span>
+          </a>
+          <span class="hidden h-7 border-l border-white/50 sm:block" aria-hidden="true"></span>
           <LanguageSwitcher />
         </div>
       </div>

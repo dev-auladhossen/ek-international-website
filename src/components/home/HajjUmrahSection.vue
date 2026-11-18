@@ -3,7 +3,7 @@ import { ArrowRight, Headset, IdCard, MessageCircle, Package, Plane } from '@luc
 import { RouterLink } from 'vue-router'
 import RevealHeading from '../common/RevealHeading.vue'
 import sectionBackground from '../../assets/images/backgrounds/ethereal-blue-wave-panorama.png'
-import pilgrimageImage from '../../assets/images/services/Sunlit Kaaba and Clock Tower.png'
+import pilgrimageImage from '../../assets/images/hajj&umrah/Masjid al-Haram at Sunset-5.png'
 import hajjFeatures from '../../data/hajjFeatures'
 import { headerContact } from '../../data/contact'
 import { usePageContent } from '../../composables/usePageContent'

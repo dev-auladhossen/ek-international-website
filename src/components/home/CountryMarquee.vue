@@ -1,8 +1,14 @@
 <script setup>
-import destinations from '../../data/destinations'
+import { destinationDirectory } from '../../data/destinations'
 import { usePageContent } from '../../composables/usePageContent'
 
-const { locale } = usePageContent()
+const { dictionary, locale } = usePageContent()
+const marqueeDestinations = destinationDirectory
+
+function getMarqueeName(destination) {
+  if (destination.id === 'united-states' && locale.value === 'en') return 'USA'
+  return dictionary.value.destinationsPage.countryNames[destination.id]
+}
 </script>
 
 <template>
@@ -12,22 +18,22 @@ const { locale } = usePageContent()
   >
     <div class="group flex w-max motion-safe:animate-country-marquee hover:[animation-play-state:paused] focus-within:[animation-play-state:paused] motion-reduce:animate-none">
       <ul class="flex shrink-0 items-center gap-5 pr-5 sm:gap-8 sm:pr-8" role="list">
-        <li v-for="destination in destinations" :key="destination.id" class="flex shrink-0 items-center gap-5 sm:gap-8">
+        <li v-for="destination in marqueeDestinations" :key="destination.id" class="flex shrink-0 items-center gap-5 sm:gap-8">
           <span class="flex items-center gap-2">
             <img class="size-6 shrink-0 rounded-full object-cover sm:size-7" :src="destination.flagImage" alt="" width="28" height="28" loading="lazy" decoding="async" aria-hidden="true" />
             <span class="whitespace-nowrap text-lg font-bold tracking-tight sm:text-xl lg:text-2xl">
-              {{ locale === 'bn' ? destination.shortNameBn : destination.shortNameEn }}
+              {{ getMarqueeName(destination) }}
             </span>
           </span>
           <span class="text-xl leading-none sm:text-2xl" aria-hidden="true">✳</span>
         </li>
       </ul>
       <ul class="flex shrink-0 items-center gap-5 pr-5 sm:gap-8 sm:pr-8" role="list" aria-hidden="true">
-        <li v-for="destination in destinations" :key="destination.id" class="flex shrink-0 items-center gap-5 sm:gap-8">
+        <li v-for="destination in marqueeDestinations" :key="destination.id" class="flex shrink-0 items-center gap-5 sm:gap-8">
           <span class="flex items-center gap-2">
             <img class="size-6 shrink-0 rounded-full object-cover sm:size-7" :src="destination.flagImage" alt="" width="28" height="28" loading="lazy" decoding="async" aria-hidden="true" />
             <span class="whitespace-nowrap text-lg font-bold tracking-tight sm:text-xl lg:text-2xl">
-              {{ locale === 'bn' ? destination.shortNameBn : destination.shortNameEn }}
+              {{ getMarqueeName(destination) }}
             </span>
           </span>
           <span class="text-xl leading-none sm:text-2xl" aria-hidden="true">✳</span>

@@ -1,5 +1,6 @@
 import AboutPage from '../pages/AboutPage.vue'
 import ContactPage from '../pages/ContactPage.vue'
+import DestinationsPage from '../pages/DestinationsPage.vue'
 import HajjUmrahPage from '../pages/HajjUmrahPage.vue'
 import HomePage from '../pages/HomePage.vue'
 import LanguageSelectionPage from '../pages/LanguageSelectionPage.vue'
@@ -13,6 +14,7 @@ const localizedPages = [
   { key: 'about', segment: 'about', component: AboutPage },
   { key: 'team', segment: 'team', component: TeamPage },
   { key: 'services', segment: 'services', component: ServicesPage },
+  { key: 'destinations', segment: 'destinations', component: DestinationsPage },
   { key: 'workVisa', segment: 'work-visa', component: WorkVisaPage },
   { key: 'hajjUmrah', segment: 'hajj-umrah', component: HajjUmrahPage },
   { key: 'contact', segment: 'contact', component: ContactPage },

@@ -16,7 +16,7 @@ export const primaryNavigation = [
     hash: '#destinations',
     labelKey: 'more',
     submenu: [
-      { id: 'destinations', routeKey: 'home', hash: '#destinations', labelKey: 'destinations' },
+      { id: 'destinations', routeKey: 'destinations', labelKey: 'destinations' },
       { id: 'faq', routeKey: 'home', hash: '#faq', labelKey: 'faq' },
       { id: 'gallery', routeKey: 'home', hash: '#gallery', labelKey: 'gallery' },
     ],
@@ -30,10 +30,12 @@ export const contactChannels = [
 ]
 
 export const footerQuickNavigation = [
-  { id: 'home', routeKey: 'home', labelKey: 'home' },
   { id: 'about', routeKey: 'about', labelKey: 'aboutUs' },
+  { id: 'workVisa', routeKey: 'work-visa', labelKey: 'workVisaHeader' },
+  { id: 'hajjUmrah', routeKey: 'hajj-umrah', labelKey: 'hajjUmrah' },
   { id: 'team', routeKey: 'team', labelKey: 'team' },
-  { id: 'contact', routeKey: 'contact', labelKey: 'contactUs' },
+  { id: 'destinations', routeKey: 'destinations', labelKey: 'destinations' },
+  { id: 'gallery', routeKey: 'home', hash: '#gallery', labelKey: 'gallery' },
 ]
 
 export const footerBottomNavigation = [

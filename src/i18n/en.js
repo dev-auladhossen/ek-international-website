@@ -43,6 +43,7 @@ export default {
     team: {
       title: "Our Team | EK International",
       heading: "Meet Our Team",
+      heroEyebrow: "Our experienced professionals",
       description:
         "Meet the people behind EK International and learn about their roles.",
     },
@@ -51,6 +52,12 @@ export default {
       heading: "Our Services",
       description:
         "Explore overseas employment, passport and travel visa processing, air ticket booking, Umrah visa processing, and Hajj registration services.",
+    },
+    destinations: {
+      title: "Work Visa Destinations | EK International",
+      heading: "Work Visa Destinations",
+      description:
+        "Explore countries featured as work visa destinations by EK International.",
     },
     workVisa: {
       title: "Overseas Employment | EK International",
@@ -259,6 +266,174 @@ export default {
       "Looking to build your career abroad? EK International provides guidance and assistance for individuals exploring overseas employment opportunities and related visa processes.",
     destinationsCta: "Explore Work Destinations",
     inquiryCta: "Submit an Inquiry",
+    jobsEyebrow: "Explore Job Opportunities",
+    jobsTitleLead: "Find a Job Category That Matches",
+    jobsTitleAccent: "Your Skills",
+    jobsIntro:
+      "Explore a variety of overseas job opportunities across different industries.",
+    constructionTitle: "Construction & Technical",
+    constructionDescription:
+      "Welder, Steel Fixer, Carpenter, Electrician, Plumber, Mason, Painter and more.",
+    constructionImageAlt:
+      "Construction worker wearing safety gear at a work site",
+    factoryTitle: "Factory & Manufacturing",
+    factoryDescription:
+      "Factory Worker, Packaging Worker, Glass Factory Worker, Production Worker and more.",
+    factoryImageAlt: "Factory supervisor working in a manufacturing facility",
+    cleaningTitle: "Cleaning & Maintenance",
+    cleaningDescription:
+      "Office Cleaner, Hospital Cleaner, Supermarket Cleaner and Housekeeping Worker.",
+    cleaningImageAlt: "Facility cleaner at work with cleaning equipment",
+    hospitalityTitle: "Hospitality & Restaurant",
+    hospitalityDescription:
+      "Waiter, Kitchen Helper, Restaurant Worker and Hotel Housekeeping.",
+    hospitalityImageAlt: "Restaurant server presenting a prepared dish",
+    generalTitle: "General & Other Services",
+    generalDescription:
+      "Car Wash Worker, Petrol Pump Attendant, Loading & Unloading Worker, Plantation Worker and General Worker.",
+    petrolImageAlt: "Petrol pump attendant at a fuel station",
+    plantationImageAlt: "Worker among plantation crops",
+    warehouseImageAlt: "Warehouse worker handling a package",
+    processEyebrow: "Our Working Process",
+    processTitleLead: "Simple & Transparent",
+    processTitleAccent: "Visa Process",
+    processIntro: "From application to employment, we guide you at every step.",
+    processConsultationTitle: "Consultation & Job Selection",
+    processConsultationDescription:
+      "Discuss your profile and choose a suitable job opportunity.",
+    processDocumentationTitle: "Documentation & Application",
+    processDocumentationDescription:
+      "Prepare and submit the required documents.",
+    processVisaTitle: "Visa Processing & Approval",
+    processVisaDescription:
+      "We assist with your visa application and follow up on its progress.",
+    processTravelTitle: "Travel Arrangement",
+    processTravelDescription:
+      "Get support with ticketing, travel planning and pre-departure briefing.",
+    processJoinTitle: "Join Your Job Abroad",
+    processJoinDescription:
+      "Travel to your destination and begin your new career.",
+    documentsEyebrow: "Required Documents",
+    documentsTitleLead: "Documents & Preparation for",
+    documentsTitleAccent: "Your Application",
+    documentsIntro:
+      "Get ready for a smooth and hassle-free visa application with the right documents and proper preparation.",
+    documentsListTitle: "Commonly Required Documents",
+    documentPassportTitle: "Valid Passport",
+    documentPassportDetail: "(with sufficient validity)",
+    documentPhotoTitle: "Recent Photographs",
+    documentPhotoDetail: "(as per visa requirements)",
+    documentEducationTitle: "Educational & Work Documents",
+    documentEducationDetail: "(as applicable)",
+    documentExperienceTitle: "Experience or Employment Proof",
+    documentExperienceDetail: "(if required)",
+    documentSupportingTitle: "Other Supporting Documents",
+    documentSupportingDetail: "(based on destination and visa type)",
+    documentsHelpTitle: "How We Help You",
+    documentHelpRequirements: "Guide you on the exact document requirements",
+    documentHelpOrganize: "Help you prepare and organize your documents",
+    documentHelpReview: "Review for completeness and accuracy",
+    documentHelpSupport:
+      "Provide ongoing support through the application process",
+    inquiryEyebrow: "Get Started Today",
+    inquiryTitleLead: "Apply for Your Work Visa with",
+    inquiryTitleAccent: "EK International",
+    inquiryIntro:
+      "Have questions or ready to begin? Our team is here to help you with expert guidance and personalized support.",
+    inquiryBenefitGuidance: "Get Expert Guidance",
+    inquiryBenefitSupport: "Receive Personalized Support",
+    inquiryBenefitOpportunities: "Explore Global Opportunities",
+    inquiryBenefitJourney: "Start Your Journey Today",
+    inquiryFormTitle: "Send Us Your Inquiry",
+    inquiryName: "Your Name",
+    inquiryEmail: "Your Email",
+    inquiryService: "Select Service",
+    inquiryMessage: "Your Message",
+    inquirySubmit: "Submit Inquiry",
+    inquiryNotConnected:
+      "This inquiry form is not connected yet. Your message has not been sent.",
+    inquiryQuickLinksLabel: "Contact EK International",
+    inquiryCall: "Call Us Today",
+    inquiryWhatsApp: "Chat on WhatsApp",
+    inquiryContact: "Get In Touch",
+    serviceOverseasEmployment: "Overseas Employment",
+    servicePassportProcessing: "Passport Processing",
+    serviceTravelVisaProcessing: "Travel Visa Processing",
+    serviceAirTicketBooking: "Air Ticket Booking",
+    serviceUmrahVisaProcessing: "Umrah Visa Processing",
+    serviceHajjRegistration: "Hajj Registration",
+    inquiryFaqLabel: "Work visa questions and answers",
+    inquiryFaqTypesQuestion: "What types of visa services do you provide?",
+    inquiryFaqTypesAnswer:
+      "We provide assistance for various visa services, including work visas, tourist visas and Hajj & Umrah visas for multiple countries.",
+    inquiryFaqCountriesQuestion:
+      "Which countries can I apply for a work visa through you?",
+    inquiryFaqCountriesAnswer:
+      "Available work visa destinations can change. Contact EK International for the current destination list and guidance for your application.",
+    inquiryFaqTravelQuestion:
+      "Do you also arrange air tickets and hotel bookings?",
+    inquiryFaqTravelAnswer:
+      "We provide air ticket booking and can discuss travel arrangements related to your journey. Contact our team for current details.",
+    inquiryFaqTimingQuestion: "How long does the visa process usually take?",
+    inquiryFaqTimingAnswer:
+      "Processing time depends on the destination and application. Contact EK International for current guidance about your case.",
+    inquiryFaqDocumentsQuestion:
+      "What documents are required for a visa application?",
+    inquiryFaqDocumentsAnswer:
+      "Requirements depend on the destination and visa type. Our team can guide you on the documents needed for your application.",
+  },
+  destinationsPage: {
+    eyebrow: "Work Visa Destinations",
+    title: "Explore Employment Opportunities Across Different Countries",
+    intro: "Discover international destinations featured by EK International.",
+    popularEyebrow: "Popular Destinations",
+    imageAltPrefix: "Destination image for",
+    visaImageAlt:
+      "Traveler holding a passport in an airport with EK International branding",
+    visaServiceEyebrow: "Visa Processing Service",
+    visaServiceTitle: "Visa Support for Your Next Journey",
+    visaServiceDescription:
+      "Contact EK International for details about the visa category relevant to your plans.",
+    touristVisa: "Tourist Visa",
+    workVisa: "Work Visa",
+    visitFamilyVisa: "Visit / Family Visa",
+    studentVisa: "Student Visa",
+    moreVisaTypes: "And More",
+    visaWorldwideEyebrow: "Visa Assistance Worldwide",
+    visaWorldwideTitleLead: "Need a Visa for",
+    visaWorldwideTitleAccent: "Another Country?",
+    visaWorldwideDescription:
+      "Our visa support isn’t limited to the destinations listed above. Whether you’re planning to visit, work or travel to any country in the world, our team is here to guide you with the right information and assistance.",
+    worldwideVisaAssistance: "Worldwide Visa Assistance",
+    personalizedGuidance: "Personalized Guidance",
+    dedicatedVisaSupport: "Dedicated Support",
+    contactVisaTeam: "Contact Our Visa Team",
+    whatsappUs: "WhatsApp Us",
+    usaShortName: "USA",
+    cardCountryNames: {
+      "united-states": "USA",
+      "united-kingdom": "UK",
+    },
+    countryNames: {
+      portugal: "Portugal",
+      poland: "Poland",
+      hungary: "Hungary",
+      italy: "Italy",
+      romania: "Romania",
+      serbia: "Serbia",
+      cambodia: "Cambodia",
+      "saudi-arabia": "Saudi Arabia",
+      uae: "UAE",
+      malaysia: "Malaysia",
+      qatar: "Qatar",
+      singapore: "Singapore",
+      thailand: "Thailand",
+      france: "France",
+      australia: "Australia",
+      "united-kingdom": "United Kingdom",
+      "united-states": "United States",
+      turkey: "Turkey",
+    },
   },
   servicesPage: {
     eyebrow: "Our Services",
@@ -369,7 +544,7 @@ export default {
       eyebrow: "Work Visa Destinations",
       title: "Explore Employment Opportunities Worldwide",
       intro: "Discover international work destinations with EK International.",
-      askAboutOther: "Ask About Other Destinations",
+      viewAllDestinations: "View All Destinations",
       exploreDestination: "Explore work visa information for",
       destinationToConfirm: "Destination to be confirmed",
       destinationDetailsPending: "Destination information to be supplied.",
@@ -584,8 +759,10 @@ export default {
     footer: {
       brandLine: "Your Global Journey Starts Here",
       serviceLine: "Trusted Visa Experts",
-      servicesTitle: "Immigration",
-      servicesNavLabel: "Immigration services",
+      companyDescription:
+        "EK International provides overseas employment assistance, visa guidance, passport processing, travel arrangements, and Hajj & Umrah services in Bangladesh.",
+      servicesTitle: "Our Services",
+      servicesNavLabel: "Our services",
       quickLinksTitle: "Quick Links",
       quickLinksNavLabel: "Quick links",
       newsletterTitle: "Subscribe Our Newsletter",
@@ -594,6 +771,7 @@ export default {
       newsletterEmailLabel: "Email address",
       newsletterEmailPlaceholder: "Enter your email",
       newsletterSubmit: "Submit email address",
+      newsletterButton: "Subscribe",
       newsletterNotice:
         "Newsletter sign-up is not connected yet. Your email will not be sent.",
       newsletterNotConnected:

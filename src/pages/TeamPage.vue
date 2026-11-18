@@ -27,7 +27,7 @@ const teamCopy = computed(() => dictionary.value.homeFoundation.team)
           <ChevronRight :size="15" aria-hidden="true" />
           <span aria-current="page" class="font-semibold text-white">{{ pageCopy.heading }}</span>
         </nav>
-        <p v-reveal class="inline-flex rounded-sm bg-[#EE2329] px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white sm:text-sm">{{ teamCopy.eyebrow }}</p>
+        <p v-reveal class="inline-flex rounded-sm bg-[#EE2329] px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white sm:text-sm">{{ pageCopy.heroEyebrow }}</p>
         <h1 id="team-page-title" v-reveal class="mt-3 max-w-4xl font-serif text-3xl font-bold leading-[1.08] tracking-tight text-white sm:mt-4 sm:text-4xl lg:text-5xl">{{ pageCopy.heading }}</h1>
         <p v-reveal class="mt-4 max-w-3xl text-sm leading-6 text-white/85 sm:mt-5 sm:text-lg sm:leading-8 lg:text-lg">{{ pageCopy.description }}</p>
       </div>

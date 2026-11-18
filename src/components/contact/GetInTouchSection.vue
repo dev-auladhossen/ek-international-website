@@ -1,6 +1,6 @@
 <script setup>
 import { Clock3, Mail, MapPin, MessageCircle, Phone, ArrowUpRight } from '@lucide/vue'
-import { agencyAuthorization, headerContact, officeLocations } from '../../data/contact'
+import { agencyAuthorization, headerContact, officeLocations, socialPlatforms } from '../../data/contact'
 import { usePageContent } from '../../composables/usePageContent'
 import InquiryForm from './InquiryForm.vue'
 
@@ -39,7 +39,6 @@ const contactCards = [
   },
 ]
 
-const socialPlatforms = ['facebook', 'youtube', 'linkedin', 'instagram']
 </script>
 
 <template>
@@ -121,19 +120,23 @@ const socialPlatforms = ['facebook', 'youtube', 'linkedin', 'instagram']
           <div class="mt-4 shrink-0 sm:mt-0">
             <h2 class="text-sm font-bold text-[#313493]">{{ contact().followUs }}</h2>
             <div class="mt-2 flex flex-wrap gap-2.5" role="group" :aria-label="contact().followUs">
-            <span
+            <component
+              :is="platform.href ? 'a' : 'span'"
               v-for="platform in socialPlatforms"
-              :key="platform"
+              :key="platform.id"
               class="inline-flex size-9 items-center justify-center rounded-full border border-[#313493]/20 bg-white text-[#313493] transition duration-300 hover:-translate-y-1 hover:border-[#EE2329] hover:bg-[#EE2329] hover:text-white motion-reduce:transform-none motion-reduce:transition-none"
-              role="img"
-              :aria-label="dictionary.siteHeader.socialLinks[platform]"
-              :title="dictionary.siteHeader.socialLinks[platform]"
+              :href="platform.href"
+              :target="platform.href ? '_blank' : undefined"
+              :rel="platform.href ? 'noopener noreferrer' : undefined"
+              :role="platform.href ? undefined : 'img'"
+              :aria-label="dictionary.siteHeader.socialLinks[platform.id]"
+              :title="dictionary.siteHeader.socialLinks[platform.id]"
             >
-              <svg v-if="platform === 'facebook'" class="size-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z" /></svg>
-              <svg v-else-if="platform === 'youtube'" class="size-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" /></svg>
-              <svg v-else-if="platform === 'linkedin'" class="size-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.4a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.3 9h3.8v12H3.3V9Zm6.2 0h3.6v1.6h.1A4 4 0 0 1 16.8 8c4 0 4.7 2.6 4.7 6v7h-3.8v-6.2c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21H9.5V9Z" /></svg>
+              <svg v-if="platform.id === 'facebook'" class="size-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z" /></svg>
+              <svg v-else-if="platform.id === 'youtube'" class="size-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" /></svg>
+              <svg v-else-if="platform.id === 'linkedin'" class="size-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.4a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.3 9h3.8v12H3.3V9Zm6.2 0h3.6v1.6h.1A4 4 0 0 1 16.8 8c4 0 4.7 2.6 4.7 6v7h-3.8v-6.2c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21H9.5V9Z" /></svg>
               <svg v-else class="size-5 fill-none stroke-current" viewBox="0 0 24 24" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none" /></svg>
-            </span>
+            </component>
             </div>
           </div>
         </article>

@@ -32,6 +32,10 @@ export const agencyAuthorization = {
 
 export const socialPlatforms = [
   { id: "instagram" },
-  { id: "facebook" },
+  { id: "youtube" },
+  {
+    id: "facebook",
+    href: "https://www.facebook.com/profile.php?id=100092583310484",
+  },
   { id: "linkedin" },
 ];

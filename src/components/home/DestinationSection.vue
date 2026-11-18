@@ -49,14 +49,14 @@ const { dictionary, locale } = usePageContent()
           <RouterLink
             class="group block h-full overflow-hidden rounded-xl border border-sky-100 bg-white shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#313493] motion-reduce:transform-none motion-reduce:transition-none"
             :to="{ name: `${locale}-work-visa` }"
-            :aria-label="`${dictionary.homeFoundation.destinations.exploreDestination} ${locale === 'bn' ? destination.nameBn : destination.nameEn}`"
+            :aria-label="`${dictionary.homeFoundation.destinations.exploreDestination} ${dictionary.destinationsPage.countryNames[destination.id]}`"
           >
             <div class="relative overflow-hidden ">
               <img
                 v-reveal:image-left
                 class="aspect-[16/10] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 group-focus-visible:scale-105 motion-reduce:transition-none"
                 :src="destination.image"
-                :alt="locale === 'bn' ? destination.altBn : destination.altEn"
+                :alt="`${dictionary.destinationsPage.imageAltPrefix} ${dictionary.destinationsPage.countryNames[destination.id]}`"
                 width="640"
                 height="400"
                 loading="lazy"
@@ -76,7 +76,7 @@ const { dictionary, locale } = usePageContent()
                   aria-hidden="true"
                 />
                 <span class="truncate text-xs font-semibold text-[#313493] sm:text-sm">
-                  {{ locale === 'bn' ? destination.shortNameBn : destination.shortNameEn }}
+                  {{ dictionary.destinationsPage.cardCountryNames[destination.id] || dictionary.destinationsPage.countryNames[destination.id] }}
                 </span>
               </div>
               <span
@@ -94,9 +94,9 @@ const { dictionary, locale } = usePageContent()
         <RouterLink
           v-reveal
           class="inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-[#EE2329] bg-[#EE2329] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-[#B91C1C] hover:bg-[#B91C1C] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#EE2329] sm:text-base"
-          :to="{ name: `${locale}-contact` }"
+          :to="{ name: `${locale}-destinations` }"
         >
-          {{ dictionary.homeFoundation.destinations.askAboutOther }}
+          {{ dictionary.homeFoundation.destinations.viewAllDestinations }}
           <ArrowRight :size="17" aria-hidden="true" />
         </RouterLink>
       </div>
