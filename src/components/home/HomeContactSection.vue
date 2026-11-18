@@ -9,6 +9,9 @@ import InquiryForm from '../contact/InquiryForm.vue'
 
 const { dictionary } = usePageContent()
 const contact = () => dictionary.value.homeFoundation.contact
+const homeSocials = ['facebook', 'instagram', 'linkedin', 'youtube'].map((id) =>
+  socialPlatforms.find((platform) => platform.id === id),
+)
 const contactItems = [
   { id: 'hotline', labelKey: 'officeHotline', value: headerContact.phoneDisplay, href: headerContact.phoneHref, icon: Phone },
   { id: 'email', labelKey: 'email', value: headerContact.email, href: headerContact.emailHref, icon: Mail },
@@ -50,10 +53,10 @@ const contactItems = [
             <div class="mt-6">
               <h3 class="text-sm font-semibold text-white sm:text-base">{{ contact().followUs }}</h3>
               <div class="mt-3 flex flex-wrap gap-3" role="group" :aria-label="contact().followUs">
-                <component v-for="platform in socialPlatforms" :is="platform.href ? 'a' : 'span'" :key="platform.id" class="inline-flex size-10 items-center justify-center rounded-full border border-white/35 text-white transition duration-300 hover:-translate-y-1 hover:border-white hover:bg-white hover:text-[#EE2329] motion-reduce:transform-none motion-reduce:transition-none" :href="platform.href" :target="platform.href ? '_blank' : undefined" :rel="platform.href ? 'noopener noreferrer' : undefined" :role="platform.href ? undefined : 'img'" :aria-label="dictionary.siteHeader.socialLinks[platform.id]" :title="dictionary.siteHeader.socialLinks[platform.id]">
+                <component v-for="platform in homeSocials" :is="platform.href ? 'a' : 'span'" :key="platform.id" class="inline-flex size-10 items-center justify-center rounded-full border border-white/35 text-white transition duration-300 hover:-translate-y-1 hover:border-white hover:bg-white hover:text-[#EE2329] motion-reduce:transform-none motion-reduce:transition-none" :href="platform.href" :target="platform.href ? '_blank' : undefined" :rel="platform.href ? 'noopener noreferrer' : undefined" :role="platform.href ? undefined : 'img'" :aria-label="dictionary.siteHeader.socialLinks[platform.id]" :title="dictionary.siteHeader.socialLinks[platform.id]">
                   <svg v-if="platform.id === 'facebook'" class="size-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z" /></svg>
-                  <svg v-else-if="platform === 'youtube'" class="size-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" /></svg>
-                  <svg v-else-if="platform === 'linkedin'" class="size-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.4a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.3 9h3.8v12H3.3V9Zm6.2 0h3.6v1.6h.1A4 4 0 0 1 16.8 8c4 0 4.7 2.6 4.7 6v7h-3.8v-6.2c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21H9.5V9Z" /></svg>
+                  <svg v-else-if="platform.id === 'youtube'" class="size-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" /></svg>
+                  <svg v-else-if="platform.id === 'linkedin'" class="size-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.4a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.3 9h3.8v12H3.3V9Zm6.2 0h3.6v1.6h.1A4 4 0 0 1 16.8 8c4 0 4.7 2.6 4.7 6v7h-3.8v-6.2c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21H9.5V9Z" /></svg>
                   <svg v-else class="size-5 fill-none stroke-current" viewBox="0 0 24 24" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none" /></svg>
                 </component>
               </div>
