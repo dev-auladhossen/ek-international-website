@@ -22,7 +22,7 @@ The SSG build outputs nested `index.html` route files under `dist/`. Upload the 
 
 English uses `en` and `<html lang="en">`. Bangla uses `bn` and `<html lang="bn-BD">`.
 
-- `/` — language selection links to `/en/` and `/bn/`
+- `/` — English homepage; `/en/` is also the English homepage
 - `/en/`, `/en/about/`, `/en/team/`, `/en/work-visa/`, `/en/hajj-umrah/`, `/en/contact/`
 - `/bn/`, `/bn/about/`, `/bn/team/`, `/bn/work-visa/`, `/bn/hajj-umrah/`, `/bn/contact/`
 - `/404/`, `/en/404/`, `/bn/404/` — static not-found pages

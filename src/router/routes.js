@@ -3,7 +3,6 @@ import ContactPage from '../pages/ContactPage.vue'
 import DestinationsPage from '../pages/DestinationsPage.vue'
 import HajjUmrahPage from '../pages/HajjUmrahPage.vue'
 import HomePage from '../pages/HomePage.vue'
-import LanguageSelectionPage from '../pages/LanguageSelectionPage.vue'
 import NotFoundPage from '../pages/NotFoundPage.vue'
 import ServicesPage from '../pages/ServicesPage.vue'
 import TeamPage from '../pages/TeamPage.vue'
@@ -26,9 +25,9 @@ const locales = ['en', 'bn']
 export const routes = [
   {
     path: '/',
-    name: 'language-selection',
-    component: LanguageSelectionPage,
-    meta: { locale: 'en', pageKey: 'languageSelection' },
+    name: 'home',
+    component: HomePage,
+    meta: { locale: 'en', pageKey: 'home' },
   },
   ...locales.flatMap((locale) => localizedPages.map(({ key, segment, component }) => ({
     path: `/${locale}/${segment ? `${segment}/` : ''}`,
