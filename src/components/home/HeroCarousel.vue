@@ -1,4 +1,4 @@
-﻿<script setup>
+<script setup>
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { ArrowRight, ChevronLeft, ChevronRight, Plane } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
@@ -147,7 +147,7 @@ onBeforeUnmount(() => {
           aria-hidden="true"
         ></div>
         <div
-          class="relative mx-auto flex h-full max-w-7xl items-center px-5 pb-16 pt-8 sm:px-10 lg:px-16"
+          class="relative mx-auto flex h-full max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem] items-center px-5 pb-16 pt-8 sm:px-10 lg:px-16"
         >
           <TransitionGroup
             tag="div"

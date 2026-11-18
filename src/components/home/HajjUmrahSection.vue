@@ -1,4 +1,4 @@
-﻿<script setup>
+<script setup>
 import { ArrowRight, Headset, IdCard, MessageCircle, Package, Plane } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
 import RevealHeading from '../common/RevealHeading.vue'
@@ -34,7 +34,7 @@ const featureIcons = {
       aria-hidden="true"
     />
 
-    <div class="relative z-10 mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-6">
+    <div class="relative z-10 mx-auto grid max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem] gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-6">
       <Transition
         appear
         enter-from-class="translate-y-4 opacity-0"

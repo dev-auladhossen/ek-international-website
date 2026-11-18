@@ -1,4 +1,4 @@
-﻿<script setup>
+<script setup>
 import { ArrowRight, Phone } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
 import RevealHeading from '../common/RevealHeading.vue'
@@ -31,7 +31,7 @@ function memberPhoneLabel(member) {
     class="relative isolate overflow-hidden bg-sky-50 px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16"
     aria-labelledby="team-title"
   >
-    <div class="relative z-10 mx-auto max-w-7xl">
+    <div class="relative z-10 mx-auto max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem]">
       <header class="mx-auto max-w-3xl text-center">
         <div class="flex items-center justify-center gap-3">
           <span class="h-0.5 w-10 bg-[#EE2329] sm:w-12" aria-hidden="true"></span>

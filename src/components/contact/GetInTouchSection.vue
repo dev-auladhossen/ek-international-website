@@ -47,7 +47,7 @@ const contactCards = [
     class="bg-slate-50 px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14"
     aria-labelledby="inquiry-panel-title"
   >
-    <div class="mx-auto grid max-w-7xl items-start gap-5 lg:grid-cols-[1.18fr_0.82fr] lg:gap-6">
+    <div class="mx-auto grid max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem] items-start gap-5 lg:grid-cols-[1.18fr_0.82fr] lg:gap-6">
       <div class="grid min-w-0 gap-4 sm:grid-cols-2">
         <article
           v-for="card in contactCards"

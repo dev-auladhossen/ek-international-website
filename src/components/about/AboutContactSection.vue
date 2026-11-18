@@ -12,7 +12,7 @@ const callNumber = `+880 ${headerContact.phoneDisplay.slice(1)}`
 
 <template>
   <section id="about-contact" class="w-full bg-[#C91D24] px-4 py-14 text-center text-white sm:px-6 sm:py-16 lg:px-8 lg:py-20" aria-labelledby="about-contact-title">
-    <div class="mx-auto flex w-full max-w-7xl flex-col items-center gap-6">
+    <div class="mx-auto flex w-full max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem] flex-col items-center gap-6">
       <div class="max-w-4xl">
         <h2 id="about-contact-title" v-reveal class="font-serif text-xl font-bold leading-tight text-white sm:text-2xl lg:text-3xl">{{ copy.contactTitle }}</h2>
         <p v-reveal class="mt-4 text-base leading-7 text-white/80 sm:text-lg sm:leading-8">{{ copy.contactDescription }}</p>

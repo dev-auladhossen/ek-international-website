@@ -13,6 +13,8 @@ export default {
     office: "Our Office",
     openMenu: "Open navigation menu",
     closeMenu: "Close navigation menu",
+    mobileAssistanceTitle: "Need assistance?",
+    mobileAssistanceDescription: "Contact us for visa and travel support.",
     socialLinksLabel: "Social media",
     socialLinks: {
       instagram: "Instagram",

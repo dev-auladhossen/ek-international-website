@@ -42,7 +42,7 @@ const serviceIcons = {
     </section>
 
     <section class="bg-white px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16" aria-labelledby="services-list-title">
-      <div class="mx-auto max-w-7xl">
+      <div class="mx-auto max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem]">
         <header class="mx-auto mb-8 max-w-3xl text-center sm:mb-10">
           <div v-reveal class="flex items-center justify-center gap-2">
             <span class="h-0.5 w-6 bg-[#EE2329]" aria-hidden="true"></span>
@@ -83,7 +83,7 @@ const serviceIcons = {
     </section>
 
     <section class="bg-white px-4 py-4 sm:px-6 lg:px-8" aria-labelledby="service-assistance-title">
-      <div class="relative isolate mx-auto grid min-h-[210px] max-w-7xl items-center gap-5 overflow-hidden rounded-2xl border border-blue-100 px-5 py-6 sm:min-h-[220px] sm:px-8 md:grid-cols-[minmax(0,1fr)_1px_290px] md:gap-8 lg:px-12">
+      <div class="relative isolate mx-auto grid min-h-[210px] max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem] items-center gap-5 overflow-hidden rounded-2xl border border-blue-100 px-5 py-6 sm:min-h-[220px] sm:px-8 md:grid-cols-[minmax(0,1fr)_1px_290px] md:gap-8 lg:px-12">
         <img class="absolute inset-0 size-full object-cover object-right" :src="assistanceBackground" :alt="copy.assistanceImageAlt" width="1672" height="941" loading="lazy" decoding="async" />
         <div class="absolute inset-0 bg-gradient-to-r from-sky-50/95 via-sky-50/90 to-sky-50/35" aria-hidden="true"></div>
         <div class="relative z-10">

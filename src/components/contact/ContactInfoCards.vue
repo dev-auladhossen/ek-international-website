@@ -15,7 +15,7 @@ const cards = [
 
 <template>
   <section class="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20" :aria-label="dictionary.homeFoundation.contact.title">
-    <ul class="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+    <ul class="mx-auto grid max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem] gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
       <li v-for="card in cards" :key="card.id" v-reveal class="min-w-0">
         <article
           class="group h-full min-h-52 p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,23,42,0.14)] motion-reduce:transform-none motion-reduce:transition-none sm:p-7"

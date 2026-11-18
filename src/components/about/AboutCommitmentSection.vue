@@ -12,7 +12,7 @@ const icons = { guidance: UserRoundCheck, documentation: ClipboardCheck, communi
 
 <template>
   <section class="bg-white px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-24" aria-labelledby="commitment-title">
-    <div class="mx-auto max-w-[1500px]">
+    <div class="mx-auto max-w-[1500px] min-[1920px]:max-w-[1800px] min-[2560px]:max-w-[2000px]">
       <header class="mx-auto max-w-4xl text-center">
         <p v-reveal class="text-sm font-bold uppercase tracking-[0.08em] text-[#EE2329]">{{ copy.commitmentEyebrow }}</p>
         <RevealHeading id="commitment-title" class="mt-3 font-serif text-3xl font-bold leading-tight text-slate-900 sm:text-4xl lg:text-5xl" :text="copy.commitmentTitle" />

@@ -20,7 +20,7 @@ const copy = computed(() => dictionary.value.workVisaPage)
       <img class="absolute inset-0 size-full object-cover object-[68%_center] sm:object-center" :src="heroBackground" alt="" aria-hidden="true" width="1774" height="887" fetchpriority="high" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-r from-[#313493]/90 via-[#313493]/75 to-[#313493]/45 sm:via-[#313493]/60 sm:to-transparent" aria-hidden="true"></div>
 
-      <div class="relative mx-auto flex h-full w-full max-w-7xl flex-col justify-center">
+      <div class="relative mx-auto flex h-full w-full max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem] flex-col justify-center">
         <div class="max-w-[42rem]">
           <p v-reveal class="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-wide text-white sm:text-sm">
             <Plane class="text-[#EE2329]" :size="22" :stroke-width="2.5" aria-hidden="true" />

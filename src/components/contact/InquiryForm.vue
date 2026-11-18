@@ -1,10 +1,17 @@
 ﻿<script setup>
-import { ref } from 'vue'
-import { ChevronDown, Send } from '@lucide/vue'
+import { computed, ref } from 'vue'
+import { LayoutGrid, Send } from '@lucide/vue'
 import { usePageContent } from '../../composables/usePageContent'
+import ServiceSelect from '../common/ServiceSelect.vue'
 
 const { dictionary } = usePageContent()
 const submitted = ref(false)
+const selectedService = ref('')
+const serviceOptions = computed(() => [
+  { value: 'work-visa', label: dictionary.value.homeFoundation.inquiry.workVisaOption },
+  { value: 'hajj-umrah', label: dictionary.value.homeFoundation.inquiry.hajjUmrahOption },
+  { value: 'other', label: dictionary.value.homeFoundation.inquiry.otherOption },
+])
 </script>
 
 <template>
@@ -53,23 +60,20 @@ const submitted = ref(false)
       </span>
     </label>
 
-    <label class="relative block">
-      <span class="sr-only">{{ dictionary.homeFoundation.inquiry.serviceLabel }}</span>
-      <select
-        class="peer min-h-11 w-full cursor-pointer appearance-none rounded-lg border border-slate-300 bg-white px-3 pr-9 text-sm text-[#313493] outline-none transition hover:border-blue-300 focus:border-[#313493] focus:ring-2 focus:ring-[#313493]/20 motion-reduce:transition-none"
+    <div class="relative min-w-0">
+      <span class="sr-only" id="home-inquiry-service-label">{{ dictionary.homeFoundation.inquiry.serviceLabel }}</span>
+      <ServiceSelect
+        id="home-inquiry-service"
+        v-model="selectedService"
+        :options="serviceOptions"
+        :placeholder="`${dictionary.homeFoundation.inquiry.serviceLabel} *`"
+        :label="dictionary.homeFoundation.inquiry.serviceLabel"
         name="service"
-        required
-      >
-        <option value="" disabled selected hidden></option>
-        <option value="work-visa">{{ dictionary.homeFoundation.inquiry.workVisaOption }}</option>
-        <option value="hajj-umrah">{{ dictionary.homeFoundation.inquiry.hajjUmrahOption }}</option>
-        <option value="other">{{ dictionary.homeFoundation.inquiry.otherOption }}</option>
-      </select>
-      <span class="pointer-events-none absolute inset-y-0 left-3 inline-flex items-center text-sm text-[#313493] peer-valid:hidden">
-        {{ dictionary.homeFoundation.inquiry.serviceLabel }} <span class="ml-1 text-[#EE2329]">*</span>
-      </span>
-      <ChevronDown class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#313493]" :size="16" aria-hidden="true" />
-    </label>
+        :leading="LayoutGrid"
+        :required="true"
+        button-class="!min-h-11 !rounded-lg !border-slate-300 !bg-white !px-3 !pr-3 !text-[#313493]"
+      />
+    </div>
 
     <label class="relative block sm:col-span-2">
       <span class="sr-only">{{ dictionary.homeFoundation.inquiry.messageLabel }}</span>

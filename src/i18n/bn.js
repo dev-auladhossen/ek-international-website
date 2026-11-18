@@ -18,6 +18,8 @@
     callCta: 'কল করুন',
     openMenu: 'নেভিগেশন মেনু খুলুন',
     closeMenu: 'নেভিগেশন মেনু বন্ধ করুন',
+    mobileAssistanceTitle: 'সহায়তা প্রয়োজন?',
+    mobileAssistanceDescription: 'ভিসা ও ভ্রমণ সহায়তার জন্য আমাদের সঙ্গে যোগাযোগ করুন।',
   },
   localeName: 'বাংলা',
   languageNames: { en: 'ইংরেজি', bn: 'বাংলা' },

@@ -11,7 +11,7 @@ const copy = computed(() => dictionary.value.aboutPage)
 
 <template>
   <section class="bg-white px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-24" aria-labelledby="who-we-are-title">
-    <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
+    <div class="mx-auto grid max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem] items-center gap-10 lg:grid-cols-2 lg:gap-16">
       <figure v-reveal:image-left class="relative mx-auto w-full max-w-2xl lg:mx-0">
         <span class="absolute -left-3 -top-3 h-1/3 w-1/3 rounded-tl-2xl bg-[#313493]/10 sm:-left-4 sm:-top-4" aria-hidden="true"></span>
         <span class="absolute -bottom-3 -right-3 h-1/3 w-1/3 rounded-br-2xl bg-[#EE2329]/10 sm:-bottom-4 sm:-right-4" aria-hidden="true"></span>

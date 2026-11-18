@@ -12,7 +12,7 @@ const icons = { employment: BriefcaseBusiness, visa: FileText, travel: Plane, ha
 
 <template>
   <section id="about-services" class="bg-slate-50 px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-24" aria-labelledby="about-services-title">
-    <div class="mx-auto max-w-7xl">
+    <div class="mx-auto max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem]">
       <header class="mx-auto max-w-3xl text-center">
         <p v-reveal class="text-xs font-bold uppercase tracking-[0.14em] text-[#EE2329] sm:text-sm">{{ copy.servicesEyebrow }}</p>
         <RevealHeading id="about-services-title" class="mt-3 font-serif text-2xl font-bold leading-tight text-slate-900 sm:text-3xl lg:text-4xl" :text="copy.servicesTitle" />

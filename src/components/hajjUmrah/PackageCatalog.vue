@@ -31,7 +31,7 @@ const featureIcons = { hotel: Hotel, flight: Plane, guide: UserRound, meals: Ute
 
 <template>
   <section id="pilgrimage-packages" class="bg-slate-50 px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14" aria-labelledby="pilgrimage-packages-title">
-    <div class="mx-auto max-w-7xl">
+    <div class="mx-auto max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem]">
       <header class="mx-auto max-w-3xl text-center">
         <p v-reveal class="text-xs font-bold uppercase tracking-[0.14em] text-[#EE2329] sm:text-sm">{{ copy.packagesEyebrow }}</p>
         <h2 id="pilgrimage-packages-title" v-reveal class="mt-2 font-serif text-2xl font-bold leading-tight text-[#313493] sm:text-3xl lg:text-4xl">{{ copy.packagesTitle }}</h2>

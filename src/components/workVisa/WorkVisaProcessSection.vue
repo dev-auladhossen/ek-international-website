@@ -12,7 +12,7 @@ const icons = { consultation: MessageCircle, documentation: ListChecks, visa: Id
 <template>
   <section class="relative isolate overflow-hidden bg-gradient-to-b from-sky-50 via-white to-sky-50 px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16" aria-labelledby="work-visa-process-title">
     <div class="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-sky-100/70 [clip-path:polygon(0_62%,16%_46%,34%_78%,52%_54%,72%_82%,88%_52%,100%_70%,100%_100%,0_100%)]" aria-hidden="true"></div>
-    <div class="relative z-10 mx-auto max-w-7xl">
+    <div class="relative z-10 mx-auto max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem]">
       <header class="mx-auto max-w-5xl text-center">
         <div v-reveal class="flex items-center justify-center gap-3">
           <span class="h-0.5 w-10 bg-[#EE2329] sm:w-14" aria-hidden="true"></span>

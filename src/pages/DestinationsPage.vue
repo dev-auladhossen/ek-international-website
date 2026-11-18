@@ -64,7 +64,7 @@ const visaHighlights = [
 
     <section class="relative isolate overflow-hidden bg-sky-50 px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14" :aria-label="copy.eyebrow">
       <img class="absolute inset-0 size-full object-cover object-center" :src="destinationBackground" alt="" width="2172" height="724" loading="lazy" decoding="async" aria-hidden="true" />
-      <div class="relative mx-auto max-w-[1680px]">
+      <div class="relative mx-auto max-w-[1680px] min-[1920px]:max-w-[1920px] min-[2560px]:max-w-[2200px]">
         <header v-reveal class="mb-6 flex items-center justify-center gap-3 sm:mb-8">
           <span class="h-0.5 w-8 bg-[#EE2329] sm:w-10" aria-hidden="true"></span>
           <p class="text-center text-xs font-bold uppercase tracking-[0.14em] text-[#EE2329] sm:text-sm">{{ copy.popularEyebrow }}</p>
@@ -107,7 +107,7 @@ const visaHighlights = [
     </section>
 
     <section class="px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16" aria-labelledby="visa-processing-title">
-      <div class="relative isolate mx-auto min-h-[430px] max-w-7xl overflow-hidden rounded-2xl border border-blue-100 bg-[#EAF6FF] shadow-sm transition-shadow duration-300 hover:shadow-lg motion-reduce:transition-none sm:min-h-[450px] lg:min-h-[410px]">
+      <div class="relative isolate mx-auto min-h-[430px] max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem] overflow-hidden rounded-2xl border border-blue-100 bg-[#EAF6FF] shadow-sm transition-shadow duration-300 hover:shadow-lg motion-reduce:transition-none sm:min-h-[450px] lg:min-h-[410px]">
         <img class="absolute inset-0 size-full object-cover object-[68%_center]" :src="visaAssistanceBackground" alt="" width="1774" height="887" loading="lazy" decoding="async" aria-hidden="true" />
         <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/35 lg:from-white/95 lg:via-white/80 lg:to-transparent" aria-hidden="true"></div>
 

@@ -14,7 +14,7 @@ const supportItems = [
 
 <template>
   <section class="bg-white px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16" aria-labelledby="pilgrimage-support-title">
-    <div class="mx-auto max-w-7xl">
+    <div class="mx-auto max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem]">
       <header class="mx-auto max-w-3xl text-center">
         <p v-reveal class="text-xs font-bold uppercase tracking-[0.14em] text-[#EE2329] sm:text-sm">{{ copy.supportEyebrow }}</p>
         <h2 id="pilgrimage-support-title" v-reveal class="mt-2 font-serif text-2xl font-bold leading-tight text-[#313493] sm:text-3xl lg:text-4xl">{{ copy.supportTitle }}</h2>

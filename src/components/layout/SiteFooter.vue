@@ -28,7 +28,7 @@ const serviceIcons = {
 
 <template>
   <footer class="bg-[#313493] text-white">
-    <div class="mx-auto grid max-w-[1310px] gap-10 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[1.15fr_0.8fr_0.9fr_1.25fr] lg:gap-12 lg:px-8 lg:py-16">
+    <div class="mx-auto grid max-w-[1310px] 2xl:max-w-[1440px] min-[1920px]:max-w-[1600px] min-[2560px]:max-w-[1920px] gap-10 px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[1.15fr_0.8fr_0.9fr_1.25fr] lg:gap-12 lg:px-8 lg:py-16">
       <div class="min-w-0">
         <RouterLink
           class="inline-flex cursor-pointer rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
@@ -113,7 +113,7 @@ const serviceIcons = {
     </div>
 
     <section class="border-t border-white/15 bg-[#292A7D] px-4 py-7 sm:px-6 lg:px-8" aria-labelledby="footer-newsletter-title">
-      <div class="mx-auto flex max-w-[1310px] flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+      <div class="mx-auto flex max-w-[1310px] 2xl:max-w-[1440px] min-[1920px]:max-w-[1600px] min-[2560px]:max-w-[1920px] flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h2 id="footer-newsletter-title" class="text-base font-semibold text-white sm:text-lg">{{ footer().newsletterTitle }}</h2>
           <p class="mt-1 text-sm text-white/75">{{ footer().newsletterIntro }}</p>
@@ -124,11 +124,11 @@ const serviceIcons = {
           <button class="inline-flex min-h-12 cursor-pointer items-center justify-center rounded-full bg-[#EE2329] px-7 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#B91C1C] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white motion-reduce:transform-none motion-reduce:transition-none" type="submit">{{ footer().newsletterButton }}</button>
         </form>
       </div>
-      <p v-if="newsletterSubmitted" class="mx-auto mt-2 max-w-[1310px] text-xs text-white/80" role="status">{{ footer().newsletterNotConnected }}</p>
+      <p v-if="newsletterSubmitted" class="mx-auto mt-2 max-w-[1310px] 2xl:max-w-[1440px] min-[1920px]:max-w-[1600px] min-[2560px]:max-w-[1920px] text-xs text-white/80" role="status">{{ footer().newsletterNotConnected }}</p>
     </section>
 
     <div class="bg-[#010300] px-4 py-4 text-white sm:px-6 lg:px-8">
-      <div class="mx-auto flex max-w-[1310px] flex-col gap-2 text-xs text-white/75 sm:flex-row sm:items-center sm:justify-between sm:text-sm">
+      <div class="mx-auto flex max-w-[1310px] 2xl:max-w-[1440px] min-[1920px]:max-w-[1600px] min-[2560px]:max-w-[1920px] flex-col gap-2 text-xs text-white/75 sm:flex-row sm:items-center sm:justify-between sm:text-sm">
         <p>{{ footer().copyright.replace('{year}', copyrightYear) }}</p>
         <p>
           Developed by

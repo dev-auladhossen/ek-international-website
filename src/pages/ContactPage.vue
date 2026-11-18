@@ -38,7 +38,7 @@ const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(primaryO
     <GetInTouchSection />
 
     <section class="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20" aria-labelledby="contact-map-title">
-      <div class="mx-auto max-w-7xl">
+      <div class="mx-auto max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem]">
         <header class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p v-reveal class="text-xs font-bold uppercase tracking-[0.14em] text-[#EE2329] sm:text-sm">{{ contactCopy.eyebrow }}</p>

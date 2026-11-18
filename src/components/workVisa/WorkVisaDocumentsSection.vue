@@ -22,7 +22,7 @@ const assistanceSteps = [
 
 <template>
   <section class="bg-white px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12" aria-labelledby="work-visa-documents-title">
-    <div class="mx-auto max-w-7xl">
+    <div class="mx-auto max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem]">
       <header class="mx-auto mb-6 max-w-5xl text-center sm:mb-8">
         <div v-reveal class="flex items-center justify-center gap-3">
           <span class="h-0.5 w-10 bg-[#EE2329] sm:w-14" aria-hidden="true"></span>

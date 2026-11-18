@@ -1,14 +1,16 @@
 <script setup>
 import { computed, ref } from 'vue'
-import { ArrowDown, ArrowRight, FileCheck2, Globe, Handshake, Headset, LayoutGrid, Mail, MessageCircle, Phone, Send, UserRound } from '@lucide/vue'
+import { ArrowRight, FileCheck2, Globe, Handshake, Headset, LayoutGrid, Mail, MessageCircle, Phone, Send, UserRound } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
 import { headerContact } from '../../data/contact'
 import { usePageContent } from '../../composables/usePageContent'
+import ServiceSelect from '../common/ServiceSelect.vue'
 import backgroundImage from '../../assets/images/backgrounds/Sky Blue World Map Background.png'
 
 const { dictionary, locale } = usePageContent()
 const copy = computed(() => dictionary.value.workVisaPage)
 const submitted = ref(false)
+const selectedService = ref('')
 const openFaq = ref(0)
 
 const benefits = [
@@ -26,6 +28,10 @@ const services = [
   { key: 'serviceUmrahVisaProcessing', value: 'Umrah Visa Processing' },
   { key: 'serviceHajjRegistration', value: 'Hajj Registration' },
 ]
+const serviceOptions = computed(() => services.map((service) => ({
+  value: service.value,
+  label: copy.value[service.key],
+})))
 
 const inquiryFaqs = [
   { question: 'inquiryFaqTypesQuestion', answer: 'inquiryFaqTypesAnswer' },
@@ -45,7 +51,7 @@ function submitInquiry() {
     <img class="absolute inset-0 -z-10 size-full object-cover object-center" :src="backgroundImage" alt="" aria-hidden="true" width="1920" height="1080" loading="lazy" decoding="async" />
     <div class="absolute inset-0 -z-10 bg-white/55" aria-hidden="true"></div>
 
-    <div class="mx-auto max-w-6xl">
+    <div class="mx-auto max-w-6xl 2xl:max-w-[84rem] min-[1920px]:max-w-[96rem] min-[2560px]:max-w-[112rem]">
       <header class="mx-auto max-w-5xl text-center">
         <div v-reveal class="flex items-center justify-center gap-3">
           <span class="h-0.5 w-10 bg-[#EE2329] sm:w-14" aria-hidden="true"></span>
@@ -82,15 +88,19 @@ function submitInquiry() {
                 <Mail class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#243E61]" :size="20" aria-hidden="true" />
                 <input required autocomplete="email" name="email" type="email" class="min-h-12 w-full rounded-xl border border-blue-200 bg-white/80 py-3 pl-12 pr-4 text-sm text-[#101F4F] placeholder:text-[#243E61] focus:border-[#313493] focus:outline-none focus:ring-2 focus:ring-[#313493]/20" :placeholder="copy.inquiryEmail" />
               </label>
-              <label class="relative block">
-                <span class="sr-only">{{ copy.inquiryService }}</span>
-                <LayoutGrid class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#243E61]" :size="20" aria-hidden="true" />
-                <select required name="service" class="min-h-12 w-full appearance-none rounded-xl border border-blue-200 bg-white/80 py-3 pl-12 pr-10 text-sm text-[#243E61] focus:border-[#313493] focus:outline-none focus:ring-2 focus:ring-[#313493]/20">
-                  <option value="" selected disabled>{{ copy.inquiryService }}</option>
-                  <option v-for="service in services" :key="service.key" :value="service.value">{{ copy[service.key] }}</option>
-                </select>
-                <ArrowDown class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#243E61]" :size="18" aria-hidden="true" />
-              </label>
+              <div class="relative min-w-0">
+                <span class="sr-only" id="work-visa-inquiry-service-label">{{ copy.inquiryService }}</span>
+                <ServiceSelect
+                  id="work-visa-inquiry-service"
+                  v-model="selectedService"
+                  :options="serviceOptions"
+                  :placeholder="copy.inquiryService"
+                  :label="copy.inquiryService"
+                  name="service"
+                  :leading="LayoutGrid"
+                  :required="true"
+                />
+              </div>
               <label class="relative block">
                 <span class="sr-only">{{ copy.inquiryMessage }}</span>
                 <MessageCircle class="pointer-events-none absolute left-4 top-4 text-[#243E61]" :size="20" aria-hidden="true" />
