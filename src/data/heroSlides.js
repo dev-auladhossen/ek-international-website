@@ -1,6 +1,6 @@
-import professionalOfficeHandshake from '../assets/images/hero/Professional Office Handshake Lounge.png'
-import internationalTravelReception from '../assets/images/hero/International Travel Office Reception.png'
-import globalCareerConsultation from '../assets/images/hero/Global Career Consultation Meeting.png'
+import professionalOfficeHandshake from '../assets/images/hero/Professional Office Handshake Lounge.jpg'
+import internationalTravelReception from '../assets/images/hero/International Travel Office Reception.jpg'
+import globalCareerConsultation from '../assets/images/hero/Global Career Consultation Meeting.jpg'
 
 export default [
   {

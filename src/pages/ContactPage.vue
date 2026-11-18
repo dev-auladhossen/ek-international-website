@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { ArrowUpRight, ChevronRight, House } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
-import heroBackground from '../assets/images/backgrounds/Blue Flight Path Wallpaper.png'
+import heroBackground from '../assets/images/backgrounds/Blue Flight Path Wallpaper.jpg'
 import GetInTouchSection from '../components/contact/GetInTouchSection.vue'
 import SiteFooter from '../components/layout/SiteFooter.vue'
 import { usePageContent } from '../composables/usePageContent'

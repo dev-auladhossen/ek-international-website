@@ -5,8 +5,8 @@ import { RouterLink } from 'vue-router'
 import SiteFooter from '../components/layout/SiteFooter.vue'
 import { usePageContent } from '../composables/usePageContent'
 import services from '../data/services'
-import heroBackground from '../assets/images/backgrounds/Blue Flight Path Wallpaper.png'
-import assistanceBackground from '../assets/images/services/Sunlit Kaaba and Clock Tower.png'
+import heroBackground from '../assets/images/backgrounds/Blue Flight Path Wallpaper.jpg'
+import assistanceBackground from '../assets/images/services/Sunlit Kaaba and Clock Tower.jpg'
 import { headerContact } from '../data/contact'
 
 const { dictionary, locale } = usePageContent()

@@ -1,10 +1,10 @@
-import constructionImage from '../assets/images/jobs/Confident Construction Worker on Site-1.png'
-import factoryImage from '../assets/images/jobs/Confident Factory Supervisor at Work-2.png'
-import cleanerImage from '../assets/images/jobs/Friendly Facility Cleaner with Cart-3.png'
-import hospitalityImage from '../assets/images/jobs/Elegant Waiter Presenting Garnished Dish-4.png'
-import petrolImage from '../assets/images/jobs/petrol_pump_attendant.png'
-import plantationImage from '../assets/images/jobs/plantation_worker.png'
-import warehouseImage from '../assets/images/jobs/warehouse_general_worker.png'
+import constructionImage from '../assets/images/jobs/Confident Construction Worker on Site-1.jpg'
+import factoryImage from '../assets/images/jobs/Confident Factory Supervisor at Work-2.jpg'
+import cleanerImage from '../assets/images/jobs/Friendly Facility Cleaner with Cart-3.jpg'
+import hospitalityImage from '../assets/images/jobs/Elegant Waiter Presenting Garnished Dish-4.jpg'
+import petrolImage from '../assets/images/jobs/petrol_pump_attendant.jpg'
+import plantationImage from '../assets/images/jobs/plantation_worker.jpg'
+import warehouseImage from '../assets/images/jobs/warehouse_general_worker.jpg'
 
 export default [
   {

@@ -2,7 +2,7 @@
 import { ArrowRight } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
 import RevealHeading from '../common/RevealHeading.vue'
-import destinationBackground from '../../assets/images/backgrounds/minimal-blue-world-map-banner.png'
+import destinationBackground from '../../assets/images/backgrounds/minimal-blue-world-map-banner.jpg'
 import destinations from '../../data/destinations'
 import { usePageContent } from '../../composables/usePageContent'
 

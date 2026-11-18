@@ -2,7 +2,7 @@
 import { ArrowRight, Eye, Handshake, Plane } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
 import RevealHeading from '../common/RevealHeading.vue'
-import sectionBackground from '../../assets/images/backgrounds/ethereal-blue-wave-panorama.png'
+import sectionBackground from '../../assets/images/backgrounds/ethereal-blue-wave-panorama.jpg'
 import officeReception from '../../assets/images/optimized/office/ek-modern-reception.webp'
 import aboutFeatures from '../../data/aboutFeatures'
 import { usePageContent } from '../../composables/usePageContent'

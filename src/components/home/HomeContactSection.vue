@@ -1,7 +1,7 @@
 <script setup>
 import { Clock3, Mail, MapPin, Phone } from '@lucide/vue'
 import RevealHeading from '../common/RevealHeading.vue'
-import inquiryBackground from '../../assets/images/backgrounds/Blue Gradient World Map with Red Wave.png'
+import inquiryBackground from '../../assets/images/backgrounds/Blue Gradient World Map with Red Wave.jpg'
 import { headerContact, officeLocations, socialPlatforms } from '../../data/contact'
 import { usePageContent } from '../../composables/usePageContent'
 import InquiryForm from '../contact/InquiryForm.vue'

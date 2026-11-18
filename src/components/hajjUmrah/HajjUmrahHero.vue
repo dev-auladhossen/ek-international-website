@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { ChevronRight, House, Layers3 } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
-import heroImage from '../../assets/images/hajj&umrah/Masjid al-Haram at Sunset-5.png'
+import heroImage from '../../assets/images/hajj&umrah/Masjid al-Haram at Sunset-5.jpg'
 import { usePageContent } from '../../composables/usePageContent'
 
 const { dictionary, locale } = usePageContent()

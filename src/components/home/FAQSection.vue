@@ -2,7 +2,7 @@
 import { Minus, Plus } from '@lucide/vue'
 import { ref } from 'vue'
 import RevealHeading from '../common/RevealHeading.vue'
-import faqBackground from '../../assets/images/backgrounds/Minimal FAQ Waves with Question Mark.png'
+import faqBackground from '../../assets/images/backgrounds/Minimal FAQ Waves with Question Mark.jpg'
 import faqPortrait from '../../assets/images/backgrounds/Thoughtful Bearded Man Cutout.png'
 import faqs from '../../data/faqs'
 import { usePageContent } from '../../composables/usePageContent'

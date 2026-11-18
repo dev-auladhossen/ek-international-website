@@ -8,7 +8,7 @@ import WorkVisaDocumentsSection from '../components/workVisa/WorkVisaDocumentsSe
 import WorkVisaInquirySection from '../components/workVisa/WorkVisaInquirySection.vue'
 import SiteFooter from '../components/layout/SiteFooter.vue'
 import { usePageContent } from '../composables/usePageContent'
-import heroBackground from '../assets/images/backgrounds/Global Careers Take Flight.png'
+import heroBackground from '../assets/images/backgrounds/Global Careers Take Flight.jpg'
 
 const { dictionary, locale } = usePageContent()
 const copy = computed(() => dictionary.value.workVisaPage)

@@ -1,7 +1,7 @@
-import goldenTawaf from "../assets/images/hajj&umrah/Masjid al-Haram at Sunset-5.png";
-import goldenKaaba from "../assets/images/hajj&umrah/Golden Sunset at the Kaaba-1.png";
-import mosqueCorridor from "../assets/images/hajj&umrah/Grand Mosque Pilgrimage Corridor-4.png";
-import prophetMosque from "../assets/images/hajj&umrah/Sunset at the Prophet’s Mosque-3.png";
+import goldenTawaf from "../assets/images/hajj&umrah/Masjid al-Haram at Sunset-5.jpg";
+import goldenKaaba from "../assets/images/hajj&umrah/Golden Sunset at the Kaaba-1.jpg";
+import mosqueCorridor from "../assets/images/hajj&umrah/Grand Mosque Pilgrimage Corridor-4.jpg";
+import prophetMosque from "../assets/images/hajj&umrah/Sunset at the Prophet’s Mosque-3.jpg";
 
 export default [
   {

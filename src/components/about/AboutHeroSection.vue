@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { ChevronRight, House } from "@lucide/vue";
 import { RouterLink } from "vue-router";
-import heroBackground from "../../assets/images/backgrounds/Blue Flight Path Wallpaper.png";
+import heroBackground from "../../assets/images/backgrounds/Blue Flight Path Wallpaper.jpg";
 import { usePageContent } from "../../composables/usePageContent";
 
 const { dictionary, locale } = usePageContent();

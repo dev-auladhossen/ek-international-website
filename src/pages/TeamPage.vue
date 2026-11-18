@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { ChevronRight, House } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
-import heroBackground from '../assets/images/backgrounds/Blue Flight Path Wallpaper.png'
+import heroBackground from '../assets/images/backgrounds/Blue Flight Path Wallpaper.jpg'
 import SiteFooter from '../components/layout/SiteFooter.vue'
 import RevealHeading from '../components/common/RevealHeading.vue'
 import TeamMemberCard from '../components/team/TeamMemberCard.vue'

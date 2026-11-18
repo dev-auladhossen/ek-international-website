@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { ArrowRight, MessageCircle } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
-import ctaImage from '../../assets/images/hajj&umrah/Golden Sunset at the Kaaba-1.png'
+import ctaImage from '../../assets/images/hajj&umrah/Golden Sunset at the Kaaba-1.jpg'
 import { headerContact } from '../../data/contact'
 import { usePageContent } from '../../composables/usePageContent'
 

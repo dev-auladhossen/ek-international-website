@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router'
 import { headerContact } from '../../data/contact'
 import { usePageContent } from '../../composables/usePageContent'
 import ServiceSelect from '../common/ServiceSelect.vue'
-import backgroundImage from '../../assets/images/backgrounds/Sky Blue World Map Background.png'
+import backgroundImage from '../../assets/images/backgrounds/Sky Blue World Map Background.jpg'
 
 const { dictionary, locale } = usePageContent()
 const copy = computed(() => dictionary.value.workVisaPage)
