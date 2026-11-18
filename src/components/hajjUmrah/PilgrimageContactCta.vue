@@ -2,7 +2,8 @@
 import { computed } from 'vue'
 import { ArrowRight, MessageCircle } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
-import ctaImage from '../../assets/images/hajj&umrah/Golden Sunset at the Kaaba-1.jpg'
+import ctaImage from '../../assets/images/hajj&umrah/Golden Sunset at the Kaaba-1.webp'
+import ctaImageMobile from '../../assets/images/hajj&umrah/Golden Sunset at the Kaaba-1-mobile.webp'
 import { headerContact } from '../../data/contact'
 import { usePageContent } from '../../composables/usePageContent'
 
@@ -12,7 +13,7 @@ const copy = computed(() => dictionary.value.hajjUmrahPage)
 
 <template>
   <section class="relative isolate overflow-hidden bg-[#313493] px-4 py-14 text-center text-white sm:px-6 sm:py-16 lg:px-8 lg:py-20" aria-labelledby="pilgrimage-cta-title">
-    <img class="absolute inset-0 -z-10 size-full object-cover object-center" :src="ctaImage" :alt="copy.ctaImageAlt" width="1672" height="940" loading="lazy" decoding="async" />
+    <img class="absolute inset-0 -z-10 size-full object-cover object-center" :src="ctaImage" :srcset="`${ctaImageMobile} 800w, ${ctaImage} 1400w`" sizes="100vw" :alt="copy.ctaImageAlt" width="1672" height="940" loading="lazy" decoding="async" />
     <div class="absolute inset-0 -z-10 bg-[#17245C]/85" aria-hidden="true"></div>
     <div class="relative mx-auto max-w-4xl">
       <h2 id="pilgrimage-cta-title" v-reveal class="font-serif text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-4xl">{{ copy.ctaTitle }}</h2>

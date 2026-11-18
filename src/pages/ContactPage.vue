@@ -2,7 +2,8 @@
 import { computed } from 'vue'
 import { ArrowUpRight, ChevronRight, House } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
-import heroBackground from '../assets/images/backgrounds/Blue Flight Path Wallpaper.jpg'
+import heroBackground from '../assets/images/backgrounds/Blue Flight Path Wallpaper.webp'
+import heroBackgroundMobile from '../assets/images/backgrounds/Blue Flight Path Wallpaper-mobile.webp'
 import GetInTouchSection from '../components/contact/GetInTouchSection.vue'
 import SiteFooter from '../components/layout/SiteFooter.vue'
 import { usePageContent } from '../composables/usePageContent'
@@ -19,7 +20,7 @@ const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(primaryO
 <template>
   <main class="min-w-0 overflow-x-clip">
     <section class="relative isolate flex min-h-[calc(100svh-126px)] items-center overflow-hidden bg-[#313493] px-4 py-7 text-white sm:min-h-[calc(100svh-140px)] sm:px-6 sm:py-9 lg:min-h-[calc(100svh-138px)] lg:px-8 lg:py-10" aria-labelledby="contact-page-title">
-      <img class="absolute inset-0 size-full object-cover object-left" :src="heroBackground" alt="" aria-hidden="true" width="2172" height="724" fetchpriority="high" decoding="async" />
+      <img class="absolute inset-0 size-full object-cover object-left" :src="heroBackground" :srcset="`${heroBackgroundMobile} 900w, ${heroBackground} 1600w`" sizes="100vw" alt="" aria-hidden="true" width="2172" height="724" loading="eager" fetchpriority="high" decoding="async" />
       <div class="absolute inset-0 bg-[#17245C]/45" aria-hidden="true"></div>
       <div class="relative mx-auto flex max-w-5xl flex-col items-center text-center">
         <nav v-reveal class="mb-5 flex items-center gap-2 text-sm text-white/75 sm:mb-6" :aria-label="dictionary.aboutPage.breadcrumbLabel">

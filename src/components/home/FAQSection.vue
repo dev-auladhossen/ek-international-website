@@ -2,8 +2,9 @@
 import { Minus, Plus } from '@lucide/vue'
 import { ref } from 'vue'
 import RevealHeading from '../common/RevealHeading.vue'
-import faqBackground from '../../assets/images/backgrounds/Minimal FAQ Waves with Question Mark.jpg'
-import faqPortrait from '../../assets/images/backgrounds/Thoughtful Bearded Man Cutout.png'
+import faqBackground from '../../assets/images/backgrounds/Minimal FAQ Waves with Question Mark.webp'
+import faqBackgroundMobile from '../../assets/images/backgrounds/Minimal FAQ Waves with Question Mark-mobile.webp'
+import faqPortrait from '../../assets/images/backgrounds/Thoughtful Bearded Man Cutout.webp'
 import faqs from '../../data/faqs'
 import { usePageContent } from '../../composables/usePageContent'
 
@@ -24,6 +25,8 @@ function toggleFaq(id) {
     <img
       class="absolute inset-0 z-0 size-full object-cover object-center"
       :src="faqBackground"
+      :srcset="`${faqBackgroundMobile} 900w, ${faqBackground} 1600w`"
+      sizes="100vw"
       alt=""
       width="1774"
       height="887"

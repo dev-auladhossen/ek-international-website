@@ -1,7 +1,8 @@
 <script setup>
 import { Clock3, Mail, MapPin, Phone } from '@lucide/vue'
 import RevealHeading from '../common/RevealHeading.vue'
-import inquiryBackground from '../../assets/images/backgrounds/Blue Gradient World Map with Red Wave.jpg'
+import inquiryBackground from '../../assets/images/backgrounds/Blue Gradient World Map with Red Wave.webp'
+import inquiryBackgroundMobile from '../../assets/images/backgrounds/Blue Gradient World Map with Red Wave-mobile.webp'
 import { headerContact, officeLocations, socialPlatforms } from '../../data/contact'
 import { usePageContent } from '../../composables/usePageContent'
 import InquiryForm from '../contact/InquiryForm.vue'
@@ -31,7 +32,7 @@ const contactItems = [
 
       <div class="mt-7 grid gap-5 lg:mt-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-6">
         <aside v-reveal:image-left class="group relative isolate flex min-h-[25rem] overflow-hidden rounded-2xl bg-[#313493] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transform-none motion-reduce:transition-none sm:p-8">
-          <img class="absolute inset-0 -z-10 size-full scale-105 object-cover transition-transform duration-700 ease-out group-hover:scale-110 motion-reduce:transition-none" :src="inquiryBackground" alt="" width="1638" height="940" loading="lazy" decoding="async" aria-hidden="true" />
+          <img class="absolute inset-0 -z-10 size-full scale-105 object-cover transition-transform duration-700 ease-out group-hover:scale-110 motion-reduce:transition-none" :src="inquiryBackground" :srcset="`${inquiryBackgroundMobile} 900w, ${inquiryBackground} 1600w`" sizes="100vw" alt="" width="1638" height="940" loading="lazy" decoding="async" aria-hidden="true" />
           <div class="my-auto w-full">
             <ul class="grid gap-5 sm:gap-6">
               <li v-for="item in contactItems" :key="item.id" class="group/item flex min-w-0 items-center gap-3.5 sm:gap-4">

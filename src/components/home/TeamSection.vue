@@ -66,6 +66,8 @@ function memberPhoneLabel(member) {
               <img
                 class="aspect-[4/3] w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none"
                 :src="member.image"
+                :srcset="`${member.imageMobile} 360w, ${member.image} ${member.imageWidth}w`"
+                sizes="(max-width: 639px) 46vw, (max-width: 1279px) 30vw, 20vw"
                 :alt="memberAlt(member)"
                 width="640"
                 height="480"

@@ -87,7 +87,7 @@ const featureIcons = { hotel: Hotel, flight: Plane, guide: UserRound, meals: Ute
       >
         <article v-for="item in visiblePackages" :key="item.id" class="group flex min-w-0 flex-col rounded-2xl border border-blue-100 bg-white p-5 shadow-[0_8px_24px_rgba(49,52,147,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(49,52,147,0.16)] motion-reduce:transform-none motion-reduce:transition-none sm:p-6">
           <div class="relative -mx-5 -mt-5 mb-5 h-44 overflow-hidden rounded-t-2xl bg-[#313493] sm:-mx-6 sm:-mt-6 sm:h-48">
-            <img class="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none" :src="item.image" :alt="copy[item.imageAltKey]" width="1672" height="940" loading="lazy" decoding="async" />
+            <img class="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none" :src="item.image" :srcset="`${item.imageMobile} 800w, ${item.image} ${item.imageWidth}w`" sizes="(max-width: 639px) 92vw, (max-width: 1023px) 80vw, 38vw" :alt="copy[item.imageAltKey]" width="1672" height="940" loading="lazy" decoding="async" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#101743]/85 via-[#101743]/20 to-[#101743]/10" aria-hidden="true"></div>
             <span class="absolute right-3 top-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/25 px-3 py-2 text-xs font-bold text-white backdrop-blur-sm sm:right-4 sm:top-4 sm:text-sm">
               <component :is="item.category === 'umrah' ? Mosque : Layers3" :size="18" aria-hidden="true" />

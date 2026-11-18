@@ -1,18 +1,16 @@
-import workVisaImage from '../assets/images/optimized/hero/south-korea-meeting.webp'
-import visaImage from '../assets/images/optimized/services/office-consultation-passport.webp'
-import travelImage from '../assets/images/optimized/hero/travel-office-banner.webp'
-import hajjImage from '../assets/images/optimized/hero/airport-pilgrimage.webp'
 import whoWeAreImage from '../assets/images/optimized/hero/consultation-meeting.webp'
+import whoWeAreImageMobile from '../assets/images/optimized/hero/consultation-meeting-mobile.webp'
 
 export const aboutImages = {
   whoWeAre: whoWeAreImage,
+  whoWeAreMobile: whoWeAreImageMobile,
 }
 
 export const aboutServices = [
-  { id: 'employment', titleKey: 'serviceEmploymentTitle', descriptionKey: 'serviceEmploymentDescription', image: workVisaImage, imageAltKey: 'serviceEmploymentAlt', icon: 'employment' },
-  { id: 'visa', titleKey: 'serviceVisaTitle', descriptionKey: 'serviceVisaDescription', image: visaImage, imageAltKey: 'serviceVisaAlt', icon: 'visa' },
-  { id: 'travel', titleKey: 'serviceTravelTitle', descriptionKey: 'serviceTravelDescription', image: travelImage, imageAltKey: 'serviceTravelAlt', icon: 'travel' },
-  { id: 'hajj-umrah', titleKey: 'serviceHajjTitle', descriptionKey: 'serviceHajjDescription', image: hajjImage, imageAltKey: 'serviceHajjAlt', icon: 'hajj' },
+  { id: 'employment', titleKey: 'serviceEmploymentTitle', descriptionKey: 'serviceEmploymentDescription', imageAltKey: 'serviceEmploymentAlt', icon: 'employment' },
+  { id: 'visa', titleKey: 'serviceVisaTitle', descriptionKey: 'serviceVisaDescription', imageAltKey: 'serviceVisaAlt', icon: 'visa' },
+  { id: 'travel', titleKey: 'serviceTravelTitle', descriptionKey: 'serviceTravelDescription', imageAltKey: 'serviceTravelAlt', icon: 'travel' },
+  { id: 'hajj-umrah', titleKey: 'serviceHajjTitle', descriptionKey: 'serviceHajjDescription', imageAltKey: 'serviceHajjAlt', icon: 'hajj' },
 ]
 
 export const commitmentValues = [

@@ -2,7 +2,8 @@
 import { computed } from 'vue'
 import { ChevronRight, House, Layers3 } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
-import heroImage from '../../assets/images/hajj&umrah/Masjid al-Haram at Sunset-5.jpg'
+import heroImage from '../../assets/images/hajj&umrah/Masjid al-Haram at Sunset-5.webp'
+import heroImageMobile from '../../assets/images/hajj&umrah/Masjid al-Haram at Sunset-5-mobile.webp'
 import { usePageContent } from '../../composables/usePageContent'
 
 const { dictionary, locale } = usePageContent()
@@ -12,7 +13,7 @@ const copy = computed(() => dictionary.value.hajjUmrahPage)
 
 <template>
   <section class="relative isolate flex min-h-[calc(100svh-126px)] items-center overflow-hidden bg-[#313493] px-4 py-8 text-white sm:min-h-[calc(100svh-140px)] sm:px-6 sm:py-10 lg:min-h-[calc(100svh-138px)] lg:px-8" aria-labelledby="hajj-umrah-page-title">
-    <img class="absolute inset-0 size-full object-cover object-center" :src="heroImage" :alt="copy.heroImageAlt" width="1672" height="940" fetchpriority="high" decoding="async" />
+    <img class="absolute inset-0 size-full object-cover object-center" :src="heroImage" :srcset="`${heroImageMobile} 800w, ${heroImage} 1400w`" sizes="100vw" :alt="copy.heroImageAlt" width="1672" height="940" loading="eager" fetchpriority="high" decoding="async" />
     <div class="absolute inset-0 bg-[#101743]/80" aria-hidden="true"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-[#101743]/60 via-transparent to-transparent" aria-hidden="true"></div>
 

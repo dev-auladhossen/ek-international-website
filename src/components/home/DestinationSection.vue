@@ -2,7 +2,8 @@
 import { ArrowRight } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
 import RevealHeading from '../common/RevealHeading.vue'
-import destinationBackground from '../../assets/images/backgrounds/minimal-blue-world-map-banner.jpg'
+import destinationBackground from '../../assets/images/backgrounds/minimal-blue-world-map-banner.webp'
+import destinationBackgroundMobile from '../../assets/images/backgrounds/minimal-blue-world-map-banner-mobile.webp'
 import destinations from '../../data/destinations'
 import { usePageContent } from '../../composables/usePageContent'
 
@@ -18,6 +19,8 @@ const { dictionary, locale } = usePageContent()
     <img
       class="absolute inset-0 z-0 size-full object-cover object-center"
       :src="destinationBackground"
+      :srcset="`${destinationBackgroundMobile} 900w, ${destinationBackground} 1600w`"
+      sizes="100vw"
       alt=""
       width="2172"
       height="724"
@@ -56,6 +59,8 @@ const { dictionary, locale } = usePageContent()
                 v-reveal:image-left
                 class="aspect-[16/10] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 group-focus-visible:scale-105 motion-reduce:transition-none"
                 :src="destination.image"
+                :srcset="`${destination.imageMobile} 480w, ${destination.image} 900w`"
+                sizes="(max-width: 639px) 46vw, (max-width: 767px) 31vw, (max-width: 1279px) 23vw, 14vw"
                 :alt="`${dictionary.destinationsPage.imageAltPrefix} ${dictionary.destinationsPage.countryNames[destination.id]}`"
                 width="640"
                 height="400"

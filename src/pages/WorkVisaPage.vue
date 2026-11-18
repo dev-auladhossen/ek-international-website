@@ -8,7 +8,8 @@ import WorkVisaDocumentsSection from '../components/workVisa/WorkVisaDocumentsSe
 import WorkVisaInquirySection from '../components/workVisa/WorkVisaInquirySection.vue'
 import SiteFooter from '../components/layout/SiteFooter.vue'
 import { usePageContent } from '../composables/usePageContent'
-import heroBackground from '../assets/images/backgrounds/Global Careers Take Flight.jpg'
+import heroBackground from '../assets/images/backgrounds/Global Careers Take Flight.webp'
+import heroBackgroundMobile from '../assets/images/backgrounds/Global Careers Take Flight-mobile.webp'
 
 const { dictionary, locale } = usePageContent()
 const copy = computed(() => dictionary.value.workVisaPage)
@@ -17,7 +18,7 @@ const copy = computed(() => dictionary.value.workVisaPage)
 <template>
   <main class="min-w-0 overflow-x-clip">
     <section class="relative isolate flex h-[calc(100svh-140px)] min-h-[460px] max-h-[700px] items-center overflow-hidden bg-[#313493] px-4 sm:px-6 lg:h-[calc(100svh-210px)] lg:min-h-[460px] lg:px-8" aria-labelledby="work-visa-page-title">
-      <img class="absolute inset-0 size-full object-cover object-[68%_center] sm:object-center" :src="heroBackground" alt="" aria-hidden="true" width="1774" height="887" fetchpriority="high" decoding="async" />
+      <img class="absolute inset-0 size-full object-cover object-[68%_center] sm:object-center" :src="heroBackground" :srcset="`${heroBackgroundMobile} 900w, ${heroBackground} 1600w`" sizes="100vw" alt="" aria-hidden="true" width="1774" height="887" loading="eager" fetchpriority="high" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-r from-[#313493]/90 via-[#313493]/75 to-[#313493]/45 sm:via-[#313493]/60 sm:to-transparent" aria-hidden="true"></div>
 
       <div class="relative mx-auto flex h-full w-full max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem] flex-col justify-center">

@@ -1,11 +1,19 @@
-import abdulWadud from '../assets/images/team/Abdul Wadud-Director.jpeg'
-import hasnatJahanSuchi from '../assets/images/team/Hasnat Jahan Suchi-CEO.jpeg'
-import kasfiyaKhanum from '../assets/images/team/Kasfiya Khanum- MD.jpeg'
-import skFarukRohani from '../assets/images/team/S.K Faruk Rohani- Chairman.jpeg'
-import sbSulaimanKhan from '../assets/images/team/SB Sulaiman Khan- Accounts Manager.jpeg'
-import anantoIslam from '../assets/images/team/Ananto Islam-Marketing Officer.jpeg'
-import jahangirAlomKhan from '../assets/images/team/MD. Jahangir Alom Khan-Marketing Manager.jpeg'
-import chanMia from '../assets/images/team/Chan Mia-Assistant Director.jpeg'
+import abdulWadud from '../assets/images/team/Abdul Wadud-Director.webp'
+import abdulWadudMobile from '../assets/images/team/Abdul Wadud-Director-mobile.webp'
+import hasnatJahanSuchi from '../assets/images/team/Hasnat Jahan Suchi-CEO.webp'
+import hasnatJahanSuchiMobile from '../assets/images/team/Hasnat Jahan Suchi-CEO-mobile.webp'
+import kasfiyaKhanum from '../assets/images/team/Kasfiya Khanum- MD.webp'
+import kasfiyaKhanumMobile from '../assets/images/team/Kasfiya Khanum- MD-mobile.webp'
+import skFarukRohani from '../assets/images/team/S.K Faruk Rohani- Chairman.webp'
+import skFarukRohaniMobile from '../assets/images/team/S.K Faruk Rohani- Chairman-mobile.webp'
+import sbSulaimanKhan from '../assets/images/team/SB Sulaiman Khan- Accounts Manager.webp'
+import sbSulaimanKhanMobile from '../assets/images/team/SB Sulaiman Khan- Accounts Manager-mobile.webp'
+import anantoIslam from '../assets/images/team/Ananto Islam-Marketing Officer.webp'
+import anantoIslamMobile from '../assets/images/team/Ananto Islam-Marketing Officer-mobile.webp'
+import jahangirAlomKhan from '../assets/images/team/MD. Jahangir Alom Khan-Marketing Manager.webp'
+import jahangirAlomKhanMobile from '../assets/images/team/MD. Jahangir Alom Khan-Marketing Manager-mobile.webp'
+import chanMia from '../assets/images/team/Chan Mia-Assistant Director.webp'
+import chanMiaMobile from '../assets/images/team/Chan Mia-Assistant Director-mobile.webp'
 
 export default [
   {
@@ -14,6 +22,8 @@ export default [
     roleKey: 'chairmanRole',
     descriptionKey: 'chairmanDescription',
     image: skFarukRohani,
+    imageMobile: skFarukRohaniMobile,
+    imageWidth: 640,
     phone: { display: '+880 1811-215487', href: 'tel:+8801811215487' },
   },
   {
@@ -22,6 +32,8 @@ export default [
     roleKey: 'ceoRole',
     descriptionKey: 'ceoDescription',
     image: hasnatJahanSuchi,
+    imageMobile: hasnatJahanSuchiMobile,
+    imageWidth: 640,
     phone: { display: '+880 1324-564042', href: 'tel:+8801324564042' },
   },
   {
@@ -30,6 +42,8 @@ export default [
     roleKey: 'managingDirectorRole',
     descriptionKey: 'managingDirectorDescription',
     image: kasfiyaKhanum,
+    imageMobile: kasfiyaKhanumMobile,
+    imageWidth: 640,
     phone: { display: '+880 1820-813155', href: 'tel:+8801820813155' },
   },
   {
@@ -38,6 +52,8 @@ export default [
     roleKey: 'directorRole',
     descriptionKey: 'directorDescription',
     image: abdulWadud,
+    imageMobile: abdulWadudMobile,
+    imageWidth: 402,
     phone: { display: '+880 1558-987551', href: 'tel:+8801558987551' },
   },
   {
@@ -46,6 +62,8 @@ export default [
     roleKey: 'accountsManagerRole',
     descriptionKey: 'accountsManagerDescription',
     image: sbSulaimanKhan,
+    imageMobile: sbSulaimanKhanMobile,
+    imageWidth: 640,
     phone: { display: '+880 1763-733098', href: 'tel:+8801763733098' },
   },
   {
@@ -54,6 +72,8 @@ export default [
     roleKey: 'marketingOfficerRole',
     descriptionKey: 'marketingOfficerDescription',
     image: anantoIslam,
+    imageMobile: anantoIslamMobile,
+    imageWidth: 640,
     phone: { display: '+880 1988-929584', href: 'tel:+8801988929584' },
   },
   {
@@ -62,6 +82,8 @@ export default [
     roleKey: 'marketingManagerRole',
     descriptionKey: 'marketingManagerDescription',
     image: jahangirAlomKhan,
+    imageMobile: jahangirAlomKhanMobile,
+    imageWidth: 640,
     phone: { display: '+880 1939-704155', href: 'tel:+8801939704155' },
   },
   {
@@ -70,6 +92,8 @@ export default [
     roleKey: 'assistantDirectorRole',
     descriptionKey: 'assistantDirectorDescription',
     image: chanMia,
+    imageMobile: chanMiaMobile,
+    imageWidth: 640,
     phone: { display: '+880 1354-441524', href: 'tel:+8801354441524' },
   },
 ]

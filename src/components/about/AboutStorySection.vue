@@ -15,7 +15,7 @@ const copy = computed(() => dictionary.value.aboutPage)
       <figure v-reveal:image-left class="relative mx-auto w-full max-w-2xl lg:mx-0">
         <span class="absolute -left-3 -top-3 h-1/3 w-1/3 rounded-tl-2xl bg-[#313493]/10 sm:-left-4 sm:-top-4" aria-hidden="true"></span>
         <span class="absolute -bottom-3 -right-3 h-1/3 w-1/3 rounded-br-2xl bg-[#EE2329]/10 sm:-bottom-4 sm:-right-4" aria-hidden="true"></span>
-        <img class="relative aspect-[4/3] w-full rounded-xl object-cover shadow-xl" :src="aboutImages.whoWeAre" :alt="copy.whoWeAreImageAlt" width="1200" height="900" fetchpriority="high" decoding="async" />
+        <img class="relative aspect-[4/3] w-full rounded-xl object-cover shadow-xl" :src="aboutImages.whoWeAre" :srcset="`${aboutImages.whoWeAreMobile} 800w, ${aboutImages.whoWeAre} 1600w`" sizes="(max-width: 1023px) 92vw, 50vw" :alt="copy.whoWeAreImageAlt" width="1200" height="900" loading="lazy" decoding="async" />
       </figure>
       <div class="min-w-0">
         <p v-reveal class="text-xs font-bold uppercase tracking-[0.14em] text-[#EE2329] sm:text-sm">{{ copy.whoWeAreEyebrow }}</p>

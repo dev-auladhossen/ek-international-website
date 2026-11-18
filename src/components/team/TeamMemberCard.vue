@@ -20,7 +20,7 @@ const phoneLabel = computed(() =>
 <template>
   <article class="group h-full rounded-3xl bg-slate-100 px-5 py-6 text-center transition duration-300 hover:-translate-y-1 hover:shadow-[0_14px_35px_rgba(15,23,42,0.12)] motion-reduce:transform-none motion-reduce:transition-none sm:px-7 sm:py-8">
     <div v-reveal:image-left class="mx-auto size-32 overflow-hidden rounded-full border-4 border-white bg-white shadow-[0_10px_22px_rgba(15,23,42,0.16)] sm:size-36 lg:size-40">
-      <img class="size-full object-cover object-top transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none" :src="member.image" :alt="copy.portraitAlt.replace('{name}', name)" width="320" height="320" loading="lazy" decoding="async" />
+      <img class="size-full object-cover object-top transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none" :src="member.image" :srcset="`${member.imageMobile} 360w, ${member.image} ${member.imageWidth}w`" sizes="320px" :alt="copy.portraitAlt.replace('{name}', name)" width="320" height="320" loading="lazy" decoding="async" />
     </div>
     <div class="pt-4">
       <h3 v-reveal class="text-base font-bold leading-snug text-slate-950 delay-100 sm:text-lg">{{ name }}</h3>

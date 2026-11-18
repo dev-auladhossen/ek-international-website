@@ -41,6 +41,8 @@ const services = allServices.filter((service) => service.featured)
               v-reveal:image-left
               class="block h-auto w-full"
               :src="service.image"
+              :srcset="`${service.imageMobile} 480w, ${service.image} 752w`"
+              sizes="(max-width: 639px) 92vw, (max-width: 1279px) 48vw, 24vw"
               :alt="copy[service.imageAltKey]"
               width="960"
               height="540"

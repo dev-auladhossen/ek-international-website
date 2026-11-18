@@ -2,7 +2,8 @@
 import { computed } from "vue";
 import { ChevronRight, House } from "@lucide/vue";
 import { RouterLink } from "vue-router";
-import heroBackground from "../../assets/images/backgrounds/Blue Flight Path Wallpaper.jpg";
+import heroBackground from "../../assets/images/backgrounds/Blue Flight Path Wallpaper.webp";
+import heroBackgroundMobile from "../../assets/images/backgrounds/Blue Flight Path Wallpaper-mobile.webp";
 import { usePageContent } from "../../composables/usePageContent";
 
 const { dictionary, locale } = usePageContent();
@@ -17,6 +18,8 @@ const copy = computed(() => dictionary.value.aboutPage);
     <img
       class="absolute inset-0 size-full object-cover object-left"
       :src="heroBackground"
+      :srcset="`${heroBackgroundMobile} 900w, ${heroBackground} 1600w`"
+      sizes="100vw"
       alt=""
       aria-hidden="true"
       width="2172"

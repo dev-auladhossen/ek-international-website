@@ -18,6 +18,10 @@ npm run preview
 
 The SSG build outputs nested `index.html` route files under `dist/`. Upload the contents of `dist/` to the domain root on Apache/cPanel. The Vite base path is `/`; route URLs use trailing slashes. `public/.htaccess` serves the generated `/404/` page for Apache 404 responses. There is no SPA fallback rewrite.
 
+## Image assets
+
+Run `npm run optimize:images` to regenerate the committed WebP and responsive image variants. The script reads its preserved input files from `verification/image-originals/pre-responsive/`; that archive is outside the Vite build output.
+
 ## Languages and routes
 
 English uses `en` and `<html lang="en">`. Bangla uses `bn` and `<html lang="bn-BD">`.

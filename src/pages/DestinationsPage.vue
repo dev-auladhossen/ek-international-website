@@ -4,9 +4,12 @@ import { ArrowRight, ChevronRight, Globe, Headset, House, UsersRound } from '@lu
 import RevealHeading from '../components/common/RevealHeading.vue'
 import SiteFooter from '../components/layout/SiteFooter.vue'
 import { RouterLink } from 'vue-router'
-import heroBackground from '../assets/images/backgrounds/Blue Flight Path Wallpaper.jpg'
-import destinationBackground from '../assets/images/backgrounds/minimal-blue-world-map-banner.jpg'
-import visaAssistanceBackground from '../assets/images/backgrounds/worldwide-visa-assistance-banner.png.jpg'
+import heroBackground from '../assets/images/backgrounds/Blue Flight Path Wallpaper.webp'
+import heroBackgroundMobile from '../assets/images/backgrounds/Blue Flight Path Wallpaper-mobile.webp'
+import destinationBackground from '../assets/images/backgrounds/minimal-blue-world-map-banner.webp'
+import destinationBackgroundMobile from '../assets/images/backgrounds/minimal-blue-world-map-banner-mobile.webp'
+import visaAssistanceBackground from '../assets/images/backgrounds/worldwide-visa-assistance-banner.webp'
+import visaAssistanceBackgroundMobile from '../assets/images/backgrounds/worldwide-visa-assistance-banner-mobile.webp'
 import { usePageContent } from '../composables/usePageContent'
 import { destinationDirectory } from '../data/destinations'
 import { headerContact } from '../data/contact'
@@ -30,6 +33,8 @@ const visaHighlights = [
       <img
         class="absolute inset-0 size-full object-cover object-left"
         :src="heroBackground"
+        :srcset="`${heroBackgroundMobile} 900w, ${heroBackground} 1600w`"
+        sizes="100vw"
         alt=""
         width="2172"
         height="724"
@@ -63,7 +68,7 @@ const visaHighlights = [
     </section>
 
     <section class="relative isolate overflow-hidden bg-sky-50 px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14" :aria-label="copy.eyebrow">
-      <img class="absolute inset-0 size-full object-cover object-center" :src="destinationBackground" alt="" width="2172" height="724" loading="lazy" decoding="async" aria-hidden="true" />
+      <img class="absolute inset-0 size-full object-cover object-center" :src="destinationBackground" :srcset="`${destinationBackgroundMobile} 900w, ${destinationBackground} 1600w`" sizes="100vw" alt="" width="2172" height="724" loading="lazy" decoding="async" aria-hidden="true" />
       <div class="relative mx-auto max-w-[1680px] min-[1920px]:max-w-[1920px] min-[2560px]:max-w-[2200px]">
         <header v-reveal class="mb-6 flex items-center justify-center gap-3 sm:mb-8">
           <span class="h-0.5 w-8 bg-[#EE2329] sm:w-10" aria-hidden="true"></span>
@@ -78,6 +83,8 @@ const visaHighlights = [
                   v-reveal:image-left
                   class="aspect-[16/10] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none"
                   :src="destination.image"
+                  :srcset="`${destination.imageMobile} 480w, ${destination.image} 900w`"
+                  sizes="(max-width: 639px) 46vw, (max-width: 1023px) 31vw, 19vw"
                   :alt="`${copy.imageAltPrefix} ${copy.countryNames[destination.id]}`"
                   width="640"
                   height="400"
@@ -108,7 +115,7 @@ const visaHighlights = [
 
     <section class="px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16" aria-labelledby="visa-processing-title">
       <div class="relative isolate mx-auto min-h-[430px] max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem] overflow-hidden rounded-2xl border border-blue-100 bg-[#EAF6FF] shadow-sm transition-shadow duration-300 hover:shadow-lg motion-reduce:transition-none sm:min-h-[450px] lg:min-h-[410px]">
-        <img class="absolute inset-0 size-full object-cover object-[68%_center]" :src="visaAssistanceBackground" alt="" width="1774" height="887" loading="lazy" decoding="async" aria-hidden="true" />
+        <img class="absolute inset-0 size-full object-cover object-[68%_center]" :src="visaAssistanceBackground" :srcset="`${visaAssistanceBackgroundMobile} 900w, ${visaAssistanceBackground} 1600w`" sizes="100vw" alt="" width="1774" height="887" loading="lazy" decoding="async" aria-hidden="true" />
         <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/35 lg:from-white/95 lg:via-white/80 lg:to-transparent" aria-hidden="true"></div>
 
         <div class="relative flex min-h-[430px] items-center px-5 py-8 sm:min-h-[450px] sm:px-8 lg:min-h-[410px] lg:px-9">

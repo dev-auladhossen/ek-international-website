@@ -1,24 +1,37 @@
-import australia from '../assets/images/optimized/destinations/aus.jpg'
-import cambodia from '../assets/images/optimized/destinations/cambodia.jpg'
-import france from '../assets/images/optimized/destinations/france.jpg'
-import hungary from '../assets/images/optimized/destinations/hungary.jpg'
-import italy from '../assets/images/optimized/destinations/italy.jpg'
-import malaysia from '../assets/images/optimized/destinations/malaysia.jpg'
-import poland from '../assets/images/optimized/destinations/poland.jpg'
-import portugal from '../assets/images/optimized/destinations/portugal.jpg'
-import qatar from '../assets/images/optimized/destinations/qatar.jpg'
-import romania from '../assets/images/optimized/destinations/romania.jpg'
-import saudiArabia from '../assets/images/optimized/destinations/saudi-arabia.jpg'
-import serbia from '../assets/images/optimized/destinations/serbia.jpg'
-import singapore from '../assets/images/optimized/destinations/singapore.jpg'
-import italyFlag from '../assets/images/destinations/Italy.png'
-import malaysiaFlag from '../assets/images/destinations/Malaysia.png'
-import singaporeFlag from '../assets/images/destinations/Singapore.png'
-import uaeFlag from '../assets/images/destinations/UAE.png'
-import saudiArabiaFlag from '../assets/images/destinations/Saudi-Arabia.png'
-import cambodiaFlag from '../assets/images/destinations/Cambodia.png'
-import thailandFlag from '../assets/images/destinations/Thailand.png'
-import turkeyFlag from '../assets/images/destinations/turkey.png'
+import australia from '../assets/images/optimized/destinations/aus.webp'
+import australiaMobile from '../assets/images/optimized/destinations/aus-mobile.webp'
+import cambodia from '../assets/images/optimized/destinations/cambodia.webp'
+import cambodiaMobile from '../assets/images/optimized/destinations/cambodia-mobile.webp'
+import france from '../assets/images/optimized/destinations/france.webp'
+import franceMobile from '../assets/images/optimized/destinations/france-mobile.webp'
+import hungary from '../assets/images/optimized/destinations/hungary.webp'
+import hungaryMobile from '../assets/images/optimized/destinations/hungary-mobile.webp'
+import italy from '../assets/images/optimized/destinations/italy.webp'
+import italyMobile from '../assets/images/optimized/destinations/italy-mobile.webp'
+import malaysia from '../assets/images/optimized/destinations/malaysia.webp'
+import malaysiaMobile from '../assets/images/optimized/destinations/malaysia-mobile.webp'
+import poland from '../assets/images/optimized/destinations/poland.webp'
+import polandMobile from '../assets/images/optimized/destinations/poland-mobile.webp'
+import portugal from '../assets/images/optimized/destinations/portugal.webp'
+import portugalMobile from '../assets/images/optimized/destinations/portugal-mobile.webp'
+import qatar from '../assets/images/optimized/destinations/qatar.webp'
+import qatarMobile from '../assets/images/optimized/destinations/qatar-mobile.webp'
+import romania from '../assets/images/optimized/destinations/romania.webp'
+import romaniaMobile from '../assets/images/optimized/destinations/romania-mobile.webp'
+import saudiArabia from '../assets/images/optimized/destinations/saudi-arabia.webp'
+import saudiArabiaMobile from '../assets/images/optimized/destinations/saudi-arabia-mobile.webp'
+import serbia from '../assets/images/optimized/destinations/serbia.webp'
+import serbiaMobile from '../assets/images/optimized/destinations/serbia-mobile.webp'
+import singapore from '../assets/images/optimized/destinations/singapore.webp'
+import singaporeMobile from '../assets/images/optimized/destinations/singapore-mobile.webp'
+import italyFlag from '../assets/images/destinations/Italy-small.png'
+import malaysiaFlag from '../assets/images/destinations/Malaysia-small.png'
+import singaporeFlag from '../assets/images/destinations/Singapore-small.png'
+import uaeFlag from '../assets/images/destinations/UAE-small.png'
+import saudiArabiaFlag from '../assets/images/destinations/Saudi-Arabia-small.png'
+import cambodiaFlag from '../assets/images/destinations/Cambodia-small.png'
+import thailandFlag from '../assets/images/destinations/Thailand-small.png'
+import turkeyFlag from '../assets/images/destinations/turkey-small.png'
 import australiaFlag from '../assets/images/destinations/australia.png'
 import franceFlag from '../assets/images/destinations/france.png'
 import hungaryFlag from '../assets/images/destinations/hungary.png'
@@ -29,11 +42,16 @@ import romaniaFlag from '../assets/images/destinations/romania.png'
 import serbiaFlag from '../assets/images/destinations/serbia.png'
 import ukFlag from '../assets/images/destinations/uk.png'
 import usaFlag from '../assets/images/destinations/usa.png'
-import uae from '../assets/images/optimized/destinations/uae.jpg'
-import thailand from '../assets/images/destinations/06_Thailand.jpg'
-import unitedKingdom from '../assets/images/optimized/destinations/uk.jpg'
-import unitedStates from '../assets/images/optimized/destinations/usa.jpg'
-import turkey from '../assets/images/optimized/destinations/turkey.jpg'
+import uae from '../assets/images/optimized/destinations/uae.webp'
+import uaeMobile from '../assets/images/optimized/destinations/uae-mobile.webp'
+import thailand from '../assets/images/destinations/06_Thailand.webp'
+import thailandMobile from '../assets/images/destinations/06_Thailand-mobile.webp'
+import unitedKingdom from '../assets/images/optimized/destinations/uk.webp'
+import unitedKingdomMobile from '../assets/images/optimized/destinations/uk-mobile.webp'
+import unitedStates from '../assets/images/optimized/destinations/usa.webp'
+import unitedStatesMobile from '../assets/images/optimized/destinations/usa-mobile.webp'
+import turkey from '../assets/images/optimized/destinations/turkey.webp'
+import turkeyMobile from '../assets/images/optimized/destinations/turkey-mobile.webp'
 
 const destinationDirectory = [
   { id: 'portugal', nameEn: 'Portugal', nameBn: 'পর্তুগাল', image: portugal, flagImage: portugalFlag, altEn: 'Landmark in Portugal', altBn: 'পর্তুগালের একটি দর্শনীয় স্থান' },
@@ -66,7 +84,33 @@ const homeDestinationOrder = [
   'turkey',
 ]
 
-export { destinationDirectory }
+const mobileDestinationImages = {
+  australia: australiaMobile,
+  cambodia: cambodiaMobile,
+  france: franceMobile,
+  hungary: hungaryMobile,
+  italy: italyMobile,
+  malaysia: malaysiaMobile,
+  poland: polandMobile,
+  portugal: portugalMobile,
+  qatar: qatarMobile,
+  romania: romaniaMobile,
+  'saudi-arabia': saudiArabiaMobile,
+  serbia: serbiaMobile,
+  singapore: singaporeMobile,
+  uae: uaeMobile,
+  thailand: thailandMobile,
+  'united-kingdom': unitedKingdomMobile,
+  'united-states': unitedStatesMobile,
+  turkey: turkeyMobile,
+}
+
+const responsiveDestinationDirectory = destinationDirectory.map((destination) => ({
+  ...destination,
+  imageMobile: mobileDestinationImages[destination.id] ?? destination.image,
+}))
+
+export { responsiveDestinationDirectory as destinationDirectory }
 export default homeDestinationOrder.map((id) =>
-  destinationDirectory.find((destination) => destination.id === id),
+  responsiveDestinationDirectory.find((destination) => destination.id === id),
 )

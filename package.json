@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite-ssg build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "optimize:images": "node scripts/prepare-image-assets.mjs"
   },
   "dependencies": {
     "@lucide/vue": "^1.72.0",
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.10",
+    "sharp": "^0.35.5",
     "vite": "^8.3.6",
     "vite-ssg": "^28.3.0"
   }

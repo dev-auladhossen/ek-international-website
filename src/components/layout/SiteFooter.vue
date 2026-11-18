@@ -2,7 +2,7 @@
 import { ArrowRight, BriefcaseBusiness, Clock3, ContactRound, IdCard, Mail, MapPin, Mosque, Phone, Plane, UsersRound } from '@lucide/vue'
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
-import footerLogo from '../../assets/images/logo/logo-white-bg.png'
+import footerLogo from '../../assets/images/logo/logo-white-bg.webp'
 import { headerContact, officeLocations, socialPlatforms } from '../../data/contact'
 import { footerQuickNavigation } from '../../data/navigation'
 import services from '../../data/services'

@@ -2,8 +2,10 @@
 import { ArrowRight, Headset, IdCard, MessageCircle, Package, Plane } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
 import RevealHeading from '../common/RevealHeading.vue'
-import sectionBackground from '../../assets/images/backgrounds/ethereal-blue-wave-panorama.jpg'
-import pilgrimageImage from '../../assets/images/hajj&umrah/Masjid al-Haram at Sunset-5.jpg'
+import sectionBackground from '../../assets/images/backgrounds/ethereal-blue-wave-panorama.webp'
+import sectionBackgroundMobile from '../../assets/images/backgrounds/ethereal-blue-wave-panorama-mobile.webp'
+import pilgrimageImage from '../../assets/images/hajj&umrah/Masjid al-Haram at Sunset-5.webp'
+import pilgrimageImageMobile from '../../assets/images/hajj&umrah/Masjid al-Haram at Sunset-5-mobile.webp'
 import hajjFeatures from '../../data/hajjFeatures'
 import { headerContact } from '../../data/contact'
 import { usePageContent } from '../../composables/usePageContent'
@@ -26,6 +28,8 @@ const featureIcons = {
     <img
       class="absolute inset-0 z-0 size-full object-cover object-center"
       :src="sectionBackground"
+      :srcset="`${sectionBackgroundMobile} 900w, ${sectionBackground} 1600w`"
+      sizes="100vw"
       alt=""
       width="2100"
       height="749"
@@ -95,6 +99,8 @@ const featureIcons = {
         <img
           class="absolute inset-0 size-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none"
           :src="pilgrimageImage"
+          :srcset="`${pilgrimageImageMobile} 800w, ${pilgrimageImage} 1400w`"
+          sizes="(max-width: 1023px) 92vw, 50vw"
           :alt="dictionary.homeFoundation.hajjUmrah.imageAlt"
           width="1672"
           height="940"

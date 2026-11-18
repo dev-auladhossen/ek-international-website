@@ -5,8 +5,10 @@ import { RouterLink } from 'vue-router'
 import SiteFooter from '../components/layout/SiteFooter.vue'
 import { usePageContent } from '../composables/usePageContent'
 import services from '../data/services'
-import heroBackground from '../assets/images/backgrounds/Blue Flight Path Wallpaper.jpg'
-import assistanceBackground from '../assets/images/services/Sunlit Kaaba and Clock Tower.jpg'
+import heroBackground from '../assets/images/backgrounds/Blue Flight Path Wallpaper.webp'
+import heroBackgroundMobile from '../assets/images/backgrounds/Blue Flight Path Wallpaper-mobile.webp'
+import assistanceBackground from '../assets/images/services/Sunlit Kaaba and Clock Tower.webp'
+import assistanceBackgroundMobile from '../assets/images/services/Sunlit Kaaba and Clock Tower-mobile.webp'
 import { headerContact } from '../data/contact'
 
 const { dictionary, locale } = usePageContent()
@@ -25,7 +27,7 @@ const serviceIcons = {
 <template>
   <main class="min-w-0 overflow-x-clip">
     <section class="relative isolate flex min-h-[calc(100svh-126px)] items-center overflow-hidden bg-[#313493] px-4 py-7 text-white sm:min-h-[calc(100svh-140px)] sm:px-6 sm:py-9 lg:min-h-[calc(100svh-138px)] lg:px-8 lg:py-10" aria-labelledby="services-page-title">
-      <img class="absolute inset-0 size-full object-cover object-left" :src="heroBackground" alt="" aria-hidden="true" width="2172" height="724" fetchpriority="high" decoding="async" />
+      <img class="absolute inset-0 size-full object-cover object-left" :src="heroBackground" :srcset="`${heroBackgroundMobile} 900w, ${heroBackground} 1600w`" sizes="100vw" alt="" aria-hidden="true" width="2172" height="724" loading="eager" fetchpriority="high" decoding="async" />
       <div class="absolute inset-0 bg-[#17245C]/60" aria-hidden="true"></div>
       <div class="relative mx-auto flex max-w-5xl flex-col items-center text-center">
         <nav v-reveal class="mb-5 flex items-center gap-2 text-sm text-white/75 sm:mb-6" :aria-label="dictionary.aboutPage.breadcrumbLabel">
@@ -56,7 +58,7 @@ const serviceIcons = {
           <li v-for="service in services" :id="service.id" :key="service.id" v-reveal class="min-w-0 scroll-mt-28">
             <article class="group flex h-full flex-col overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-[0_8px_24px_rgba(49,52,147,0.09)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(49,52,147,0.16)] motion-reduce:transform-none motion-reduce:transition-none">
               <div v-reveal:image-left class="relative overflow-hidden bg-sky-50">
-                <img class="block h-auto w-full transition-transform duration-500 ease-out group-hover:scale-[1.02] motion-reduce:transition-none" :src="service.image" :alt="copy[service.imageAltKey]" width="752" height="320" loading="lazy" decoding="async" />
+              <img class="block h-auto w-full transition-transform duration-500 ease-out group-hover:scale-[1.02] motion-reduce:transition-none" :src="service.image" :srcset="`${service.imageMobile} 480w, ${service.image} 752w`" sizes="(max-width: 767px) 92vw, (max-width: 1279px) 46vw, 31vw" :alt="copy[service.imageAltKey]" width="752" height="320" loading="lazy" decoding="async" />
               </div>
               <div class="flex flex-1 flex-col p-5 sm:p-6">
                 <div class="flex items-center gap-3">
@@ -84,7 +86,7 @@ const serviceIcons = {
 
     <section class="bg-white px-4 py-4 sm:px-6 lg:px-8" aria-labelledby="service-assistance-title">
       <div class="relative isolate mx-auto grid min-h-[210px] max-w-7xl 2xl:max-w-[90rem] min-[1920px]:max-w-[100rem] min-[2560px]:max-w-[120rem] items-center gap-5 overflow-hidden rounded-2xl border border-blue-100 px-5 py-6 sm:min-h-[220px] sm:px-8 md:grid-cols-[minmax(0,1fr)_1px_290px] md:gap-8 lg:px-12">
-        <img class="absolute inset-0 size-full object-cover object-right" :src="assistanceBackground" :alt="copy.assistanceImageAlt" width="1672" height="941" loading="lazy" decoding="async" />
+        <img class="absolute inset-0 size-full object-cover object-right" :src="assistanceBackground" :srcset="`${assistanceBackgroundMobile} 900w, ${assistanceBackground} 1600w`" sizes="100vw" :alt="copy.assistanceImageAlt" width="1672" height="941" loading="lazy" decoding="async" />
         <div class="absolute inset-0 bg-gradient-to-r from-sky-50/95 via-sky-50/90 to-sky-50/35" aria-hidden="true"></div>
         <div class="relative z-10">
           <span class="mb-3 block h-1 w-10 rounded-full bg-[#EE2329]" aria-hidden="true"></span>

@@ -5,7 +5,8 @@ import { RouterLink } from 'vue-router'
 import { headerContact } from '../../data/contact'
 import { usePageContent } from '../../composables/usePageContent'
 import ServiceSelect from '../common/ServiceSelect.vue'
-import backgroundImage from '../../assets/images/backgrounds/Sky Blue World Map Background.jpg'
+import backgroundImage from '../../assets/images/backgrounds/Sky Blue World Map Background.webp'
+import backgroundImageMobile from '../../assets/images/backgrounds/Sky Blue World Map Background-mobile.webp'
 
 const { dictionary, locale } = usePageContent()
 const copy = computed(() => dictionary.value.workVisaPage)
@@ -48,7 +49,7 @@ function submitInquiry() {
 
 <template>
   <section class="relative isolate overflow-hidden bg-[#eff8ff] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14" aria-labelledby="work-visa-inquiry-title">
-    <img class="absolute inset-0 -z-10 size-full object-cover object-center" :src="backgroundImage" alt="" aria-hidden="true" width="1920" height="1080" loading="lazy" decoding="async" />
+    <img class="absolute inset-0 -z-10 size-full object-cover object-center" :src="backgroundImage" :srcset="`${backgroundImageMobile} 900w, ${backgroundImage} 1600w`" sizes="100vw" alt="" aria-hidden="true" width="1920" height="1080" loading="lazy" decoding="async" />
     <div class="absolute inset-0 -z-10 bg-white/55" aria-hidden="true"></div>
 
     <div class="mx-auto max-w-6xl 2xl:max-w-[84rem] min-[1920px]:max-w-[96rem] min-[2560px]:max-w-[112rem]">

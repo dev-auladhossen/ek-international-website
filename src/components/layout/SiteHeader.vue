@@ -196,7 +196,6 @@ onBeforeUnmount(() => {
           class="h-auto w-16 object-contain sm:w-20 lg:w-24"
           :src="brandLogo"
           alt="EK International"
-          fetchpriority="high"
           width="512"
           height="375"
         />
