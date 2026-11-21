@@ -18,14 +18,14 @@ const phoneLabel = computed(() =>
 </script>
 
 <template>
-  <article class="group h-full rounded-3xl bg-slate-100 px-5 py-6 text-center transition duration-300 hover:-translate-y-1 hover:shadow-[0_14px_35px_rgba(15,23,42,0.12)] motion-reduce:transform-none motion-reduce:transition-none sm:px-7 sm:py-8">
-    <div v-reveal:image-left class="mx-auto size-32 overflow-hidden rounded-full border-4 border-white bg-white shadow-[0_10px_22px_rgba(15,23,42,0.16)] sm:size-36 lg:size-40">
-      <img class="size-full object-cover object-top transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none" :src="member.image" :srcset="`${member.imageMobile} 360w, ${member.image} ${member.imageWidth}w`" sizes="320px" :alt="copy.portraitAlt.replace('{name}', name)" width="320" height="320" loading="lazy" decoding="async" />
+  <article class="group h-full border-r border-slate-200 px-4 py-1 transition-colors duration-300 last:border-r-0 hover:bg-slate-50/70 motion-reduce:transition-none sm:px-5 lg:px-6">
+    <div v-reveal:image-left class="overflow-hidden bg-slate-100">
+      <img class="aspect-[3/4] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none" :src="member.image" :srcset="`${member.imageMobile} 360w, ${member.image} ${member.imageWidth}w`" sizes="(max-width: 639px) 90vw, (max-width: 1023px) 44vw, (max-width: 1279px) 28vw, 22vw" :alt="copy.portraitAlt.replace('{name}', name)" width="640" height="853" loading="lazy" decoding="async" />
     </div>
-    <div class="pt-4">
-      <h3 v-reveal class="text-base font-bold leading-snug text-slate-950 delay-100 sm:text-lg">{{ name }}</h3>
-      <p v-reveal class="mt-2 text-sm font-medium text-[#313493] delay-200 sm:text-base">{{ copy[member.roleKey] }}</p>
-      <p v-reveal class="mx-auto mt-4 max-w-sm text-sm leading-6 text-slate-600 delay-300 sm:text-base sm:leading-7">{{ copy[member.descriptionKey] }}</p>
+    <div class="pt-6 sm:pt-8">
+      <p v-reveal class="min-h-5 text-xs font-medium uppercase leading-5 tracking-wide text-[#EE2329] delay-100 sm:text-sm">{{ copy[member.roleKey] }}</p>
+      <h3 v-reveal class="mt-4 whitespace-nowrap text-[clamp(0.875rem,1.45vw,1.5rem)] font-semibold uppercase leading-snug text-[#173F68] delay-200 sm:mt-5">{{ name }}</h3>
+      <p v-reveal class="mt-5 text-sm leading-[1.55] text-slate-700 delay-300 sm:mt-6 sm:text-base">{{ copy[member.descriptionKey] }}</p>
       <a v-if="member.phone" v-reveal class="mt-4 inline-flex max-w-full items-center gap-2 rounded-sm text-sm font-medium text-[#313493] transition-colors hover:text-[#EE2329] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EE2329]" :href="member.phone.href" :aria-label="phoneLabel">
         <Phone :size="16" aria-hidden="true" />
         <span>{{ member.phone.display }}</span>

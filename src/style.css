@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+html[lang="bn-BD"] body {
+  font-family: "Hind Siliguri", Poppins, sans-serif;
+}
+
+html[lang="bn-BD"] body :is(h1, h2, h3, h4, .font-serif) {
+  font-family: "Baloo Da 2", "Hind Siliguri", sans-serif;
+}
+
 @theme {
   --animate-country-marquee: country-marquee 38s linear infinite;
   --animate-hero-zoom: hero-zoom 3s ease-in-out forwards;

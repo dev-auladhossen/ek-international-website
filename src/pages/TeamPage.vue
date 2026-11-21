@@ -41,7 +41,7 @@ const teamCopy = computed(() => dictionary.value.homeFoundation.team)
           <RevealHeading id="team-directory-title" class="mt-3 font-serif text-2xl font-bold leading-tight text-slate-900 sm:text-3xl lg:text-4xl" :text="teamCopy.title" />
           <p v-reveal class="mt-4 text-sm leading-7 text-slate-600 sm:text-base">{{ teamCopy.intro }}</p>
         </header>
-        <ul class="mx-auto mt-9 grid max-w-6xl 2xl:max-w-[84rem] min-[1920px]:max-w-[96rem] min-[2560px]:max-w-[112rem] grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 2xl:grid-cols-4">
+        <ul class="mx-auto mt-9 grid max-w-6xl 2xl:max-w-[84rem] min-[1920px]:max-w-[96rem] min-[2560px]:max-w-[112rem] grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-4 lg:gap-y-14">
           <li v-for="(member, index) in team" :key="member.id" v-reveal :class="['min-w-0', ['delay-100', 'delay-200', 'delay-300', 'delay-500', 'delay-700'][index % 5]]">
             <TeamMemberCard :member="member" />
           </li>

@@ -6,7 +6,7 @@ import team from '../../data/team'
 import { usePageContent } from '../../composables/usePageContent'
 
 const { dictionary, locale } = usePageContent()
-const featuredTeam = team.slice(0, 5)
+const featuredTeam = team.slice(0, 4)
 function memberName(member) {
   return dictionary.value.homeFoundation.team[member.nameKey]
 }
@@ -51,7 +51,7 @@ function memberPhoneLabel(member) {
       </header>
 
       <ul
-        class="mt-7 grid grid-cols-2 gap-3 sm:mt-9 sm:gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+        class="mx-auto mt-7 grid max-w-6xl grid-cols-1 gap-y-10 sm:mt-9 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-4 lg:gap-y-14"
       >
         <li
           v-for="member in featuredTeam"
@@ -59,37 +59,38 @@ function memberPhoneLabel(member) {
           v-reveal
           class="min-w-0"
         >
-          <article
-            class="group h-full overflow-hidden rounded-xl border border-sky-100 bg-white/95 shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg motion-reduce:transform-none motion-reduce:transition-none"
-          >
-            <div v-reveal:image-left class="relative overflow-hidden bg-slate-100 ">
+          <article class="group h-full border-r border-slate-200 px-4 py-1 transition-colors duration-300 last:border-r-0 hover:bg-white/60 motion-reduce:transition-none sm:px-5 lg:px-6">
+            <div v-reveal:image-left class="overflow-hidden bg-slate-100">
               <img
-                class="aspect-[4/3] w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none"
+                class="aspect-[3/4] w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none"
                 :src="member.image"
                 :srcset="`${member.imageMobile} 360w, ${member.image} ${member.imageWidth}w`"
-                sizes="(max-width: 639px) 46vw, (max-width: 1279px) 30vw, 20vw"
+                sizes="(max-width: 639px) 90vw, (max-width: 1023px) 44vw, (max-width: 1279px) 28vw, 22vw"
                 :alt="memberAlt(member)"
                 width="640"
-                height="480"
+                height="853"
                 loading="lazy"
                 decoding="async"
               />
             </div>
-            <div class="min-h-24 px-3 py-3 sm:px-4 sm:py-4">
-              <h3 class="text-sm font-bold leading-snug text-[#313493] sm:text-base">
+            <div class="pt-6 sm:pt-8">
+              <p class="min-h-5 text-xs font-medium uppercase leading-5 tracking-wide text-[#EE2329] delay-100 sm:text-sm">
+                {{ dictionary.homeFoundation.team[member.roleKey] }}
+              </p>
+              <h3 class="mt-4 whitespace-nowrap text-[clamp(0.875rem,1.45vw,1.5rem)] font-semibold uppercase leading-snug text-[#173F68] delay-200 sm:mt-5">
                 {{ memberName(member) }}
               </h3>
-              <p class="mt-1 text-xs font-semibold text-[#EE2329] sm:text-sm">
-                {{ dictionary.homeFoundation.team[member.roleKey] }}
+              <p class="mt-5 text-sm leading-[1.55] text-slate-700 delay-300 sm:mt-6 sm:text-base">
+                {{ dictionary.homeFoundation.team[member.descriptionKey] }}
               </p>
               <a
                 v-if="member.phone"
-                class="mt-1.5 inline-flex max-w-full cursor-pointer items-center gap-1.5 rounded-sm text-xs font-medium leading-5 text-[#313493] transition-colors hover:text-[#313493] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#313493] motion-reduce:transition-none"
+                class="mt-4 inline-flex max-w-full cursor-pointer items-center gap-2 rounded-sm text-sm font-medium text-[#313493] transition-colors hover:text-[#EE2329] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EE2329] motion-reduce:transition-none"
                 :href="member.phone.href"
                 :aria-label="memberPhoneLabel(member)"
               >
-                <Phone class="shrink-0" :size="14" aria-hidden="true" />
-                <span class="whitespace-nowrap">{{ member.phone.display }}</span>
+                <Phone class="shrink-0" :size="16" aria-hidden="true" />
+                <span>{{ member.phone.display }}</span>
               </a>
             </div>
           </article>
