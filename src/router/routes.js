@@ -3,6 +3,7 @@ import ContactPage from '../pages/ContactPage.vue'
 import DestinationsPage from '../pages/DestinationsPage.vue'
 import HajjUmrahPage from '../pages/HajjUmrahPage.vue'
 import HomePage from '../pages/HomePage.vue'
+import GalleryPage from '../pages/GalleryPage.vue'
 import NotFoundPage from '../pages/NotFoundPage.vue'
 import ServicesPage from '../pages/ServicesPage.vue'
 import TeamPage from '../pages/TeamPage.vue'
@@ -12,6 +13,7 @@ const localizedPages = [
   { key: 'home', segment: '', component: HomePage },
   { key: 'about', segment: 'about', component: AboutPage },
   { key: 'team', segment: 'team', component: TeamPage },
+  { key: 'gallery', segment: 'gallery', component: GalleryPage },
   { key: 'services', segment: 'services', component: ServicesPage },
   { key: 'destinations', segment: 'destinations', component: DestinationsPage },
   { key: 'workVisa', segment: 'work-visa', component: WorkVisaPage },

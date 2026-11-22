@@ -18,7 +18,7 @@ export const primaryNavigation = [
     submenu: [
       { id: 'destinations', routeKey: 'destinations', labelKey: 'destinations' },
       { id: 'faq', routeKey: 'home', hash: '#faq', labelKey: 'faq' },
-      { id: 'gallery', routeKey: 'home', hash: '#gallery', labelKey: 'gallery' },
+      { id: 'gallery', routeKey: 'gallery', labelKey: 'gallery' },
     ],
   },
 ]
@@ -35,7 +35,7 @@ export const footerQuickNavigation = [
   { id: 'hajjUmrah', routeKey: 'hajj-umrah', labelKey: 'hajjUmrah' },
   { id: 'team', routeKey: 'team', labelKey: 'team' },
   { id: 'destinations', routeKey: 'destinations', labelKey: 'destinations' },
-  { id: 'gallery', routeKey: 'home', hash: '#gallery', labelKey: 'gallery' },
+  { id: 'gallery', routeKey: 'gallery', labelKey: 'gallery' },
 ]
 
 export const footerBottomNavigation = [

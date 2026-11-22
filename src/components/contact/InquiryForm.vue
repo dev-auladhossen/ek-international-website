@@ -1,21 +1,61 @@
 ﻿<script setup>
 import { computed, ref } from 'vue'
-import { LayoutGrid, Send } from '@lucide/vue'
+import { LayoutGrid, LoaderCircle, Send } from '@lucide/vue'
 import { usePageContent } from '../../composables/usePageContent'
+import { sendWeb3Form } from '../../services/web3forms'
 import ServiceSelect from '../common/ServiceSelect.vue'
 
 const { dictionary } = usePageContent()
-const submitted = ref(false)
+const isSubmitting = ref(false)
+const statusType = ref('')
+const statusMessage = ref('')
+const copy = computed(() => dictionary.value.homeFoundation.inquiry)
 const selectedService = ref('')
 const serviceOptions = computed(() => [
-  { value: 'work-visa', label: dictionary.value.homeFoundation.inquiry.workVisaOption },
-  { value: 'hajj-umrah', label: dictionary.value.homeFoundation.inquiry.hajjUmrahOption },
-  { value: 'other', label: dictionary.value.homeFoundation.inquiry.otherOption },
+  { value: 'work-visa', label: copy.value.workVisaOption },
+  { value: 'hajj-umrah', label: copy.value.hajjUmrahOption },
+  { value: 'other', label: copy.value.otherOption },
 ])
+
+const errorMessages = {
+  configuration: 'configurationError',
+  network: 'networkError',
+  rate_limit: 'rateLimitError',
+  invalid_response: 'submissionError',
+  submission: 'submissionError',
+}
+
+async function submitInquiry(event) {
+  if (isSubmitting.value) return
+
+  const form = event.currentTarget
+  const fields = Object.fromEntries(new FormData(form).entries())
+  isSubmitting.value = true
+  statusType.value = ''
+  statusMessage.value = ''
+
+  try {
+    await sendWeb3Form({
+      ...fields,
+      subject: 'New Website Inquiry - EK International',
+      form_type: 'Website Inquiry',
+    })
+    form.reset()
+    selectedService.value = ''
+    statusType.value = 'success'
+    statusMessage.value = copy.value.successMessage
+  } catch (error) {
+    statusType.value = 'error'
+    statusMessage.value = copy.value[errorMessages[error?.code] ?? 'submissionError']
+  } finally {
+    isSubmitting.value = false
+  }
+}
 </script>
 
 <template>
-  <form class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-3.5" @submit.prevent="submitted = true">
+  <form class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-3.5" @submit.prevent="submitInquiry">
+    <input class="hidden" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
     <label class="relative block">
       <span class="sr-only">{{ dictionary.homeFoundation.inquiry.nameLabel }}</span>
       <input
@@ -90,18 +130,20 @@ const serviceOptions = computed(() => [
 
     <button
       v-reveal
-      class="relative isolate inline-flex min-h-11 w-fit cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-[#EE2329] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-[#B91C1C] hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#EE2329] motion-reduce:transform-none  sm:col-span-2"
+      class="relative isolate inline-flex min-h-11 w-fit cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-[#EE2329] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-[#B91C1C] hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#EE2329] disabled:cursor-wait disabled:opacity-70 motion-reduce:transform-none sm:col-span-2"
       type="submit"
+      :disabled="isSubmitting"
     >
-      <Send :size="17" aria-hidden="true" />
-      {{ dictionary.homeFoundation.inquiry.submit }}
+      <LoaderCircle v-if="isSubmitting" class="animate-spin" :size="17" aria-hidden="true" />
+      <Send v-else :size="17" aria-hidden="true" />
+      {{ isSubmitting ? copy.sending : copy.submit }}
     </button>
 
     <p class="text-xs leading-4 text-slate-500 sm:col-span-2">
       {{ dictionary.homeFoundation.inquiry.formNotice }}
     </p>
-    <p v-if="submitted" class="text-sm leading-5 text-slate-700 sm:col-span-2" role="status">
-      {{ dictionary.homeFoundation.inquiry.notConnected }}
+    <p v-if="isSubmitting || statusMessage" class="text-sm leading-5 sm:col-span-2" :class="statusType === 'success' ? 'text-emerald-700' : statusType === 'error' ? 'text-[#B91C1C]' : 'text-slate-700'" role="status" aria-live="polite">
+      {{ isSubmitting ? copy.sending : statusMessage }}
     </p>
   </form>
 </template>

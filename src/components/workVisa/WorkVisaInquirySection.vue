@@ -1,16 +1,19 @@
 <script setup>
 import { computed, ref } from 'vue'
-import { ArrowRight, FileCheck2, Globe, Handshake, Headset, LayoutGrid, Mail, MessageCircle, Phone, Send, UserRound } from '@lucide/vue'
+import { ArrowDown, ArrowRight, FileCheck2, Globe, Handshake, Headset, LayoutGrid, LoaderCircle, Mail, MessageCircle, Phone, UserRound } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
 import { headerContact } from '../../data/contact'
 import { usePageContent } from '../../composables/usePageContent'
+import { sendWeb3Form } from '../../services/web3forms'
 import ServiceSelect from '../common/ServiceSelect.vue'
 import backgroundImage from '../../assets/images/backgrounds/Sky Blue World Map Background.webp'
 import backgroundImageMobile from '../../assets/images/backgrounds/Sky Blue World Map Background-mobile.webp'
 
 const { dictionary, locale } = usePageContent()
 const copy = computed(() => dictionary.value.workVisaPage)
-const submitted = ref(false)
+const isSubmitting = ref(false)
+const statusType = ref('')
+const statusMessage = ref('')
 const selectedService = ref('')
 const openFaq = ref(0)
 
@@ -34,6 +37,14 @@ const serviceOptions = computed(() => services.map((service) => ({
   label: copy.value[service.key],
 })))
 
+const inquiryErrorMessages = {
+  configuration: 'inquiryConfigurationError',
+  network: 'inquiryNetworkError',
+  rate_limit: 'inquiryRateLimitError',
+  invalid_response: 'inquirySubmissionError',
+  submission: 'inquirySubmissionError',
+}
+
 const inquiryFaqs = [
   { question: 'inquiryFaqTypesQuestion', answer: 'inquiryFaqTypesAnswer' },
   { question: 'inquiryFaqCountriesQuestion', answer: 'inquiryFaqCountriesAnswer' },
@@ -42,8 +53,31 @@ const inquiryFaqs = [
   { question: 'inquiryFaqDocumentsQuestion', answer: 'inquiryFaqDocumentsAnswer' },
 ]
 
-function submitInquiry() {
-  submitted.value = true
+async function submitInquiry(event) {
+  if (isSubmitting.value) return
+
+  const form = event.currentTarget
+  const fields = Object.fromEntries(new FormData(form).entries())
+  isSubmitting.value = true
+  statusType.value = ''
+  statusMessage.value = ''
+
+  try {
+    await sendWeb3Form({
+      ...fields,
+      subject: 'New Work Visa Inquiry - EK International',
+      form_type: 'Work Visa Inquiry',
+    })
+    form.reset()
+    selectedService.value = ''
+    statusType.value = 'success'
+    statusMessage.value = copy.value.inquirySuccess
+  } catch (error) {
+    statusType.value = 'error'
+    statusMessage.value = copy.value[inquiryErrorMessages[error?.code] ?? 'inquirySubmissionError']
+  } finally {
+    isSubmitting.value = false
+  }
 }
 </script>
 
@@ -77,6 +111,7 @@ function submitInquiry() {
       <div v-reveal class="mt-7 rounded-2xl border border-blue-200 bg-white/90 p-4 shadow-sm backdrop-blur-sm sm:mt-8 sm:p-6 lg:p-8">
         <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
           <form class="min-w-0 lg:border-r lg:border-blue-200 lg:pr-8" @submit.prevent="submitInquiry">
+            <input class="hidden" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <h3 class="text-xl font-bold tracking-tight text-[#101F4F] sm:text-2xl">{{ copy.inquiryFormTitle }}</h3>
             <div class="mt-4 grid gap-3 sm:grid-cols-2 sm:gap-4">
               <label class="relative block">
@@ -108,10 +143,12 @@ function submitInquiry() {
                 <textarea required name="message" rows="3" class="min-h-12 w-full resize-y rounded-xl border border-blue-200 bg-white/80 py-3 pl-12 pr-4 text-sm text-[#101F4F] placeholder:text-[#243E61] focus:border-[#313493] focus:outline-none focus:ring-2 focus:ring-[#313493]/20 sm:h-full" :placeholder="copy.inquiryMessage"></textarea>
               </label>
               <div class="sm:col-span-2">
-                <button type="submit" class="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-[#EE2329] px-6 py-3 text-base font-bold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#B91C1C] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#EE2329] active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none sm:w-auto sm:min-w-56">
-                  {{ copy.inquirySubmit }} <ArrowRight :size="21" aria-hidden="true" />
+                <button type="submit" :disabled="isSubmitting" class="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-[#EE2329] px-6 py-3 text-base font-bold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#B91C1C] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#EE2329] active:translate-y-0 disabled:cursor-wait disabled:opacity-70 motion-reduce:transform-none motion-reduce:transition-none sm:w-auto sm:min-w-56">
+                  {{ isSubmitting ? copy.inquirySending : copy.inquirySubmit }}
+                  <LoaderCircle v-if="isSubmitting" class="animate-spin" :size="21" aria-hidden="true" />
+                  <ArrowRight v-else :size="21" aria-hidden="true" />
                 </button>
-                <p v-if="submitted" class="mt-3 text-sm leading-5 text-[#243E61]" role="status">{{ copy.inquiryNotConnected }}</p>
+                <p v-if="isSubmitting || statusMessage" class="mt-3 text-sm leading-5" :class="statusType === 'success' ? 'text-emerald-700' : statusType === 'error' ? 'text-[#B91C1C]' : 'text-[#243E61]'" role="status" aria-live="polite">{{ isSubmitting ? copy.inquirySending : statusMessage }}</p>
               </div>
             </div>
           </form>

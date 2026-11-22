@@ -119,6 +119,7 @@ function isActive(item) {
   if (item.id === "more") {
     return (
       route.name === `${locale.value}-destinations` ||
+      route.name === `${locale.value}-gallery` ||
       (route.name === `${locale.value}-home` && ["#destinations", "#faq", "#gallery"].includes(route.hash))
     );
   }

@@ -10,11 +10,12 @@ const props = defineProps({
 const { dictionary } = usePageContent()
 const copy = computed(() => dictionary.value.homeFoundation.team)
 const name = computed(() => copy.value[props.member.nameKey])
-const phoneLabel = computed(() =>
-  copy.value.callTeamMember
+const phones = computed(() => props.member.phones ?? (props.member.phone ? [props.member.phone] : []))
+function phoneLabel(phone) {
+  return copy.value.callTeamMember
     .replace('{name}', name.value)
-    .replace('{phone}', props.member.phone.display),
-)
+    .replace('{phone}', phone.display)
+}
 </script>
 
 <template>
@@ -26,9 +27,9 @@ const phoneLabel = computed(() =>
       <p v-reveal class="min-h-5 text-xs font-medium uppercase leading-5 tracking-wide text-[#EE2329] delay-100 sm:text-sm">{{ copy[member.roleKey] }}</p>
       <h3 v-reveal class="mt-4 whitespace-nowrap text-[clamp(0.875rem,1.45vw,1.5rem)] font-semibold uppercase leading-snug text-[#173F68] delay-200 sm:mt-5">{{ name }}</h3>
       <p v-reveal class="mt-5 text-sm leading-[1.55] text-slate-700 delay-300 sm:mt-6 sm:text-base">{{ copy[member.descriptionKey] }}</p>
-      <a v-if="member.phone" v-reveal class="mt-4 inline-flex max-w-full items-center gap-2 rounded-sm text-sm font-medium text-[#313493] transition-colors hover:text-[#EE2329] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EE2329]" :href="member.phone.href" :aria-label="phoneLabel">
+      <a v-for="(phone, index) in phones" :key="phone.href" v-reveal class="mt-4 flex max-w-full items-center gap-2 rounded-sm text-sm font-medium text-[#313493] transition-colors hover:text-[#EE2329] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EE2329]" :class="{ 'mt-2': index > 0 }" :href="phone.href" :aria-label="phoneLabel(phone)">
         <Phone :size="16" aria-hidden="true" />
-        <span>{{ member.phone.display }}</span>
+        <span>{{ phone.display }}</span>
       </a>
     </div>
   </article>

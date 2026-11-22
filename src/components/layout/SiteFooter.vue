@@ -1,5 +1,5 @@
 <script setup>
-import { ArrowRight, BriefcaseBusiness, Clock3, ContactRound, IdCard, Mail, MapPin, Mosque, Phone, Plane, UsersRound } from '@lucide/vue'
+import { ArrowRight, BriefcaseBusiness, Clock3, ContactRound, IdCard, LoaderCircle, Mail, MapPin, Mosque, Phone, Plane, Send, UsersRound } from '@lucide/vue'
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import footerLogo from '../../assets/images/logo/logo-white-bg.webp'
@@ -7,9 +7,12 @@ import { headerContact, officeLocations, socialPlatforms } from '../../data/cont
 import { footerQuickNavigation } from '../../data/navigation'
 import services from '../../data/services'
 import { usePageContent } from '../../composables/usePageContent'
+import { sendWeb3Form } from '../../services/web3forms'
 
 const { dictionary, locale } = usePageContent()
-const newsletterSubmitted = ref(false)
+const newsletterSubmitting = ref(false)
+const newsletterStatusType = ref('')
+const newsletterStatusMessage = ref('')
 const footerSocials = ['facebook', 'instagram', 'youtube', 'linkedin'].map((id) =>
   socialPlatforms.find((platform) => platform.id === id),
 )
@@ -23,6 +26,41 @@ const serviceIcons = {
   airTicket: Plane,
   umrah: Mosque,
   hajj: UsersRound,
+}
+
+const newsletterErrorMessages = {
+  configuration: 'newsletterConfigurationError',
+  network: 'newsletterNetworkError',
+  rate_limit: 'newsletterRateLimitError',
+  invalid_response: 'newsletterError',
+  submission: 'newsletterError',
+}
+
+async function submitNewsletter(event) {
+  if (newsletterSubmitting.value) return
+
+  const form = event.currentTarget
+  const fields = Object.fromEntries(new FormData(form).entries())
+  newsletterSubmitting.value = true
+  newsletterStatusType.value = ''
+  newsletterStatusMessage.value = ''
+
+  try {
+    await sendWeb3Form({
+      ...fields,
+      subject: 'New Newsletter Subscription - EK International',
+      form_type: 'Newsletter Subscription',
+    })
+    form.reset()
+    newsletterStatusType.value = 'success'
+    newsletterStatusMessage.value = footer().newsletterSuccess
+  } catch (error) {
+    newsletterStatusType.value = 'error'
+    const errorKey = newsletterErrorMessages[error?.code] ?? 'newsletterError'
+    newsletterStatusMessage.value = footer()[errorKey]
+  } finally {
+    newsletterSubmitting.value = false
+  }
 }
 </script>
 
@@ -118,13 +156,18 @@ const serviceIcons = {
           <h2 id="footer-newsletter-title" class="text-base font-semibold text-white sm:text-lg">{{ footer().newsletterTitle }}</h2>
           <p class="mt-1 text-sm text-white/75">{{ footer().newsletterIntro }}</p>
         </div>
-        <form class="flex w-full max-w-xl flex-col gap-2 sm:flex-row" @submit.prevent="newsletterSubmitted = true">
+        <form class="flex w-full max-w-xl flex-col gap-2 sm:flex-row" @submit.prevent="submitNewsletter">
+          <input class="hidden" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <label class="sr-only" for="footer-newsletter-email">{{ footer().newsletterEmailLabel }}</label>
           <input id="footer-newsletter-email" class="min-h-12 min-w-0 flex-1 rounded-full border border-white/25 bg-white/10 px-5 text-sm text-white outline-none placeholder:text-white/60 focus-visible:ring-2 focus-visible:ring-[#EE2329]" type="email" name="email" autocomplete="email" :placeholder="footer().newsletterEmailPlaceholder" required />
-          <button class="inline-flex min-h-12 cursor-pointer items-center justify-center rounded-full bg-[#EE2329] px-7 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#B91C1C] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white motion-reduce:transform-none motion-reduce:transition-none" type="submit">{{ footer().newsletterButton }}</button>
+          <button class="inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-full bg-[#EE2329] px-7 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#B91C1C] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white disabled:cursor-wait disabled:opacity-70 motion-reduce:transform-none motion-reduce:transition-none" type="submit" :disabled="newsletterSubmitting">
+            <LoaderCircle v-if="newsletterSubmitting" class="animate-spin" :size="16" aria-hidden="true" />
+            <Send v-else :size="16" aria-hidden="true" />
+            {{ newsletterSubmitting ? footer().newsletterSending : footer().newsletterButton }}
+          </button>
         </form>
       </div>
-      <p v-if="newsletterSubmitted" class="mx-auto mt-2 max-w-[1310px] 2xl:max-w-[1440px] min-[1920px]:max-w-[1600px] min-[2560px]:max-w-[1920px] text-xs text-white/80" role="status">{{ footer().newsletterNotConnected }}</p>
+      <p v-if="newsletterSubmitting || newsletterStatusMessage" class="mx-auto mt-2 max-w-[1310px] 2xl:max-w-[1440px] min-[1920px]:max-w-[1600px] min-[2560px]:max-w-[1920px] text-xs" :class="newsletterStatusType === 'success' ? 'text-emerald-200' : newsletterStatusType === 'error' ? 'text-red-200' : 'text-white/80'" role="status" aria-live="polite">{{ newsletterSubmitting ? footer().newsletterSending : newsletterStatusMessage }}</p>
     </section>
 
     <div class="bg-[#010300] px-4 py-4 text-white sm:px-6 lg:px-8">
