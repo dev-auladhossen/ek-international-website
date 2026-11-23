@@ -4,8 +4,8 @@ import { RouterLink } from 'vue-router'
 import RevealHeading from '../common/RevealHeading.vue'
 import sectionBackground from '../../assets/images/backgrounds/ethereal-blue-wave-panorama.webp'
 import sectionBackgroundMobile from '../../assets/images/backgrounds/ethereal-blue-wave-panorama-mobile.webp'
-import officeReception from '../../assets/images/optimized/office/ek-modern-reception.webp'
-import officeReceptionMobile from '../../assets/images/optimized/office/ek-modern-reception-mobile.webp'
+import officeTeam from '../../assets/images/gallery/modern-travel-agency-office-team.webp'
+import officeTeamMobile from '../../assets/images/gallery/modern-travel-agency-office-team-mobile.webp'
 import aboutFeatures from '../../data/aboutFeatures'
 import { usePageContent } from '../../composables/usePageContent'
 
@@ -49,8 +49,8 @@ const featureIcons = {
       <figure v-reveal:image-left class="group relative overflow-hidden rounded-xl shadow-sm">
         <img
           class="aspect-[16/10] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02] motion-reduce:transition-none"
-          :src="officeReception"
-          :srcset="`${officeReceptionMobile} 800w, ${officeReception} 1600w`"
+          :src="officeTeam"
+          :srcset="`${officeTeamMobile} 800w, ${officeTeam} 1600w`"
           sizes="(max-width: 1023px) 92vw, 34vw"
           :alt="dictionary.homeFoundation.about.imageAlt"
           width="1672"

@@ -17,9 +17,22 @@ function slugify(value) {
     .replace(/^-|-$/g, '')
 }
 
+const optimizedFiles = []
 for (const file of files) {
   const source = path.join(galleryRoot, file)
   const name = slugify(file)
+  const desktopOutput = path.join(galleryRoot, `${name}.webp`)
+  const mobileOutput = path.join(galleryRoot, `${name}-mobile.webp`)
+  const outputsAlreadyExist = await Promise.all([desktopOutput, mobileOutput].map(async (output) => {
+    try {
+      await fs.access(output)
+      return true
+    } catch {
+      return false
+    }
+  }))
+  if (outputsAlreadyExist.every(Boolean)) continue
+
   for (const [suffix, width] of [['', 1200], ['-mobile', 700]]) {
     const output = path.join(galleryRoot, `${name}${suffix}.webp`)
     await sharp(source)
@@ -28,7 +41,7 @@ for (const file of files) {
       .webp({ quality: 82, effort: 6 })
       .toFile(output)
   }
+  optimizedFiles.push(file)
 }
 
-const outputFiles = files.length * 2
-console.log(`Optimized ${files.length} gallery photos into ${outputFiles} WebP assets.`)
+console.log(`Optimized ${optimizedFiles.length} new gallery photos into ${optimizedFiles.length * 2} responsive WebP assets.`)

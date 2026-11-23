@@ -22,6 +22,12 @@ import airlineCrew from '../assets/images/gallery/professional-airline-crew-port
 import airlineCrewMobile from '../assets/images/gallery/professional-airline-crew-portrait-mobile.webp'
 import yellowTeam from '../assets/images/gallery/yellow-polo-team-in-a-modern-office.webp'
 import yellowTeamMobile from '../assets/images/gallery/yellow-polo-team-in-a-modern-office-mobile.webp'
+import southKoreaAgreement from '../assets/images/gallery/south-korea-agreement-signing-ceremony.webp'
+import southKoreaAgreementMobile from '../assets/images/gallery/south-korea-agreement-signing-ceremony-mobile.webp'
+import cordialHandshake from '../assets/images/gallery/cordial-handshake-before-a-world-travel-mural.webp'
+import cordialHandshakeMobile from '../assets/images/gallery/cordial-handshake-before-a-world-travel-mural-mobile.webp'
+import travelOfficeTeam from '../assets/images/gallery/team-in-travel-themed-office.webp'
+import travelOfficeTeamMobile from '../assets/images/gallery/team-in-travel-themed-office-mobile.webp'
 
 export const galleryPhotos = [
   {
@@ -81,7 +87,7 @@ export const galleryPhotos = [
   },
   {
     id: 'magenta-team',
-    category: 'teams',
+    category: 'training',
     captionKey: 'magentaTeamCaption',
     imageAltKey: 'magentaTeamAlt',
     image: magentaTeam,
@@ -147,13 +153,46 @@ export const galleryPhotos = [
   },
   {
     id: 'yellow-team',
-    category: 'teams',
+    category: 'training',
     captionKey: 'yellowTeamCaption',
     imageAltKey: 'yellowTeamAlt',
     image: yellowTeam,
     imageMobile: yellowTeamMobile,
     width: 1200,
     height: 900,
+    mobileWidth: 700,
+  },
+  {
+    id: 'south-korea-agreement',
+    category: 'travel',
+    captionKey: 'southKoreaAgreementCaption',
+    imageAltKey: 'southKoreaAgreementAlt',
+    image: southKoreaAgreement,
+    imageMobile: southKoreaAgreementMobile,
+    width: 1200,
+    height: 900,
+    mobileWidth: 700,
+  },
+  {
+    id: 'travel-office-handshake',
+    category: 'teams',
+    captionKey: 'cordialHandshakeCaption',
+    imageAltKey: 'cordialHandshakeAlt',
+    image: cordialHandshake,
+    imageMobile: cordialHandshakeMobile,
+    width: 1100,
+    height: 1430,
+    mobileWidth: 700,
+  },
+  {
+    id: 'travel-office-team',
+    category: 'teams',
+    captionKey: 'travelOfficeTeamCaption',
+    imageAltKey: 'travelOfficeTeamAlt',
+    image: travelOfficeTeam,
+    imageMobile: travelOfficeTeamMobile,
+    width: 1200,
+    height: 903,
     mobileWidth: 700,
   },
 ]

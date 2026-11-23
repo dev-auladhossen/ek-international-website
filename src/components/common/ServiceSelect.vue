@@ -9,6 +9,9 @@ const props = defineProps({
   label: { type: String, required: true },
   name: { type: String, required: true },
   required: { type: Boolean, default: false },
+  showRequiredIndicator: { type: Boolean, default: false },
+  placeholderClass: { type: String, default: 'text-[#243E61]' },
+  valueClass: { type: String, default: 'text-[#101F4F]' },
   buttonClass: { type: String, default: '' },
   menuClass: { type: String, default: '' },
   leading: { type: Object, default: null },
@@ -94,7 +97,9 @@ onBeforeUnmount(() => document.removeEventListener('pointerdown', handleDocument
       @keydown="handleKeydown"
     >
       <component :is="leading" v-if="leading" class="size-5 shrink-0" :size="20" aria-hidden="true" />
-      <span class="min-w-0 flex-1 truncate" :class="selectedOption ? 'text-[#101F4F]' : 'text-[#243E61]'">{{ selectedOption?.label ?? placeholder }}</span>
+      <span class="min-w-0 flex-1 truncate" :class="selectedOption ? valueClass : placeholderClass">
+        {{ selectedOption?.label ?? placeholder }}<span v-if="!selectedOption && showRequiredIndicator" class="ml-1 text-[#EE2329]" aria-hidden="true">*</span>
+      </span>
       <ChevronDown class="size-4 shrink-0 transition-transform duration-200" :class="isOpen ? 'rotate-180' : ''" :size="18" aria-hidden="true" />
     </button>
 

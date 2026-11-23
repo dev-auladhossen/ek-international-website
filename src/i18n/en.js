@@ -85,17 +85,162 @@ export default {
       description:
         "Contact EK International in Dhaka, Bangladesh, for overseas employment assistance, visa guidance, travel arrangements, and Hajj & Umrah services.",
     },
+    terms: {
+      title: "Terms & Conditions | EK International",
+      heading: "Terms & Conditions",
+      description:
+        "Please review the terms that apply when you use EK International’s website and request our employment, visa, travel, Hajj, or Umrah services.",
+    },
+    privacy: {
+      title: "Privacy Policy | EK International",
+      heading: "Privacy Policy",
+      description:
+        "Learn how EK International handles information you share through our website and inquiry forms.",
+    },
     notFound: {
       title: "Page Not Found | EK International",
       heading: "Page not found",
       description: "The page you requested could not be found.",
     },
   },
+  termsPage: {
+    heroEyebrow: "Important information",
+    lastUpdated: "Last updated: 23 November 2026",
+    contactTitle: "Questions about these terms?",
+    contactDescription:
+      "Contact our team and we will be glad to clarify information about our services.",
+    contactEmail: "ekinternational.info@gmail.com",
+    sections: [
+      {
+        title: "Using our website",
+        paragraphs: [
+          "By using this website or contacting EK International through it, you agree to these terms. Website information is general guidance and may change. An inquiry or online message does not itself create a booking, employment agreement, visa application, or service contract.",
+        ],
+      },
+      {
+        title: "Inquiries and service confirmation",
+        paragraphs: [
+          "Our team can explain available services, requirements, estimated costs, and next steps. A service is confirmed only when we provide the applicable details and confirmation in writing. Availability, prices, and requirements may change before confirmation.",
+        ],
+      },
+      {
+        title: "Overseas employment and visa assistance",
+        paragraphs: [
+          "We may assist with information, documentation coordination, and processes related to overseas employment and visas. Employers, recruitment partners, embassies, and government authorities make their own decisions. We cannot guarantee a job offer, visa approval, processing time, or other decision made by those parties.",
+        ],
+      },
+      {
+        title: "Travel, Hajj, and Umrah arrangements",
+        paragraphs: [
+          "Travel, ticketing, accommodation, and related arrangements may involve airlines, hotels, transport operators, and other providers. Their availability and terms apply to the services they provide, and details will be shared as part of the relevant arrangement.",
+        ],
+      },
+      {
+        title: "Fees, changes, and cancellations",
+        paragraphs: [
+          "Any fees, payment schedule, included services, change conditions, or cancellation and refund terms will be stated in the specific quotation, receipt, booking confirmation, or written service agreement. Please review those details before paying or confirming a service.",
+        ],
+      },
+      {
+        title: "Your responsibilities",
+        paragraphs: [
+          "Please provide complete and accurate information, respond to requests for documents promptly, and check that your passport and other travel documents are valid for your plans. You are responsible for reviewing the information and requirements shared with you and for following instructions from relevant authorities and providers.",
+        ],
+      },
+      {
+        title: "External websites and updates",
+        paragraphs: [
+          "Our website may link to third-party websites for convenience. We do not control their content or terms. We may update these terms from time to time; the current version will appear on this page with its updated date.",
+        ],
+      },
+      {
+        title: "Contact us",
+        paragraphs: [
+          "For questions about these Terms & Conditions or an EK International service, contact us using the email below.",
+        ],
+      },
+    ],
+  },
+  privacyPage: {
+    heroEyebrow: "Your information matters",
+    lastUpdated: "Last updated: 23 November 2026",
+    contactTitle: "Contact us about privacy",
+    contactDescription:
+      "For a privacy question or a request about information you have shared with us, email our team.",
+    contactEmail: "ekinternational.info@gmail.com",
+    sections: [
+      {
+        title: "Information you provide",
+        paragraphs: [
+          "When you contact us through a form, we may receive your name, phone number, email address, the service you are interested in, and the message you submit. If you subscribe to updates, we receive the email address you provide.",
+        ],
+      },
+      {
+        title: "How we use information",
+        paragraphs: [
+          "We use the information you send to respond to inquiries, explain or arrange requested services, communicate with you, provide newsletter updates when requested, and operate and protect our website.",
+        ],
+      },
+      {
+        title: "Form delivery and service providers",
+        paragraphs: [
+          "Website inquiry forms use Web3Forms to deliver submissions to our team. Website hosting and delivery providers may process technical information needed to operate, secure, and troubleshoot the site. These providers handle information under their own policies.",
+        ],
+        providersIntro:
+          "You can review the providers’ privacy information here:",
+        providers: [
+          {
+            name: "Web3Forms Privacy Policy",
+            href: "https://web3forms.com/privacy",
+            description:
+              "information about Web3Forms and its handling of form submissions.",
+          },
+        ],
+      },
+      {
+        title: "When information may be shared",
+        paragraphs: [
+          "We do not offer website inquiry information for sale. We may share relevant details with service providers, employers, travel partners, or authorities when needed to respond to your request or deliver a service, or where disclosure is otherwise required. We will seek to share only information relevant to that purpose.",
+        ],
+      },
+      {
+        title: "Retention and security",
+        paragraphs: [
+          "We keep information for as long as reasonably needed to respond to you, provide or document a requested service, and meet operational or legal requirements. We use reasonable safeguards, though no website or electronic transmission can be guaranteed completely secure.",
+        ],
+      },
+      {
+        title: "Your choices",
+        paragraphs: [
+          "You may contact us to ask about, correct, or request deletion of information you have provided, subject to records we need to keep for an ongoing service or other requirements. You may also ask us to stop sending newsletter updates.",
+        ],
+      },
+      {
+        title: "Documents and sensitive information",
+        paragraphs: [
+          "Please do not send passport scans, identity documents, or other sensitive records through general website inquiry forms. If such documents are needed for a service, our team will explain an appropriate way to provide them.",
+        ],
+      },
+      {
+        title: "Cookies and external links",
+        paragraphs: [
+          "Our hosting, security, or website delivery providers may use technical storage or similar technologies to make the site work and help protect it. Links to other websites are governed by those websites’ own privacy practices; please review them directly.",
+        ],
+      },
+      {
+        title: "Changes and contact",
+        paragraphs: [
+          "We may update this policy as our website or services change. The latest version and its updated date will be shown here. Contact us at the email below if you have questions.",
+        ],
+      },
+    ],
+  },
   galleryPage: {
     eyebrow: "Moments from our work",
     collectionEyebrow: "Our Gallery",
     collectionTitle: "People, Places & Progress",
-    collectionIntro: "Browse moments from our team, office, travel services, and overseas training programmes.",
+    collectionIntro:
+      "Browse moments from our team, office, travel services, and overseas training programmes.",
     filterLabel: "Filter gallery photos by category",
     photoListLabel: "Gallery photos",
     openPhotoLabel: "View photo: {caption}",
@@ -116,29 +261,55 @@ export default {
       travel: "Travel",
     },
     airportTeamCaption: "Our team gathers before an overseas departure.",
-    airportTeamAlt: "A group of EK International team members at an airport before departure.",
-    cidbRegistrationCaption: "Workers register for Malaysia CIDB skills training.",
+    airportTeamAlt:
+      "A group of EK International team members at an airport before departure.",
+    cidbRegistrationCaption:
+      "Workers register for Malaysia CIDB skills training.",
     cidbRegistrationAlt: "Workers register at a Malaysia CIDB training tent.",
     cidbClassroomCaption: "Participants attend a CIDB training session.",
-    cidbClassroomAlt: "Workers seated in a classroom during Malaysia CIDB training.",
-    cidbCertificatesCaption: "Training participants celebrate completing their programme.",
-    cidbCertificatesAlt: "Workers hold certificates after completing Malaysia CIDB training.",
+    cidbClassroomAlt:
+      "Workers seated in a classroom during Malaysia CIDB training.",
+    cidbCertificatesCaption:
+      "Training participants celebrate completing their programme.",
+    cidbCertificatesAlt:
+      "Workers hold certificates after completing Malaysia CIDB training.",
     cidbWorkersCaption: "Workers line up at an outdoor training site.",
-    cidbWorkersAlt: "Workers stand together under a red canopy at a Malaysia training site.",
-    magentaTeamCaption: "A team portrait at the EK International office.",
-    magentaTeamAlt: "EK International staff pose together in matching magenta shirts.",
+    cidbWorkersAlt:
+      "Workers stand together under a red canopy at a Malaysia training site.",
+    magentaTeamCaption:
+      "A training batch poses together before travelling abroad for work.",
+    magentaTeamAlt:
+      "A group of workers in matching magenta shirts pose together after training for overseas work.",
     receptionCaption: "A welcoming space for travel and visa consultations.",
     receptionAlt: "The reception area of a modern international travel office.",
     agencyPortraitCaption: "A team member at work in the travel office.",
     agencyPortraitAlt: "A travel professional seated at a desk in the office.",
     agencyTeamCaption: "Our travel office team working together.",
-    agencyTeamAlt: "EK International staff gather in their travel agency office.",
+    agencyTeamAlt:
+      "EK International staff gather in their travel agency office.",
     officeCallCaption: "Supporting clients with travel arrangements.",
-    officeCallAlt: "A travel consultant speaks with a client by phone at the office.",
-    airlineCrewCaption: "A professional airline crew ready to welcome travellers.",
-    airlineCrewAlt: "A group of airline crew members standing together in uniform.",
-    yellowTeamCaption: "Colleagues celebrate together at the office.",
-    yellowTeamAlt: "A large group of EK International colleagues in yellow polo shirts.",
+    officeCallAlt:
+      "A travel consultant speaks with a client by phone at the office.",
+    airlineCrewCaption:
+      "A professional airline crew ready to welcome travellers.",
+    airlineCrewAlt:
+      "A group of airline crew members standing together in uniform.",
+    yellowTeamCaption:
+      "A worker batch gathers after training before going abroad for work.",
+    yellowTeamAlt:
+      "A group of workers in yellow polo shirts pose together after overseas work training.",
+    southKoreaAgreementCaption:
+      "Representatives gather for a South Korea employment agreement at the office.",
+    southKoreaAgreementAlt:
+      "A group poses in the EK International office in front of international travel displays.",
+    cordialHandshakeCaption:
+      "Two professionals greet each other at the travel-themed office.",
+    cordialHandshakeAlt:
+      "Two professionals shake hands in front of an international travel mural.",
+    travelOfficeTeamCaption:
+      "Our team welcomes clients at the travel-themed office.",
+    travelOfficeTeamAlt:
+      "EK International team members pose together in front of international destination displays.",
   },
   hajjUmrahPage: {
     eyebrow: "Sacred Journeys",
@@ -409,10 +580,14 @@ export default {
     inquirySubmit: "Submit Inquiry",
     inquirySending: "Sending inquiry...",
     inquirySuccess: "Thanks for your inquiry. Our team will contact you soon.",
-    inquiryConfigurationError: "This form is temporarily unavailable. Please contact us by phone or email.",
-    inquiryNetworkError: "We couldn't connect. Check your internet connection and try again.",
-    inquiryRateLimitError: "Too many attempts were made. Please wait a moment and try again.",
-    inquirySubmissionError: "We couldn't send your inquiry. Your details are still here; please try again.",
+    inquiryConfigurationError:
+      "This form is temporarily unavailable. Please contact us by phone or email.",
+    inquiryNetworkError:
+      "We couldn't connect. Check your internet connection and try again.",
+    inquiryRateLimitError:
+      "Too many attempts were made. Please wait a moment and try again.",
+    inquirySubmissionError:
+      "We couldn't send your inquiry. Your details are still here; please try again.",
     inquiryQuickLinksLabel: "Contact EK International",
     inquiryCall: "Call Us Today",
     inquiryWhatsApp: "Chat on WhatsApp",
@@ -573,19 +748,51 @@ export default {
           secondaryCta: "Contact Us",
         },
         {
-          eyebrow: "Professional Guidance",
-          heading: "Your Journey Starts with the Right Guidance",
+          eyebrow: "Skills & Training",
+          heading: "Preparing Workers with Practical Training",
           description:
-            "Get guidance on application requirements, documentation, and the next steps toward your international opportunities.",
-          primaryCta: "Our Services",
+            "Participants attend a CIDB Malaysia training session as part of preparation for overseas work.",
+          primaryCta: "Explore Work Visa",
           secondaryCta: "Contact Us",
         },
         {
-          eyebrow: "Travel & Visa Assistance",
-          heading: "Making Your International Journey Easier",
+          eyebrow: "Travel Services",
+          heading: "Professional Airline Crew, Ready to Welcome You",
           description:
-            "Explore travel and visa assistance for your overseas journey with support from EK International.",
+            "Discover travel support and arrangements from the EK International team.",
           primaryCta: "Explore Our Services",
+          secondaryCta: "Contact Us",
+        },
+        {
+          eyebrow: "South Korea Opportunities",
+          heading: "South Korea Employment Agreement",
+          description:
+            "Representatives gather to mark an employment agreement connected with opportunities in South Korea.",
+          primaryCta: "Explore Work Visa",
+          secondaryCta: "Contact Us",
+        },
+        {
+          eyebrow: "Personalized Guidance",
+          heading: "Together Before the Journey Begins",
+          description:
+            "The EK International team gathers at the airport before an overseas departure.",
+          primaryCta: "Explore Our Services",
+          secondaryCta: "Contact Us",
+        },
+        {
+          eyebrow: "Meet Our Team",
+          heading: "People Working Together for Your Journey",
+          description:
+            "Meet the EK International team supporting clients with travel and visa services.",
+          primaryCta: "Meet Our Team",
+          secondaryCta: "Contact Us",
+        },
+        {
+          eyebrow: "Overseas Worker Training",
+          heading: "A Training Batch Preparing for Work Abroad",
+          description:
+            "Workers gather after training before travelling abroad for employment.",
+          primaryCta: "Explore Work Visa",
           secondaryCta: "Contact Us",
         },
       ],
@@ -597,6 +804,18 @@ export default {
       consultationMeetingAlt: "An international travel office reception",
       travelOfficeBannerAlt:
         "A consultation meeting about global career opportunities",
+      southKoreaAgreementAlt:
+        "Representatives at a South Korea employment agreement signing",
+      cidbClassroomAlt: "Participants attending a CIDB Malaysia training class",
+      airlineCrewAlt: "A professional airline crew portrait",
+      cordialHandshakeAlt:
+        "Two professionals greeting each other beside a world travel mural",
+      airportTeamAlt:
+        "EK International team members gathered at the airport before departure",
+      agencyTeamAlt:
+        "EK International staff gathered in a modern travel office",
+      yellowTeamAlt:
+        "A batch of workers in yellow polo shirts after overseas job training",
       controlsLabel: "Carousel controls",
       previous: "Previous slide",
       next: "Next slide",
@@ -665,7 +884,7 @@ export default {
       supportingDescription:
         "Our services include work visa assistance, travel arrangements, documentation guidance, and dedicated support.",
       imageAlt:
-        "Illustrative concept of a modern EK International reception area.",
+        "EK International team gathered in a modern travel agency office.",
       cta: "Learn More About Us",
       missionTitle: "Our Mission",
       missionDescription:
@@ -764,11 +983,16 @@ export default {
       messageLabel: "Your Message",
       submit: "Send Inquiry",
       sending: "Sending...",
-      successMessage: "Thanks for your inquiry. Our team will contact you soon.",
-      configurationError: "The form is temporarily unavailable. Please contact us by phone or email.",
-      networkError: "We couldn't connect. Check your internet connection and try again.",
-      rateLimitError: "Too many attempts were made. Please wait a moment and try again.",
-      submissionError: "We couldn't send your inquiry. Your details are still here; please try again.",
+      successMessage:
+        "Thanks for your inquiry. Our team will contact you soon.",
+      configurationError:
+        "The form is temporarily unavailable. Please contact us by phone or email.",
+      networkError:
+        "We couldn't connect. Check your internet connection and try again.",
+      rateLimitError:
+        "Too many attempts were made. Please wait a moment and try again.",
+      submissionError:
+        "We couldn't send your inquiry. Your details are still here; please try again.",
     },
     contact: {
       phone: "Phone",
@@ -826,6 +1050,8 @@ export default {
       faq: "FAQ",
       contact: "Contact",
       contactUs: "Contact Us",
+      termsAndConditions: "Terms & Conditions",
+      privacyPolicy: "Privacy Policy",
     },
     footer: {
       brandLine: "Your Global Journey Starts Here",
@@ -844,11 +1070,16 @@ export default {
       newsletterSubmit: "Submit email address",
       newsletterButton: "Subscribe",
       newsletterSending: "Subscribing...",
-      newsletterSuccess: "Thanks for subscribing. Your email has been received.",
-      newsletterConfigurationError: "Sign-up is temporarily unavailable. Please try again later.",
-      newsletterNetworkError: "We couldn't connect. Check your internet connection and try again.",
-      newsletterRateLimitError: "Too many attempts were made. Please wait a moment and try again.",
-      newsletterError: "We couldn't submit your email. It is still in the field; please try again.",
+      newsletterSuccess:
+        "Thanks for subscribing. Your email has been received.",
+      newsletterConfigurationError:
+        "Sign-up is temporarily unavailable. Please try again later.",
+      newsletterNetworkError:
+        "We couldn't connect. Check your internet connection and try again.",
+      newsletterRateLimitError:
+        "Too many attempts were made. Please wait a moment and try again.",
+      newsletterError:
+        "We couldn't submit your email. It is still in the field; please try again.",
       bottomNavLabel: "Footer links",
       copyright: "Copyright © {year} EK International. All Rights Reserved.",
     },

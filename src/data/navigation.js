@@ -34,8 +34,8 @@ export const footerQuickNavigation = [
   { id: 'workVisa', routeKey: 'work-visa', labelKey: 'workVisaHeader' },
   { id: 'hajjUmrah', routeKey: 'hajj-umrah', labelKey: 'hajjUmrah' },
   { id: 'team', routeKey: 'team', labelKey: 'team' },
-  { id: 'destinations', routeKey: 'destinations', labelKey: 'destinations' },
-  { id: 'gallery', routeKey: 'gallery', labelKey: 'gallery' },
+  { id: 'terms', routeKey: 'terms', labelKey: 'termsAndConditions' },
+  { id: 'privacy', routeKey: 'privacy', labelKey: 'privacyPolicy' },
 ]
 
 export const footerBottomNavigation = [

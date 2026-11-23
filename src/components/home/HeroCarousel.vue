@@ -37,7 +37,7 @@ function scheduleAutoplay() {
   autoplayTimer = window.setTimeout(() => {
     activeIndex.value = (activeIndex.value + 1) % heroSlides.length
     scheduleAutoplay()
-  }, 3000)
+  }, 2500)
 }
 
 function goToSlide(index) {

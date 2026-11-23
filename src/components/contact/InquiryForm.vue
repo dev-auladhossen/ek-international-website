@@ -12,9 +12,12 @@ const statusMessage = ref('')
 const copy = computed(() => dictionary.value.homeFoundation.inquiry)
 const selectedService = ref('')
 const serviceOptions = computed(() => [
-  { value: 'work-visa', label: copy.value.workVisaOption },
-  { value: 'hajj-umrah', label: copy.value.hajjUmrahOption },
-  { value: 'other', label: copy.value.otherOption },
+  { value: 'Overseas Employment', label: dictionary.value.workVisaPage.serviceOverseasEmployment },
+  { value: 'Passport Processing', label: dictionary.value.workVisaPage.servicePassportProcessing },
+  { value: 'Travel Visa Processing', label: dictionary.value.workVisaPage.serviceTravelVisaProcessing },
+  { value: 'Air Ticket Booking', label: dictionary.value.workVisaPage.serviceAirTicketBooking },
+  { value: 'Umrah Visa Processing', label: dictionary.value.workVisaPage.serviceUmrahVisaProcessing },
+  { value: 'Hajj Registration', label: dictionary.value.workVisaPage.serviceHajjRegistration },
 ])
 
 const errorMessages = {
@@ -106,11 +109,14 @@ async function submitInquiry(event) {
         id="home-inquiry-service"
         v-model="selectedService"
         :options="serviceOptions"
-        :placeholder="`${dictionary.homeFoundation.inquiry.serviceLabel} *`"
+        :placeholder="dictionary.homeFoundation.inquiry.serviceLabel"
         :label="dictionary.homeFoundation.inquiry.serviceLabel"
         name="service"
         :leading="LayoutGrid"
         :required="true"
+        :show-required-indicator="true"
+        placeholder-class="text-[#313493]"
+        value-class="text-[#313493]"
         button-class="!min-h-11 !rounded-lg !border-slate-300 !bg-white !px-3 !pr-3 !text-[#313493]"
       />
     </div>
