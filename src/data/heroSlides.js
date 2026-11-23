@@ -1,7 +1,9 @@
 import professionalOfficeHandshake from '../assets/images/hero/Professional Office Handshake Lounge.webp'
 import professionalOfficeHandshakeMobile from '../assets/images/hero/Professional Office Handshake Lounge-mobile.webp'
-import southKoreaAgreement from '../assets/images/gallery/south-korea-agreement-signing-ceremony.webp'
-import southKoreaAgreementMobile from '../assets/images/gallery/south-korea-agreement-signing-ceremony-mobile.webp'
+import globalCareerConsultation from '../assets/images/hero/Global Career Consultation Meeting.webp'
+import globalCareerConsultationMobile from '../assets/images/hero/Global Career Consultation Meeting-mobile.webp'
+import internationalTravelReception from '../assets/images/hero/International Travel Office Reception.webp'
+import internationalTravelReceptionMobile from '../assets/images/hero/International Travel Office Reception-mobile.webp'
 import airlineCrew from '../assets/images/gallery/professional-airline-crew-portrait.webp'
 import airlineCrewMobile from '../assets/images/gallery/professional-airline-crew-portrait-mobile.webp'
 import cidbClassroom from '../assets/images/gallery/cidb-malaysia-training-classroom.webp'
@@ -26,15 +28,16 @@ export default [
     primaryRouteKey: 'work-visa',
   },
   {
-    id: 'cidb-malaysia-training-classroom',
-    image: cidbClassroom,
-    imageMobile: cidbClassroomMobile,
-    altKey: 'cidbClassroomAlt',
+    id: 'global-career-consultation',
+    image: globalCareerConsultation,
+    imageMobile: globalCareerConsultationMobile,
+    altKey: 'travelOfficeBannerAlt',
     imagePosition: 'object-center',
     copyIndex: 1,
-    width: 1200,
-    height: 900,
-    primaryRouteKey: 'work-visa',
+    width: 1600,
+    height: 800,
+    primaryRouteKey: 'home',
+    primaryHash: '#services',
   },
   {
     id: 'professional-airline-crew',
@@ -49,21 +52,22 @@ export default [
     primaryHash: '#services',
   },
   {
-    id: 'south-korea-agreement-feature',
-    image: southKoreaAgreement,
-    imageMobile: southKoreaAgreementMobile,
-    altKey: 'southKoreaAgreementAlt',
-    imagePosition: 'object-center',
+    id: 'international-travel-office-reception',
+    image: internationalTravelReception,
+    imageMobile: internationalTravelReceptionMobile,
+    altKey: 'consultationMeetingAlt',
+    imagePosition: 'object-[68%_center] sm:object-center',
     copyIndex: 3,
-    width: 1200,
-    height: 900,
-    primaryRouteKey: 'work-visa',
+    width: 1600,
+    height: 533,
+    primaryRouteKey: 'home',
+    primaryHash: '#services',
   },
   {
-    id: 'airport-team-departure',
-    image: airportTeam,
-    imageMobile: airportTeamMobile,
-    altKey: 'airportTeamAlt',
+    id: 'cidb-malaysia-training-classroom',
+    image: cidbClassroom,
+    imageMobile: cidbClassroomMobile,
+    altKey: 'cidbClassroomAlt',
     imagePosition: 'object-center',
     copyIndex: 4,
     width: 1200,
@@ -72,15 +76,16 @@ export default [
     primaryHash: '#services',
   },
   {
-    id: 'modern-travel-agency-office-team',
-    image: travelAgencyTeam,
-    imageMobile: travelAgencyTeamMobile,
-    altKey: 'agencyTeamAlt',
+    id: 'airport-team-departure-followup',
+    image: airportTeam,
+    imageMobile: airportTeamMobile,
+    altKey: 'airportTeamAlt',
     imagePosition: 'object-center',
     copyIndex: 5,
     width: 1200,
-    height: 904,
-    primaryRouteKey: 'team',
+    height: 900,
+    primaryRouteKey: 'home',
+    primaryHash: '#services',
   },
   {
     id: 'yellow-polo-team-modern-office',

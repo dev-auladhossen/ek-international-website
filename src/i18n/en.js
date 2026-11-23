@@ -748,11 +748,11 @@ export default {
           secondaryCta: "Contact Us",
         },
         {
-          eyebrow: "Skills & Training",
-          heading: "Preparing Workers with Practical Training",
+          eyebrow: "Global Career Guidance",
+          heading: "Your Journey Starts with the Right Guidance",
           description:
-            "Participants attend a CIDB Malaysia training session as part of preparation for overseas work.",
-          primaryCta: "Explore Work Visa",
+            "Get guidance on application requirements, documentation, and the next steps toward your international opportunities.",
+          primaryCta: "Explore Our Services",
           secondaryCta: "Contact Us",
         },
         {
@@ -764,27 +764,27 @@ export default {
           secondaryCta: "Contact Us",
         },
         {
-          eyebrow: "South Korea Opportunities",
-          heading: "South Korea Employment Agreement",
+          eyebrow: "Travel & Visa Assistance",
+          heading: "Making Your International Journey Easier",
           description:
-            "Representatives gather to mark an employment agreement connected with opportunities in South Korea.",
-          primaryCta: "Explore Work Visa",
-          secondaryCta: "Contact Us",
-        },
-        {
-          eyebrow: "Personalized Guidance",
-          heading: "Together Before the Journey Begins",
-          description:
-            "The EK International team gathers at the airport before an overseas departure.",
+            "Explore travel and visa assistance for your overseas journey with support from EK International.",
           primaryCta: "Explore Our Services",
           secondaryCta: "Contact Us",
         },
         {
-          eyebrow: "Meet Our Team",
-          heading: "People Working Together for Your Journey",
+          eyebrow: "Skills & Training",
+          heading: "Preparing Workers with Practical Training",
           description:
-            "Meet the EK International team supporting clients with travel and visa services.",
-          primaryCta: "Meet Our Team",
+            "Participants attend a CIDB Malaysia training session as part of preparation for overseas work.",
+          primaryCta: "Explore Work Visa",
+          secondaryCta: "Contact Us",
+        },
+        {
+          eyebrow: "Overseas Departure",
+          heading: "Together Before the Journey Begins",
+          description:
+            "The EK International team gathers at the airport before an overseas departure.",
+          primaryCta: "Explore Our Services",
           secondaryCta: "Contact Us",
         },
         {
