@@ -23,6 +23,20 @@ const isPaused = computed(
 
 let autoplayTimer
 let motionPreference
+const preloadedSlideIds = new Set()
+
+function preloadSlide(slide) {
+  if (preloadedSlideIds.has(slide.id)) return
+
+  const image = new window.Image()
+  image.decoding = 'async'
+  image.fetchPriority = 'low'
+  image.sizes = '100vw'
+  image.srcset = `${slide.imageMobile} ${slide.mobileWidth}w, ${slide.image} ${slide.width}w`
+  image.src = slide.image
+  image.addEventListener('error', () => preloadedSlideIds.delete(slide.id), { once: true })
+  preloadedSlideIds.add(slide.id)
+}
 
 function clearAutoplay() {
   if (!autoplayTimer) return
@@ -32,6 +46,7 @@ function clearAutoplay() {
 
 function scheduleAutoplay() {
   clearAutoplay()
+  preloadSlide(heroSlides[(activeIndex.value + 1) % heroSlides.length])
   if (isPaused.value) return
 
   autoplayTimer = window.setTimeout(() => {
@@ -41,7 +56,9 @@ function scheduleAutoplay() {
 }
 
 function goToSlide(index) {
-  activeIndex.value = (index + heroSlides.length) % heroSlides.length
+  const nextIndex = (index + heroSlides.length) % heroSlides.length
+  preloadSlide(heroSlides[nextIndex])
+  activeIndex.value = nextIndex
   scheduleAutoplay()
 }
 
@@ -135,7 +152,7 @@ onBeforeUnmount(() => {
           class="absolute inset-0 size-full object-cover motion-safe:animate-hero-zoom motion-reduce:animate-none"
           :class="slide.imagePosition"
           :src="slide.image"
-          :srcset="`${slide.imageMobile} 800w, ${slide.image} 1600w`"
+          :srcset="`${slide.imageMobile} ${slide.mobileWidth}w, ${slide.image} ${slide.width}w`"
           sizes="100vw"
           :alt="dictionary.homeFoundation.carousel[slide.altKey]"
           :width="slide.width"

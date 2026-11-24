@@ -10,8 +10,6 @@ import cidbClassroom from '../assets/images/gallery/cidb-malaysia-training-class
 import cidbClassroomMobile from '../assets/images/gallery/cidb-malaysia-training-classroom-mobile.webp'
 import airportTeam from '../assets/images/gallery/airport-team-departure-group-photo.webp'
 import airportTeamMobile from '../assets/images/gallery/airport-team-departure-group-photo-mobile.webp'
-import travelAgencyTeam from '../assets/images/gallery/modern-travel-agency-office-team.webp'
-import travelAgencyTeamMobile from '../assets/images/gallery/modern-travel-agency-office-team-mobile.webp'
 import yellowPoloTeam from '../assets/images/gallery/yellow-polo-team-in-a-modern-office.webp'
 import yellowPoloTeamMobile from '../assets/images/gallery/yellow-polo-team-in-a-modern-office-mobile.webp'
 
@@ -25,6 +23,7 @@ export default [
     copyIndex: 0,
     width: 1600,
     height: 800,
+    mobileWidth: 800,
     primaryRouteKey: 'work-visa',
   },
   {
@@ -36,6 +35,7 @@ export default [
     copyIndex: 1,
     width: 1600,
     height: 800,
+    mobileWidth: 800,
     primaryRouteKey: 'home',
     primaryHash: '#services',
   },
@@ -48,6 +48,7 @@ export default [
     copyIndex: 2,
     width: 1200,
     height: 910,
+    mobileWidth: 700,
     primaryRouteKey: 'home',
     primaryHash: '#services',
   },
@@ -60,6 +61,7 @@ export default [
     copyIndex: 3,
     width: 1600,
     height: 533,
+    mobileWidth: 800,
     primaryRouteKey: 'home',
     primaryHash: '#services',
   },
@@ -72,6 +74,7 @@ export default [
     copyIndex: 4,
     width: 1200,
     height: 900,
+    mobileWidth: 700,
     primaryRouteKey: 'home',
     primaryHash: '#services',
   },
@@ -84,6 +87,7 @@ export default [
     copyIndex: 5,
     width: 1200,
     height: 900,
+    mobileWidth: 700,
     primaryRouteKey: 'home',
     primaryHash: '#services',
   },
@@ -96,6 +100,7 @@ export default [
     copyIndex: 6,
     width: 1200,
     height: 900,
+    mobileWidth: 700,
     primaryRouteKey: 'work-visa',
   },
 ]
